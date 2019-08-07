@@ -40,6 +40,6 @@ For contribuitions [see the guide](https://github.com/equal-games/equal/blob/mas
 
 | OS      | Compiler   |
 |---------|------------|
-| Boost   | GCC 8.3.0  |
+| Linux   | GCC 8.3.0  |
 | Windows | MSVC++142v |
 
