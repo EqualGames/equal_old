@@ -1,0 +1,103 @@
+#pragma once
+
+#include <equal/core/application.hpp>
+#include <equal/core/game_object.hpp>
+#include <equal/core/scene.hpp>
+#include <equal/component/transform_component.hpp>
+#include <equal/component/text_component.hpp>
+#include <equal/component/renderer_component.hpp>
+#include <equal/helper/system.hpp>
+#include <equal/prefab/ui/canvas.hpp>
+#include <equal/world/data.hpp>
+
+namespace eq {
+
+/**
+ * @ingroup factories
+ * @brief Create a Canvas object
+ *
+ * @tparam T eq::GameObject a UI objects
+ * @tparam Args
+ * @param args Args
+ * @return eq::GameObject*
+ */
+template <typename T, typename... Args>
+T *create_canvas(Args... args) {
+  T *object = new T(args...);
+  ui::Canvas *canvas = GetScene()->canvas();
+  canvas->GetComponent<eq::TransformComponent>()->add(canvas, object);
+  return object;
+}
+
+/**
+ * @brief Create a world object
+ *
+ * @param tile_size uint8_t
+ * @param chunk_size const eq::Size&
+ * @return eq::World*
+ */
+World *create_world(const Size &tile_size = Size{32}, const Size &chunk_size = Size{16});
+
+/**
+ * @brief Create a world chunk object
+ *
+ * @param world eq::World*
+ * @param position const eq::Position&
+ * @return eq::Chunk*
+ */
+Chunk *create_world_chunk(World *world, const Position &position = Position{0});
+
+/**
+ * @brief Create a world floor object
+ *
+ * @param world eq::World*
+ * @param chunk eq::Chunk*
+ * @param number int
+ * @return eq::Floor*
+ */
+Floor *create_world_floor(World *world, Chunk *chunk, int number = 0);
+
+/**
+ * @brief Create a world tile object
+ *
+ * @param world eq::World*
+ * @param floor eq::Floor*
+ * @param position const Position&
+ * @return Tile*
+ */
+Tile *create_world_tile(World *world, Floor *floor, const Position &position = Position{0});
+
+/**
+ * @brief Create a world thing object
+ *
+ * @param world eq::World*
+ * @param tile eq::Tile*
+ * @param id uint32_t
+ * @return eq::Thing*
+ */
+Thing *create_world_thing(World *world, Tile *tile, uint32_t id = 1);
+
+/**
+ * @brief Create a world tileset object
+ *
+ * @param world eq::World*
+ * @param first_id uint32_t
+ * @param texture const std::string&
+ */
+void create_world_tileset(World *world, uint32_t first_id, const std::string &texture);
+
+/**
+ * @ingroup factories
+ * @brief Create a Application object
+ */
+void create_application(const WindowOptions &options);
+
+/**
+ * @ingroup factories
+ * @brief Init game
+ *
+ * To be defined in **client**
+ */
+void create_game();
+
+} // namespace eq

@@ -1,0 +1,36 @@
+/**
+
+@page quick_guide Getting started
+
+@tableofcontents
+
+@section quick_example Example
+
+File: ``config.hpp``
+@code
+#pragma once
+
+#include <equal/engine.hpp>
+
+eq::Size eq::Render::sliced_edge{5, 5};
+eq::Size eq::Render::sliced_border_TB{1, 5};
+eq::Size eq::Render::sliced_border_LR{5, 1};
+uint8_t eq::Render::sliced_shadow{1};
+@endcode
+
+File: ``main.cpp``
+@code
+#include "config.hpp"
+#include <equal/engine.hpp>
+#include <equal/entrypoint.hpp>
+
+eq::core::Application *eq::create_application() {
+  WindowOptions opt;
+  
+  eq::core::Application app = new eq::core::Application(opt);
+
+  return app;
+}
+@endcode
+
+*/

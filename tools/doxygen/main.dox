@@ -1,0 +1,18 @@
+/**
+
+@mainpage notitle
+
+@section main_intro Introduction
+
+Equal is a 2D game engine, Closed Source, multi-plataform. Its provides a API for creating a 2D games.
+
+@ref quick_guide is a guide for users new to Equal. It takes you through how to
+write a small but complete program.
+
+There are guides for each section of the API:
+  - Coming Soon
+
+The [reference documentation](modules.html) provides more detailed information
+about specific functions.
+
+*/
