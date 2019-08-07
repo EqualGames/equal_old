@@ -1,0 +1,16 @@
+
+[submodule "external/stb"]
+	path = external/stb
+	url = git@github.com:equal-games/stb.git
+[submodule "external/pugixml"]
+	path = external/pugixml
+	url = git@github.com:equal-games/pugixml.git
+[submodule "external/glm"]
+	path = external/glm
+	url = git@github.com:equal-games/glm.git
+[submodule "external/googletest"]
+	path = external/googletest
+	url = git@github.com:equal-games/googletest.git
+[submodule "external/fmt"]
+	path = external/fmt
+	url = git@github.com:equal-games/fmt.git

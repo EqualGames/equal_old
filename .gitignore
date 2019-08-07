@@ -1,32 +1,20 @@
-# Prerequisites
-*.d
+# Others
+build
+.vscode
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+# Windows
+.vs
+*.sln
+*.vcxproj
+*.vcxproj.*
 
-# Precompiled Headers
-*.gch
-*.pch
+# Linux
+Makefile
+*.make
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
+# CMake + Doxygen
+*.cmake
+CMakeFiles
+CMakeCache.txt
+Doxyfile.doxygen
+CMakeDoxyfile.in

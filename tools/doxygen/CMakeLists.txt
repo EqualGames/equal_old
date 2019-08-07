@@ -1,0 +1,59 @@
+cmake_minimum_required(VERSION 3.13.4)
+project("Equal" VERSION 1.0.0.0 DESCRIPTION "2D Game Engine API")
+
+find_package(Doxygen OPTIONAL_COMPONENTS dot mscgen dia)
+
+if(DOXYGEN_FOUND)
+
+  set(DOXYGEN_QUIET YES)
+  set(DOXYGEN_RECURSIVE YES)
+  set(DOXYGEN_FILE_PATTERNS "*.hpp" "*.h" "*.dox")
+  set(INPUT ${CMAKE_CURRENT_SOURCE_DIR} "../../include/equal")
+  set(DOXYGEN_EXCLUDE_PATTERNS "")
+  set(DOXYGEN_OUTPUT_DIRECTORY "../../docs")
+
+  set(DOXYGEN_GENERATE_HTML YES)
+  set(DOXYGEN_HTML_OUTPUT ".")
+  set(DOXYGEN_HTML_HEADER "header.html")
+  set(DOXYGEN_HTML_FOOTER "footer.html")
+  set(DOXYGEN_HTML_EXTRA_STYLESHEET "extra.css")
+
+  set(DOXYGEN_GENERATE_MAN NO)
+  set(DOXYGEN_GENERATE_XML NO)
+  set(DOXYGEN_GENERATE_LATEX NO)
+  set(DOXYGEN_GENERATE_DOCBOOK NO)
+  set(DOXYGEN_GENERATE_RTF NO)
+  set(DOXYGEN_GENERATE_AUTOGEN_DEF NO)
+  set(DOXYGEN_GENERATE_PERLMOD NO)
+
+  set(DOXYGEN_LAYOUT_FILE "DoxygenLayout.xml")
+
+  set(DOXYGEN_REPEAT_BRIEF NO)
+  set(DOXYGEN_ALWAYS_DETAILED_SEC YES)
+  set(DOXYGEN_INLINE_INHERITED_MEMB YES)
+  set(DOXYGEN_FULL_PATH_NAMES NO)
+  set(DOXYGEN_TAB_SIZE 2)
+  set(DOXYGEN_IDL_PROPERTY_SUPPORT NO)
+  set(DOXYGEN_EXTRACT_ALL YES)
+  set(DOXYGEN_SHOW_INCLUDE_FILES NO)
+  set(DOXYGEN_SORT_GROUP_NAMES YES)
+  set(DOXYGEN_COLS_IN_ALPHA_INDEX 5)
+  set(DOXYGEN_TREEVIEW_WIDTH 300)
+  set(DOXYGEN_MACRO_EXPANSION YES)
+  set(DOXYGEN_EXPAND_ONLY_PREDEF YES)
+  if(DOT_FOUND)
+    set(DOXYGEN_HAVE_DOT YES)
+  else(DOT_FOUND)
+    set(DOXYGEN_HAVE_DOT NO)
+  endif(DOT_FOUND)
+
+  set(DOXYGEN_PREDEFINED "EQ_SDL" "EQ_LINUX" "EQ_WINDOWS")
+
+  doxygen_add_docs(doxygen
+                   ${INPUT}
+                   COMMENT
+                   "Generate document pages")
+
+else(DOXYGEN_FOUND)
+  message("Doxygen need to be installed to generate the doxygen documentation")
+endif(DOXYGEN_FOUND)
