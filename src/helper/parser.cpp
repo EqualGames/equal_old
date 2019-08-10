@@ -1,3 +1,17 @@
+/*
+ * Copyright 2019 Equal Games
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 #include <fstream>
 #include <chrono>
 #include <equal/core/logger.hpp>
@@ -10,13 +24,14 @@
 #include <equal/helper/system.hpp>
 #include <equal/helper/string.hpp>
 #include <equal/helper/parser.hpp>
+#include <equal/helper/timer.hpp>
 #include <equal/prefab/ui/ui.hpp>
 
 namespace eq {
 
 ui::Canvas *ParserUI(const std::string &filename, const Parser::Actions &actions) {
   try {
-    auto start = std::chrono::high_resolution_clock::now();
+    eq::Timer timer("Parsing UI");
     ui::Canvas *canvas = new ui::Canvas(Position{0, 0}, GetWindow()->size());
 
     std::ifstream ui_file(filename);
@@ -156,10 +171,6 @@ ui::Canvas *ParserUI(const std::string &filename, const Parser::Actions &actions
         }
       }
     }
-
-    auto end = std::chrono::high_resolution_clock::now();
-    EQ_CORE_TRACE("ParserUI({}) = {}ms", filename,
-                  std::chrono::duration_cast<std::chrono::duration<float>>(end - start).count());
 
     return canvas;
   } catch (...) {

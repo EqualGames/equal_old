@@ -20,11 +20,11 @@ For contribuitions [see the guide](https://github.com/equal-games/equal/blob/mas
 
 ## Dependencies
 
-| Package      | Version  |
-|--------------|----------|
-| Boost        | 1.67     |
-| SDL          | 2.0.9    |
-| uuid (Linux) | 2.33.1-0 |
+| Package                   | Version  | Link                   |
+|---------------------------|----------|------------------------|
+| Boost                     | 1.67     | https://www.boost.org  |
+| SDL                       | 2.0.9    | https://www.libsdl.org |
+| uuid-dev/libuuid1 (Linux) | 2.33.1-0 | -                      |
 
 ## Submodules
 
@@ -38,8 +38,8 @@ For contribuitions [see the guide](https://github.com/equal-games/equal/blob/mas
 
 ## Compilers
 
-| OS      | Compiler   |
-|---------|------------|
-| Linux   | GCC 8.3.0  |
-| Windows | MSVC++142v |
+| OS      | Compiler   | Link                               |
+|---------|------------|------------------------------------|
+| Linux   | GCC 8.3.0  | https://gcc.gnu.org                |
+| Windows | MSVC++142v | https://visualstudio.microsoft.com |
 
