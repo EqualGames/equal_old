@@ -49,13 +49,7 @@ workspace "Equal"
       defines "EQ_SDL"
       files (GetSources("src/platform/sdl"))
 
-    newaction {
-      trigger     = "docs",
-      description = "Generate documentation",
-      execute     = function ()
-        os.execute("sh tools/scripts/generate_docs.sh")
-      end
-    }
+    postbuildcommands "premake5 install"
 
     ---------- Linux ----------
 
@@ -67,3 +61,19 @@ workspace "Equal"
       includedirs (EQUAL_LINUX_INCLUDES)
       libdirs (EQUAL_LINUX_LIBRARIES)
       links (EQUAL_LINUX_LINKS)
+
+      newaction {
+        trigger     = "docs",
+        description = "Generate documentation",
+        execute     = function ()
+          os.execute("sh tools/scripts/generate_docs.sh")
+        end
+      }
+
+      newaction {
+        trigger     = "install",
+        description = "Install library locally",
+        execute     = function ()
+          os.execute("sudo cp build/libEqual.a /usr/local/lib/libEqual.a")
+        end
+      }

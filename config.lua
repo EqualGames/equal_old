@@ -66,9 +66,6 @@ EQUAL_LINUX_LIBRARIES = {
   "/usr/lib",
   "/usr/local/lib",
   "/usr/lib/x86_64-linux-gnu",
-  "../build",
-  "../../build",
-  "../../../build",
 }
 
 EQUAL_LINUX_LINKS = {
