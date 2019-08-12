@@ -18,18 +18,35 @@ eq::Size eq::Render::sliced_border_LR{5, 1};
 uint8_t eq::Render::sliced_shadow{1};
 @endcode
 
+File: ``scene/main_menu.hpp``
+@code
+#pragma once
+
+#include <equal/engine.hpp>
+
+class MainMenu : public eq::Scene {
+public:
+  void start() override {}
+  void update(eq::World *world, const eq::Timestep &timestep) {}
+  void fixed_update(eq::World *world, const eq::Timestep &timestep) {}
+  void end() override {}
+};
+@endcode
+
 File: ``main.cpp``
 @code
 #include "config.hpp"
 #include <equal/engine.hpp>
 #include <equal/entrypoint.hpp>
+#include "scene/main_menu.hpp"
 
-eq::core::Application *eq::create_application() {
+void eq::create_game() {
   WindowOptions opt;
-  
-  eq::core::Application app = new eq::core::Application(opt);
+  opt.vsync = false;
+  opt.fps_limit = 0;
 
-  return app;
+  eq::create_application(opt);
+  eq::LoadScene<MainMenu>();
 }
 @endcode
 
