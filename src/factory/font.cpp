@@ -3,9 +3,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *     http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -32,20 +32,20 @@ std::unordered_map<std::string, Font *> LoadFontFromDAT() {
 
   for (auto &font_dat : res.fonts) {
     Font *font = new Font();
-    font->name(fmt::format("{0}_{1}", font_dat.name, 16));
+    font->name = fmt::format("{0}_{1}", font_dat.name, 16);
 
 #ifdef EQ_SDL
     TTF_Font *sdl_font = TTF_OpenFontRW(SDL_RWFromMem(font_dat.buffer.data(), font_dat.buffer.size()), 1, 16);
 
     if (!sdl_font) {
       TTF_CloseFont(sdl_font);
-      EQ_THROW("Can't load font({}): {}", font->name(), TTF_GetError());
+      EQ_THROW("Can't load font({}): {}", font->name, TTF_GetError());
     }
 
-    font->data(static_cast<void *>(sdl_font));
+    font->data = static_cast<void *>(sdl_font);
 #endif
 
-    fonts.try_emplace(font->name(), font);
+    fonts.try_emplace(font->name, font);
   }
 
   return fonts;

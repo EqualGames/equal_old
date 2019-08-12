@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['rotation',['Rotation',['../group__types.html#ga0d8d0ee8a44aef2f6885ef70bb6ddc22',1,'eq']]]
+  ['ref',['Ref',['../group__types.html#gab82b8382f925f2c4b89e32c126ad1518',1,'eq']]],
+  ['rotation',['Rotation',['../group__types.html#ga7bf3e5590e7d1e1d14b6194908e89fca',1,'eq']]]
 ];

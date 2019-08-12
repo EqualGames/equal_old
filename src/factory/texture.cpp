@@ -3,9 +3,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *     http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -34,8 +34,8 @@ std::unordered_map<std::string, Texture *> LoadTextureFromDAT() {
 
   for (auto &texture_dat : res.textures) {
     Texture *texture = new Texture();
-    texture->name(texture_dat.name);
-    texture->size(Size{texture_dat.width, texture_dat.height});
+    texture->name = texture_dat.name;
+    texture->size = Size{texture_dat.width, texture_dat.height};
 
 #ifdef EQ_SDL
     SDL_Surface *sdl_surface =
@@ -64,9 +64,9 @@ std::unordered_map<std::string, Texture *> LoadTextureFromDAT() {
       EQ_THROW("Can't create texture: {}", SDL_GetError());
     }
 
-    texture->data(static_cast<void *>(sdl_texture));
+    texture->data = static_cast<void *>(sdl_texture);
 #endif
-    textures.try_emplace(texture->name(), texture);
+    textures.try_emplace(texture->name, texture);
   }
 
   return textures;

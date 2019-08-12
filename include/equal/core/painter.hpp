@@ -3,9 +3,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *     http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -39,7 +39,7 @@ public:
    * @param options eq::WindowOptions
    * @return eq::Painter*
    */
-  static eq::Painter *create(const WindowOptions &options = WindowOptions{});
+  static Scope<Painter> create(const WindowOptions &options = WindowOptions{});
 
   /**
    * @brief Destroy the Painter
@@ -61,21 +61,21 @@ public:
 
   /**
    * @brief Get painter object
-   * 
-   * @return void* 
+   *
+   * @return void*
    */
   virtual void *native_painter() const = 0;
 
   /**
    * @brief Draw scene and your elements
-   * 
+   *
    * @param scene const eq::Scene&
    */
   void draw(const Scene &scene);
 
   /**
    * @brief Draw game object and your children
-   * 
+   *
    * @param object const eq::GameObject&
    */
   void draw(const GameObject &object);

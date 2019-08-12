@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['boundingbox',['BoundingBox',['../group__types.html#ga8815b95a8c58232bb504fe2ba994851d',1,'eq']]]
+  ['boundingbox',['BoundingBox',['../group__types.html#gaa9a47db53f0e5a949e71ac2e2e65945d',1,'eq']]]
 ];

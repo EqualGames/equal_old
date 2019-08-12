@@ -49,7 +49,10 @@ workspace "Equal"
       defines "EQ_SDL"
       files (GetSources("src/platform/sdl"))
 
-    postbuildcommands "premake5 install"
+    postbuildcommands {
+      "premake5 docs",
+      "premake5 install",
+    }
 
     ---------- Linux ----------
 

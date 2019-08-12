@@ -3,9 +3,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *     http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 #pragma once
+
+#include <equal/core/types.hpp>
 
 namespace eq {
 
@@ -29,7 +31,7 @@ class Painter;
  *
  * @return eq::EventSystem*
  */
-eq::EventSystem *GetEventSystem();
+EventSystem *GetEventSystem();
 
 /**
  * @ingroup helpers
@@ -37,7 +39,7 @@ eq::EventSystem *GetEventSystem();
  *
  * @return eq::ComponentSystem*
  */
-eq::ComponentSystem *GetComponentSystem();
+ComponentSystem *GetComponentSystem();
 
 /**
  * @ingroup helpers
@@ -45,30 +47,30 @@ eq::ComponentSystem *GetComponentSystem();
  *
  * @return eq::ScriptSystem*
  */
-eq::ScriptSystem *GetScriptSystem();
+ScriptSystem *GetScriptSystem();
 
 /**
  * @ingroup helpers
  * @brief Get the Scene object
  *
- * @return eq::Scene*
+ * @return const Scope<Scene> &
  */
-eq::Scene *GetScene();
+const Scope<Scene> &GetScene();
 
 /**
  * @ingroup helpers
  * @brief Get the Window object
  *
- * @return eq::Window*
+ * @return const Scope<Window> &
  */
-eq::Window *GetWindow();
+const Scope<Window> &GetWindow();
 
 /**
  * @ingroup helpers
  * @brief Get the Painter object
  *
- * @return eq::Painter*
+ * @return const Scope<Painter> &
  */
-eq::Painter *GetPainter();
+const Scope<Painter> &GetPainter();
 
 } // namespace eq
