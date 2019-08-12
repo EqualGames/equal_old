@@ -142,7 +142,7 @@ void RendererComponent::update(const Timestep& timestep) {
     if (m_type != Render::Type::Manual) {
       m_vao.clear();
       const fSize size{m_target->GetComponent<TransformComponent>()->size()};
-      const fSize texture_size{m_texture->size()};
+      const fSize texture_size{m_texture->size};
 
       if (m_type == Render::Type::Simple) {
         m_vao.emplace_back(

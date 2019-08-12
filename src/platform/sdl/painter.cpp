@@ -3,9 +3,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *     http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -24,7 +24,7 @@
 
 namespace eq {
 
-Painter *Painter::create(const WindowOptions &options) { return new Painter_SDL(options); }
+Scope<Painter> Painter::create(const WindowOptions &options) { return std::make_unique<Painter_SDL>(options); }
 
 Painter_SDL::Painter_SDL(const WindowOptions &options) : Painter() {
   m_scale = options.scale;
@@ -123,12 +123,12 @@ void Painter_SDL::draw(const RendererComponent &renderer, const TransformCompone
       tex_rect.w = tex.z;
       tex_rect.h = tex.w;
 
-      if (SDL_SetTextureColorMod(static_cast<SDL_Texture *>(renderer.texture()->data()), renderer.color().r,
+      if (SDL_SetTextureColorMod(static_cast<SDL_Texture *>(renderer.texture()->data), renderer.color().r,
                                  renderer.color().g, renderer.color().b) != 0) {
         EQ_THROW("Can't draw game object: {}", SDL_GetError());
       }
 
-      if (SDL_RenderCopy(m_renderer, static_cast<SDL_Texture *>(renderer.texture()->data()), &tex_rect, &quad_rect) !=
+      if (SDL_RenderCopy(m_renderer, static_cast<SDL_Texture *>(renderer.texture()->data), &tex_rect, &quad_rect) !=
           0) {
         EQ_THROW("Can't draw game object: {}", SDL_GetError());
       }
@@ -149,8 +149,7 @@ void Painter_SDL::draw(const TextComponent &text, const TransformComponent &tran
 
   std::string text_value = str::wchar_to_utf8(text.text().c_str());
 
-  SDL_Surface *surface =
-      TTF_RenderUTF8_Blended(static_cast<TTF_Font *>(text.font()->data()), text_value.c_str(), color);
+  SDL_Surface *surface = TTF_RenderUTF8_Blended(static_cast<TTF_Font *>(text.font()->data), text_value.c_str(), color);
   if (!surface) {
     EQ_THROW("Can't draw game object: {}", TTF_GetError());
   }

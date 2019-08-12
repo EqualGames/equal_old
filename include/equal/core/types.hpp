@@ -3,9 +3,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *     http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -20,6 +20,7 @@
 #include <vector>
 #include <unordered_map>
 #include <functional>
+#include <memory>
 #include <glm/glm.hpp>
 #include <boost/signals2/signal.hpp>
 
@@ -34,9 +35,29 @@ namespace eq {
 /**
  * @ingroup types
  *
+ * Shared pointer alias
+ *
+ * @tparam T
+ */
+template <typename T>
+using Ref = std::shared_ptr<T>;
+
+/**
+ * @ingroup types
+ *
+ * Unique pointer alias
+ *
+ * @tparam T
+ */
+template <typename T>
+using Scope = std::unique_ptr<T>;
+
+/**
+ * @ingroup types
+ *
  * Function to call on perform action
  */
-typedef std::function<void()> ActionPerform;
+using ActionPerform = std::function<void()>;
 
 /**
  * @ingroup types
@@ -58,7 +79,7 @@ typedef std::function<void()> ActionPerform;
  *
  * @see https://glm.g-truc.net/0.9.9/api/a00721.html#ga20779a61de2fd526a17f12fe53ec46b1
  */
-typedef glm::u8vec4 Color;
+using Color = glm::u8vec4;
 
 /**
  * @ingroup types
@@ -78,7 +99,7 @@ typedef glm::u8vec4 Color;
  *
  * @see https://glm.g-truc.net/0.9.9/api/a00699.html#ga6f9269106d91b2d2b91bcf27cd5f5560
  */
-typedef glm::ivec2 Position;
+using Position = glm::ivec2;
 
 /**
  * @ingroup types
@@ -98,7 +119,7 @@ typedef glm::ivec2 Position;
  *
  * @see https://glm.g-truc.net/0.9.9/api/a00699.html#ga6f9269106d91b2d2b91bcf27cd5f5560
  */
-typedef glm::ivec2 Rotation;
+using Rotation = glm::ivec2;
 
 /**
  * @ingroup types
@@ -118,7 +139,7 @@ typedef glm::ivec2 Rotation;
  *
  * @see https://glm.g-truc.net/0.9.9/api/a00699.html#ga6f9269106d91b2d2b91bcf27cd5f5560
  */
-typedef glm::ivec2 Scale;
+using Scale = glm::ivec2;
 
 /**
  * @ingroup types
@@ -138,7 +159,7 @@ typedef glm::ivec2 Scale;
  *
  * @see https://glm.g-truc.net/0.9.9/api/a00699.html#ga2f6d9ec3ae14813ade37d6aee3715fdb
  */
-typedef glm::uvec2 Size;
+using Size = glm::uvec2;
 
 /**
  * @ingroup types
@@ -158,7 +179,7 @@ typedef glm::uvec2 Size;
  *
  * @see https://glm.g-truc.net/0.9.9/api/a00721.html#ga24273aa02abaecaab7f160bac437a339
  */
-typedef glm::fvec2 fSize;
+using fSize = glm::fvec2;
 
 /**
  * @ingroup types
@@ -178,7 +199,7 @@ typedef glm::fvec2 fSize;
  *
  * @see https://glm.g-truc.net/0.9.9/api/a00699.html#ga6f9269106d91b2d2b91bcf27cd5f5560
  */
-typedef glm::ivec2 Origin;
+using Origin = glm::ivec2;
 
 /**
  * @ingroup types
@@ -200,7 +221,7 @@ typedef glm::ivec2 Origin;
  *
  * @see https://glm.g-truc.net/0.9.9/api/a00699.html#ga5abb4603dae0ce58c595e66d9123d812
  */
-typedef glm::ivec4 BoundingBox;
+using BoundingBox = glm::ivec4;
 
 /**
  * @ingroup types
@@ -222,7 +243,7 @@ typedef glm::ivec4 BoundingBox;
  *
  * @see https://glm.g-truc.net/0.9.9/api/a00721.html#ga713c796c54875cf4092d42ff9d9096b0
  */
-typedef glm::fvec4 fBoundingBox;
+using fBoundingBox = glm::fvec4;
 
 /**
  * @ingroup types
@@ -244,7 +265,7 @@ typedef glm::fvec4 fBoundingBox;
  *
  * @see https://glm.g-truc.net/0.9.9/api/a00699.html#ga5abb4603dae0ce58c595e66d9123d812
  */
-typedef glm::ivec4 QuadRender;
+using QuadRender = glm::ivec4;
 
 /**
  * @ingroup types
@@ -266,7 +287,7 @@ typedef glm::ivec4 QuadRender;
  *
  * @see https://glm.g-truc.net/0.9.9/api/a00699.html#ga5abb4603dae0ce58c595e66d9123d812
  */
-typedef glm::ivec4 TextureCrop;
+using TextureCrop = glm::ivec4;
 
 /**
  * @ingroup types
@@ -288,19 +309,19 @@ typedef glm::ivec4 TextureCrop;
  *
  * @see https://glm.g-truc.net/0.9.9/api/a00721.html#ga713c796c54875cf4092d42ff9d9096b0
  */
-typedef glm::fvec4 VertexPoint;
+using VertexPoint = glm::fvec4;
 
 /**
  * @ingroup types
  *
  * @see https://glm.g-truc.net/0.9.9/api/a00721.html#ga681381f19f11c9e5ee45cda2c56937ff
  */
-typedef glm::fmat2x4 Vertex;
+using Vertex = glm::fmat2x4;
 
 /**
  * @ingroup types
  */
-typedef std::vector<Vertex> VertexArray;
+using VertexArray = std::vector<Vertex>;
 
 /**
  * @ingroup types
@@ -356,113 +377,20 @@ public:
  * @ingroup types
  * @brief Texture data
  */
-class Texture {
-private:
-  std::string m_name;
-  Size m_size;
-  void *m_data{nullptr};
 
-public:
-  /**
-   * @brief Construct a new Texture object
-   */
-  Texture() = default;
-
-  /**
-   * @brief Destroy the Texture object
-   */
-  ~Texture();
-
-  /**
-   * @brief Get texture name
-   *
-   * @return const std::string&
-   */
-  const std::string &name() const;
-
-  /**
-   * @brief Set texture name
-   *
-   * @param name const std::string&
-   */
-  void name(const std::string &name);
-
-  /**
-   * @brief Get texture size
-   *
-   * @return const eq::Size&
-   */
-  const Size &size() const;
-
-  /**
-   * @brief Set texture size
-   *
-   * @param size const eq::Size&
-   */
-  void size(const Size &size);
-
-  /**
-   * @brief Get texture data
-   *
-   * @return void*
-   */
-  void *data();
-
-  /**
-   * @brief Set texture data
-   *
-   * @param data void*
-   */
-  void data(void *data);
+struct Texture {
+  std::string name;
+  Size size;
+  void *data{nullptr};
 };
 
 /**
  * @ingroup types
  * @brief Font data
  */
-class Font {
-private:
-  std::string m_name;
-  void *m_data{nullptr};
-
-public:
-  /**
-   * @brief Construct a new Font object
-   */
-  Font() = default;
-
-  /**
-   * @brief Destroy the Font object
-   */
-  ~Font();
-
-  /**
-   * @brief Get texture name
-   *
-   * @return const std::string&
-   */
-  const std::string &name() const;
-
-  /**
-   * @brief Set texture name
-   *
-   * @param name const std::string&
-   */
-  void name(const std::string &name);
-
-  /**
-   * @brief Get font data
-   *
-   * @return void*
-   */
-  void *data();
-
-  /**
-   * @brief Set font data
-   *
-   * @param data void*
-   */
-  void data(void *data);
+struct Font {
+  std::string name;
+  void *data{nullptr};
 };
 
 /**

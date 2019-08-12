@@ -3,9 +3,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *     http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -15,13 +15,13 @@
 #pragma once
 
 #include <chrono>
-#include <thread>
-#include <memory>
-#include <equal/core/window.hpp>
 #include <equal/core/scene.hpp>
 #include <equal/core/timestep.hpp>
-#include <equal/prefab/scene/blank.hpp>
+#include <equal/core/window.hpp>
 #include <equal/platform/platform.hpp>
+#include <equal/prefab/scene/blank.hpp>
+#include <memory>
+#include <thread>
 
 namespace eq {
 
@@ -30,10 +30,10 @@ namespace eq {
  * @brief Application
  */
 struct Application {
-  Window *window{nullptr};
-  Painter *painter{nullptr};
-  Scene *scene{nullptr};
-  Timestep *timestep{nullptr};
+  Scope<Window> window{nullptr};
+  Scope<Painter> painter{nullptr};
+  Scope<Scene> scene{nullptr};
+  Scope<Timestep> timestep{nullptr};
 };
 
 extern Application g_app;
@@ -43,10 +43,8 @@ extern Application g_app;
  *
  * @tparam T eq::Scene
  */
-template <typename T>
-void LoadScene() {
-  delete g_app.scene;
-  g_app.scene = new T();
+template <typename T> void LoadScene() {
+  g_app.scene = std::make_unique<T>();
 }
 
 /**

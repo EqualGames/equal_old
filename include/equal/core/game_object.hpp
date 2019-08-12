@@ -3,9 +3,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *     http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -15,6 +15,8 @@
 #pragma once
 
 #include <string>
+#include <type_traits>
+#include <equal/helper/error.hpp>
 #include <equal/component/transform_component.hpp>
 #include <equal/helper/system.hpp>
 #include <equal/system/component_system.hpp>
@@ -52,7 +54,7 @@ public:
    *
    * @param position const eq::Position&
    */
-  GameObject(const eq::Position &position);
+  GameObject(const Position &position);
 
   /**
    * @brief Construct a new Game Object object
@@ -60,7 +62,7 @@ public:
    * @param position const eq::Position&
    * @param size const eq::Size&
    */
-  GameObject(const eq::Position &position, const eq::Size &size);
+  GameObject(const Position &position, const Size &size);
 
   /**
    * @brief Destroy the Game Object object
@@ -157,7 +159,7 @@ public:
    * @param query const std::string&
    * @return GameObject*
    */
-  eq::GameObject *find(const std::string &query);
+  GameObject *find(const std::string &query);
 
   /**
    * @brief Create a game object with a child
@@ -169,8 +171,12 @@ public:
    */
   template <class T, typename... Args>
   inline T *CreateObject(Args... args) {
+    if (!std::is_base_of_v<GameObject, T>) {
+      EQ_THROW("Invalid object type, the type has need be a derived of eq::GameObject");
+    }
+
     T *object = new T(args...);
-    GetComponent<eq::TransformComponent>()->add(this, object);
+    GetComponent<TransformComponent>()->add(this, object);
     return object;
   }
 
@@ -183,6 +189,10 @@ public:
    */
   template <class T, typename... Args>
   inline void AddComponent(Args... args) {
+    if (!std::is_base_of<Component, T>::value) {
+      EQ_THROW("Invalid object type, the type has need be a derived of eq::Component");
+    }
+
     T *component = new T(args...);
     component->target(this);
     eq::GetComponentSystem()->add<T>(m_id, component);
@@ -196,7 +206,11 @@ public:
    */
   template <class T>
   inline bool HasComponent() const {
-    return eq::GetComponentSystem()->has_type<T>(m_id);
+    if (!std::is_base_of<Component, T>::value) {
+      EQ_THROW("Invalid object type, the type has need be a derived of eq::Component");
+    }
+
+    return GetComponentSystem()->has_type<T>(m_id);
   }
 
   /**
@@ -207,7 +221,11 @@ public:
    */
   template <class T>
   inline T *GetComponent() const {
-    return eq::GetComponentSystem()->get<T>(m_id);
+    if (!std::is_base_of<Component, T>::value) {
+      EQ_THROW("Invalid object type, the type has need be a derived of eq::Component");
+    }
+    
+    return GetComponentSystem()->get<T>(m_id);
   }
 
   /**
@@ -218,9 +236,13 @@ public:
    */
   template <class T, typename... Args>
   inline void AddScript() {
+    if (!std::is_base_of<Script, T>::value) {
+      EQ_THROW("Invalid object type, the type has need be a derived of eq::Script");
+    }
+
     T *script = new T();
     script->target(this);
-    eq::GetScriptSystem()->add<T>(m_id, script);
+    GetScriptSystem()->add<T>(m_id, script);
   }
 
   /**
@@ -231,7 +253,11 @@ public:
    */
   template <class T>
   inline bool HasScript() const {
-    return eq::GetScriptSystem()->has_type<T>(m_id);
+    if (!std::is_base_of<Script, T>::value) {
+      EQ_THROW("Invalid object type, the type has need be a derived of eq::Script");
+    }
+
+    return GetScriptSystem()->has_type<T>(m_id);
   }
 
   /**
@@ -242,7 +268,11 @@ public:
    */
   template <class T>
   inline T *GetScript() const {
-    return eq::GetScriptSystem()->get<T>(m_id);
+    if (!std::is_base_of<Script, T>::value) {
+      EQ_THROW("Invalid object type, the type has need be a derived of eq::Script");
+    }
+
+    return GetScriptSystem()->get<T>(m_id);
   }
 };
 

@@ -3,9 +3,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *     http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -35,7 +35,7 @@ ProgressBar::ProgressBar(const std::string &id) : GameObject(id) {
   {
     RendererComponent *bg_render = m_background->GetComponent<RendererComponent>();
     bg_render->type(Render::Type::Manual);
-    fSize tex_size{bg_render->texture()->size().x, bg_render->texture()->size().y};
+    fSize tex_size{bg_render->texture()->size.x, bg_render->texture()->size.y};
     float ratio = tex_size.y / tex_size.x;
     float w = std::floor(static_cast<float>(size.y) / ratio);
     float plug = std::floor(2.0f * w / tex_size.x);
@@ -69,7 +69,7 @@ ProgressBar::ProgressBar(float value, float max_value, const Position &position,
   {
     RendererComponent *bg_render = m_background->GetComponent<RendererComponent>();
     bg_render->type(Render::Type::Manual);
-    fSize tex_size{bg_render->texture()->size().x, bg_render->texture()->size().y};
+    fSize tex_size{bg_render->texture()->size.x, bg_render->texture()->size.y};
     float ratio = tex_size.y / tex_size.x;
     float w = std::floor(static_cast<float>(size.y) / ratio);
     float plug = std::floor(2.0f * w / tex_size.x);
@@ -103,7 +103,7 @@ void ProgressBar::value(float value) {
     auto fg_render = m_foreground->GetComponent<RendererComponent>();
     fSize size{m_foreground->GetComponent<TransformComponent>()->size()};
 
-    fSize tex_size{fg_render->texture()->size().x, fg_render->texture()->size().y};
+    fSize tex_size{fg_render->texture()->size.x, fg_render->texture()->size.y};
     float ratio = tex_size.y / tex_size.x;
     float w = std::floor(size.y / ratio);
     float plug = std::floor(2.0f * w / tex_size.x);

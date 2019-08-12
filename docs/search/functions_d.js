@@ -14,7 +14,7 @@ var searchData=
   ['operator_21_3d',['operator!=',['../structeq_1_1Chunk.html#ab32dc4d40f431e4d3a3bed4b3492a41f',1,'eq::Chunk::operator!=()'],['../structeq_1_1Floor.html#af4d8686b0b8ba185f868b1dc962ad38a',1,'eq::Floor::operator!=()']]],
   ['operator_28_29',['operator()',['../structstd_1_1hash_3_01eq_1_1Position_01_4.html#a152d4b05a2f37a2accac48069bf05c25',1,'std::hash&lt; eq::Position &gt;']]],
   ['operator_3d_3d',['operator==',['../structeq_1_1Chunk.html#adcee8dd24920d2adc03a877a3332db6b',1,'eq::Chunk::operator==()'],['../structeq_1_1Floor.html#a9783426f69b67361dd04f7ad73bbce12',1,'eq::Floor::operator==()']]],
-  ['options',['options',['../classeq_1_1Window.html#ad63487eaa130f5e968e786014731e282',1,'eq::Window']]],
+  ['options',['options',['../classeq_1_1Window.html#a5c1b2e80cb23d130db6c1e1aba16838e',1,'eq::Window']]],
   ['order',['order',['../classeq_1_1GameObject.html#a8c4b4dc8123aa261e96bc01037541111',1,'eq::GameObject::order() const'],['../classeq_1_1GameObject.html#a13705288b79af1c9cf521bca4ff5d103',1,'eq::GameObject::order(int order)']]],
   ['origin',['origin',['../classeq_1_1TransformComponent.html#a8744bf9fd1398befbf6328262b43a368',1,'eq::TransformComponent::origin(const Origin &amp;origin)'],['../classeq_1_1TransformComponent.html#a305e0d85beee5c82be257d2d0f1afaf8',1,'eq::TransformComponent::origin() const']]],
   ['overflow_5fx',['overflow_x',['../classeq_1_1TextComponent.html#ac6a358da6f6fae1d3b9405a3b0889a98',1,'eq::TextComponent::overflow_x() const'],['../classeq_1_1TextComponent.html#a704cc6033248d9229a3f268337527e02',1,'eq::TextComponent::overflow_x(Text::Overflow overflow)']]],

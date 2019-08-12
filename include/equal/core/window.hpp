@@ -3,9 +3,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *     http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -25,7 +25,7 @@ namespace eq {
  */
 class Window {
 protected:
-  eq::WindowOptions m_options;
+  WindowOptions m_options;
   bool m_capture_events{false};
 
 public:
@@ -35,7 +35,7 @@ public:
    * @param options const eq::WindowOptions &
    * @return eq::Window*
    */
-  static eq::Window *create(const eq::WindowOptions &options = eq::WindowOptions{});
+  static Scope<Window> create(const WindowOptions &options = WindowOptions{});
 
   /**
    * @brief Destroy the Window object
@@ -47,7 +47,7 @@ public:
    *
    * @return const eq::WindowOptions&
    */
-  inline const eq::WindowOptions &options() const { return m_options; }
+  inline const WindowOptions &options() const { return m_options; }
 
   /**
    * @brief Enable or disable capture events
@@ -94,7 +94,7 @@ public:
    *
    * @param size const eq::Size&
    */
-  virtual void size(const eq::Size &size) = 0;
+  virtual void size(const Size &size) = 0;
 
   /**
    * @brief Close window

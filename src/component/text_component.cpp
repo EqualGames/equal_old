@@ -3,9 +3,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *     http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -138,7 +138,7 @@ void TextComponent::update(const Timestep &timestep) {
       std::string text_value = str::wchar_to_utf8(m_text.c_str());
 
       int w, h;
-      if (TTF_SizeText(static_cast<TTF_Font *>(m_font->data()), text_value.c_str(), &w, &h) != 0) {
+      if (TTF_SizeText(static_cast<TTF_Font *>(m_font->data), text_value.c_str(), &w, &h) != 0) {
         EQ_THROW("Can't draw game object: {}", TTF_GetError());
       }
 

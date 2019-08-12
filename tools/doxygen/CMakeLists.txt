@@ -7,7 +7,7 @@ if(DOXYGEN_FOUND)
 
   set(DOXYGEN_QUIET YES)
   set(DOXYGEN_RECURSIVE YES)
-  set(DOXYGEN_FILE_PATTERNS "*.hpp" "*.h" "*.dox")
+  set(DOXYGEN_FILE_PATTERNS "*.hpp" "*.inl"  "*.h" "*.dox")
   set(INPUT ${CMAKE_CURRENT_SOURCE_DIR} "../../include/equal")
   set(DOXYGEN_EXCLUDE_PATTERNS "")
   set(DOXYGEN_OUTPUT_DIRECTORY "../../docs")
