@@ -15,7 +15,7 @@ var searchData=
   ['register_5fevent',['register_event',['../classeq_1_1Script.html#ab7938a842e3110b022a13b4efff40839',1,'eq::Script']]],
   ['registeraction',['registerAction',['../classeq_1_1ButtonScript.html#a7cf04bd7f8a0707993eed64a278864f8',1,'eq::ButtonScript']]],
   ['regular',['Regular',['../classeq_1_1Text.html#a431412a59d22bdeeb051b0dc8329d8f6a6cb6bfdfdce1a5629ddb632fac380b59',1,'eq::Text']]],
-  ['remove',['remove',['../classeq_1_1TransformComponent.html#a15481a6686153873f7c4d6dfb0d250ea',1,'eq::TransformComponent']]],
+  ['remove',['remove',['../classeq_1_1TransformComponent.html#a6e989445aefdd50b0c2ca2f9d445d1cd',1,'eq::TransformComponent']]],
   ['render',['Render',['../classeq_1_1Render.html',1,'eq']]],
   ['renderer_5fcomponent_2ehpp',['renderer_component.hpp',['../renderer__component_8hpp.html',1,'']]],
   ['renderercomponent',['RendererComponent',['../classeq_1_1RendererComponent.html',1,'eq::RendererComponent'],['../classeq_1_1RendererComponent.html#a7d6759de79073cc7db8b3ac8af8226fc',1,'eq::RendererComponent::RendererComponent()=default'],['../classeq_1_1RendererComponent.html#a66aec508ed475ad901bb28ca3a49b1e4',1,'eq::RendererComponent::RendererComponent(Texture *texture)']]],

@@ -15,5 +15,5 @@ var searchData=
   ['divide',['Divide',['../classeq_1_1Keyboard.html#a5d27e13f1857f208de6a2e16c3b322fba8e222bc4a2bc88cf287ec7be2d9c1d3b',1,'eq::Keyboard']]],
   ['door',['Door',['../group__worlds.html#ggab85cf0d35e59e17ed41a3de90cc7b164a6c2b2ef9e2ed77a3ad4bbb2ac05cb93f',1,'eq']]],
   ['down',['Down',['../classeq_1_1Keyboard.html#a5d27e13f1857f208de6a2e16c3b322fbac09e210000822882ac639b633320644e',1,'eq::Keyboard']]],
-  ['draw',['draw',['../classeq_1_1Painter.html#a630481e0dc5c3ca5918be390b5868115',1,'eq::Painter::draw(const Scene &amp;scene)'],['../classeq_1_1Painter.html#a9b41abd5b664de6878ce5f57740da3a0',1,'eq::Painter::draw(const GameObject &amp;object)']]]
+  ['draw',['draw',['../classeq_1_1Painter.html#aca8c3b59eb0740fb1f4f7fe7ff30c48d',1,'eq::Painter::draw(const Scope&lt; Scene &gt; &amp;scene)'],['../classeq_1_1Painter.html#a97aba8bcd8c933ca4e8efbe6360b819f',1,'eq::Painter::draw(const Ref&lt; GameObject &gt; &amp;object)']]]
 ];
