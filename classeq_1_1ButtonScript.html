@@ -102,8 +102,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:acbb62adfa7773e52f8f60ecb671c9fad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeq_1_1ButtonScript.html#acbb62adfa7773e52f8f60ecb671c9fad">onMouseRelease</a> (<a class="el" href="classeq_1_1Mouse.html#a131fb34bf5dfc6f593c0e8844125f300">Mouse::Button</a> button, const <a class="el" href="group__types.html#ga51bf710cf599ec90ff40cf61050135dd">Position</a> &amp;position) override</td></tr>
 <tr class="memdesc:acbb62adfa7773e52f8f60ecb671c9fad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method called on mouse release.  <a href="#acbb62adfa7773e52f8f60ecb671c9fad">More...</a><br /></td></tr>
 <tr class="separator:acbb62adfa7773e52f8f60ecb671c9fad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93159a61fd2a734654a3b19eebf49c4b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeq_1_1Script.html#a93159a61fd2a734654a3b19eebf49c4b">target</a> (<a class="el" href="classeq_1_1GameObject.html">GameObject</a> *object)</td></tr>
-<tr class="separator:a93159a61fd2a734654a3b19eebf49c4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeee4fdf3493662377955c60a5f023286"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeq_1_1Script.html#aeee4fdf3493662377955c60a5f023286">target</a> (<a class="el" href="group__types.html#gab82b8382f925f2c4b89e32c126ad1518">Ref</a>&lt; <a class="el" href="classeq_1_1GameObject.html">GameObject</a> &gt; &amp;object)</td></tr>
+<tr class="separator:aeee4fdf3493662377955c60a5f023286"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff9f0bba692e6fe76241c32ea4b62896"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeq_1_1Script.html#aff9f0bba692e6fe76241c32ea4b62896">dispatch</a> (<a class="el" href="classeq_1_1Input.html#a0d1b53da4bcd8289b11e4e73d4d4ee59">Input::Event</a> event, <a class="el" href="structeq_1_1Input_1_1EventData.html">Input::EventData</a> *data)</td></tr>
 <tr class="separator:aff9f0bba692e6fe76241c32ea4b62896"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -114,8 +114,8 @@ Protected Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a4d05cb475b3789854a5533d32336a9ab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classeq_1_1GameObject.html">GameObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeq_1_1Script.html#a4d05cb475b3789854a5533d32336a9ab">m_target</a> {nullptr}</td></tr>
-<tr class="separator:a4d05cb475b3789854a5533d32336a9ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a605eaa8ebe60342f3b466293c14267b4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gab82b8382f925f2c4b89e32c126ad1518">Ref</a>&lt; <a class="el" href="classeq_1_1GameObject.html">GameObject</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeq_1_1Script.html#a605eaa8ebe60342f3b466293c14267b4">m_target</a></td></tr>
+<tr class="separator:a605eaa8ebe60342f3b466293c14267b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f045ef67fdb64abf3784902800e0cd2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classeq_1_1Input.html#abc799f1f3bc2574a1116d81266367e60">Input::OnMouseMove</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeq_1_1Script.html#a6f045ef67fdb64abf3784902800e0cd2">SignalOnMouseMove</a></td></tr>
 <tr class="separator:a6f045ef67fdb64abf3784902800e0cd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a774bdeddced53f502200e1b46a9d0ec2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classeq_1_1Input.html#acb2832381c02289f36eeb03d260ac2b4">Input::OnMousePress</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeq_1_1Script.html#a774bdeddced53f502200e1b46a9d0ec2">SignalOnMousePress</a></td></tr>
@@ -163,6 +163,13 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td><a class="el" href="classeq_1_1Input.html#a0d1b53da4bcd8289b11e4e73d4d4ee59" title="Input Events. ">eq::Input::Event</a> </td></tr>
+    <tr><td class="paramname">data</td><td><a class="el" href="structeq_1_1Input_1_1EventData.html" title="Event data structure. ">eq::Input::EventData</a>* </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -216,6 +223,12 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">timestep</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Reimplemented from <a class="el" href="classeq_1_1Script.html#a719878c9bad849da7101afcfe1d66674">eq::Script</a>.</p>
 
@@ -426,8 +439,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a93159a61fd2a734654a3b19eebf49c4b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a93159a61fd2a734654a3b19eebf49c4b">&#9670;&nbsp;</a></span>target()</h2>
+<a id="aeee4fdf3493662377955c60a5f023286"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeee4fdf3493662377955c60a5f023286">&#9670;&nbsp;</a></span>target()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -438,7 +451,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="memname">void eq::Script::target </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classeq_1_1GameObject.html">GameObject</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gab82b8382f925f2c4b89e32c126ad1518">Ref</a>&lt; <a class="el" href="classeq_1_1GameObject.html">GameObject</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>object</em></td><td>)</td>
           <td></td>
         </tr>
@@ -449,6 +462,12 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">object</td><td><a class="el" href="group__types.html#gab82b8382f925f2c4b89e32c126ad1518">eq::Ref&lt;eq::GameObject&gt;</a>&amp; </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -475,14 +494,20 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">timestep</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Reimplemented from <a class="el" href="classeq_1_1Script.html#ac62a671960f8aaff1445fd380530fb18">eq::Script</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a4d05cb475b3789854a5533d32336a9ab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4d05cb475b3789854a5533d32336a9ab">&#9670;&nbsp;</a></span>m_target</h2>
+<a id="a605eaa8ebe60342f3b466293c14267b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a605eaa8ebe60342f3b466293c14267b4">&#9670;&nbsp;</a></span>m_target</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -491,7 +516,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classeq_1_1GameObject.html">GameObject</a>* eq::Script::m_target {nullptr}</td>
+          <td class="memname"><a class="el" href="group__types.html#gab82b8382f925f2c4b89e32c126ad1518">Ref</a>&lt;<a class="el" href="classeq_1_1GameObject.html">GameObject</a>&gt; eq::Script::m_target</td>
         </tr>
       </table>
   </td>
@@ -641,7 +666,7 @@ Protected Attributes</h2></td></tr>
 </div><!-- contents -->
 <address class="footer">
   <p>
-    Last update on Mon Aug 12 2019 for Equal 1.0.0.0
+    Last update on Thu Aug 15 2019 for Equal 1.0.0.0
   </p>
 </address>
 </body>
