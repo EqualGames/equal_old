@@ -3,9 +3,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *     http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -27,7 +27,7 @@ TransformComponent::TransformComponent(const Position &position, const Size &siz
 }
 
 TransformComponent::~TransformComponent() {
-  delete m_parent;
+  m_parent = nullptr;
   m_children.clear();
 }
 
@@ -100,16 +100,16 @@ bool TransformComponent::contain(const Position &position) const {
   return (position.x > pos.x && position.x < (pos.x + size.x)) && (position.y > pos.y && position.y < (pos.y + size.y));
 }
 
-GameObject *TransformComponent::parent() const { return m_parent; }
+const Ref<GameObject> TransformComponent::parent() const { return m_parent; }
 
-void TransformComponent::parent(GameObject *object) {
+void TransformComponent::parent(Ref<GameObject> &object) {
   m_parent = object;
   m_need_update = true;
 }
 
-const std::vector<GameObject *> &TransformComponent::children() { return m_children; }
+const std::vector<Ref<GameObject>> TransformComponent::children() { return m_children; }
 
-GameObject *TransformComponent::child(int index) const {
+const Ref<GameObject> TransformComponent::child(int index) const {
   if (!m_children.empty()) {
     if (index >= 0 && index < static_cast<int>(m_children.size())) {
       return m_children.at(index);
@@ -118,20 +118,20 @@ GameObject *TransformComponent::child(int index) const {
   return nullptr;
 }
 
-void TransformComponent::add(GameObject *parent, GameObject *object) {
+void TransformComponent::add(Ref<GameObject> &parent, Ref<GameObject> object) {
   object->GetComponent<TransformComponent>()->parent(parent);
   object->order(static_cast<int>(m_children.size()) + 1);
   m_children.push_back(object);
 }
 
-void TransformComponent::remove(GameObject *object) {
+void TransformComponent::remove(const Ref<GameObject> &object) {
   m_children.erase(std::remove_if(m_children.begin(), m_children.end(),
-                                  [object](GameObject *child) { return child->id() == object->id(); }));
+                                  [object](const Ref<GameObject> &child) { return child->id() == object->id(); }));
 }
 
-void TransformComponent::fixed_update(const Timestep& timestep) {}
+void TransformComponent::fixed_update(const Timestep &timestep) {}
 
-void TransformComponent::update(const Timestep& timestep) {
+void TransformComponent::update(const Timestep &timestep) {
   if (m_need_update) {
     m_need_update = false;
 
@@ -203,7 +203,7 @@ void TransformComponent::update(const Timestep& timestep) {
     }
 
     // FIXME: Need review
-    for (GameObject *child : m_children) {
+    for (auto child : m_children) {
       child->GetComponent<TransformComponent>()->parentUpdate();
       child->GetComponent<TransformComponent>()->update(timestep);
     }

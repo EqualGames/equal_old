@@ -3,9 +3,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *     http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -48,57 +48,57 @@ T *create_canvas(Args... args) {
  *
  * @param tile_size uint8_t
  * @param chunk_size const eq::Size&
- * @return eq::World*
+ * @return eq::Ref<eq::World>
  */
-World *create_world(const Size &tile_size = Size{32}, const Size &chunk_size = Size{16});
+Ref<World> create_world(const Size &tile_size = Size{32}, const Size &chunk_size = Size{16});
 
 /**
  * @brief Create a world chunk object
  *
- * @param world eq::World*
+ * @param world eq::Ref<eq::World>&
  * @param position const eq::Position&
- * @return eq::Chunk*
+ * @return eq::Ref<eq::Chunk>
  */
-Chunk *create_world_chunk(World *world, const Position &position = Position{0});
+Ref<Chunk> create_world_chunk(Ref<World> &world, const Position &position = Position{0});
 
 /**
  * @brief Create a world floor object
  *
- * @param world eq::World*
- * @param chunk eq::Chunk*
+ * @param world eq::Ref<eq::World>&
+ * @param chunk eq::Ref<eq::Chunk>&
  * @param number int
- * @return eq::Floor*
+ * @return eq::Ref<eq::Floor>
  */
-Floor *create_world_floor(World *world, Chunk *chunk, int number = 0);
+Ref<Floor> create_world_floor(Ref<World> &world, Ref<Chunk> &chunk, int number = 0);
 
 /**
  * @brief Create a world tile object
  *
- * @param world eq::World*
- * @param floor eq::Floor*
+ * @param world eq::Ref<eq::World>&
+ * @param floor eq::Ref<eq::Floor>&
  * @param position const Position&
- * @return Tile*
+ * @return eq::Ref<eq::Tile>
  */
-Tile *create_world_tile(World *world, Floor *floor, const Position &position = Position{0});
+Ref<Tile> create_world_tile(Ref<World> &world, Ref<Floor> &floor, const Position &position = Position{0});
 
 /**
  * @brief Create a world thing object
  *
- * @param world eq::World*
- * @param tile eq::Tile*
+ * @param world eq::Ref<eq::World>&
+ * @param tile eq::Ref<eq::Tile>&
  * @param id uint32_t
- * @return eq::Thing*
+ * @return eq::Ref<eq::Thing>
  */
-Thing *create_world_thing(World *world, Tile *tile, uint32_t id = 1);
+Ref<Thing> create_world_thing(Ref<World> &world, Ref<Tile> &tile, uint32_t id = 1);
 
 /**
  * @brief Create a world tileset object
  *
- * @param world eq::World*
+ * @param world eq::Ref<eq::World>&
  * @param first_id uint32_t
  * @param texture const std::string&
  */
-void create_world_tileset(World *world, uint32_t first_id, const std::string &texture);
+void create_world_tileset(Ref<World> &world, uint32_t first_id, const std::string &texture);
 
 /**
  * @ingroup factories

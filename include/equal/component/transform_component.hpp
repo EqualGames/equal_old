@@ -3,9 +3,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *     http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -38,8 +38,8 @@ private:
   Transform::Anchor m_anchor{Transform::Anchor::TL};
   BoundingBox m_bbox{0};
   bool m_need_update{true};
-  GameObject *m_parent{nullptr};
-  std::vector<GameObject *> m_children;
+  Ref<GameObject> m_parent;
+  std::vector<Ref<GameObject>> m_children;
 
 public:
   TransformComponent() = default;
@@ -47,12 +47,12 @@ public:
   TransformComponent(const Position &position, const Size &size);
   virtual ~TransformComponent();
 
-  GameObject *parent() const;
-  void parent(GameObject *object);
-  const std::vector<GameObject *> &children();
-  GameObject *child(int index) const;
-  void add(GameObject *parent, GameObject *object);
-  void remove(GameObject *object);
+  const Ref<GameObject> parent() const;
+  void parent(Ref<GameObject> &object);
+  const std::vector<Ref<GameObject>> children();
+  const Ref<GameObject> child(int index) const;
+  void add(Ref<GameObject> &parent, Ref<GameObject> object);
+  void remove(const Ref<GameObject> &object);
   void parentUpdate();
 
   Transform::Anchor anchor() const;

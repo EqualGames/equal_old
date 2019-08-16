@@ -15,6 +15,7 @@
 #pragma once
 
 #include <equal/core/scene.hpp>
+#include <equal/core/types.hpp>
 #include <equal/core/game_object.hpp>
 #include <equal/component/transform_component.hpp>
 #include <equal/component/renderer_component.hpp>
@@ -28,7 +29,7 @@ namespace eq {
  */
 class Painter {
 private:
-  void recursive(const GameObject &object);
+  void recursive(const Ref<GameObject> &object);
   virtual void draw(const TextComponent &text, const TransformComponent &transform) = 0;
   virtual void draw(const RendererComponent &renderer, const TransformComponent &transform) = 0;
 
@@ -37,7 +38,7 @@ public:
    * @brief Create a manager based on selected platform
    *
    * @param options eq::WindowOptions
-   * @return eq::Painter*
+   * @return eq::Scope<eq::Painter>
    */
   static Scope<Painter> create(const WindowOptions &options = WindowOptions{});
 
@@ -69,16 +70,16 @@ public:
   /**
    * @brief Draw scene and your elements
    *
-   * @param scene const eq::Scene&
+   * @param scene const eq::Scope<eq::Scene>&
    */
-  void draw(const Scene &scene);
+  void draw(const Scope<Scene> &scene);
 
   /**
    * @brief Draw game object and your children
    *
-   * @param object const eq::GameObject&
+   * @param object const eq::Ref<eq::GameObject>&
    */
-  void draw(const GameObject &object);
+  void draw(const Ref<GameObject> &object);
 };
 
 } // namespace eq

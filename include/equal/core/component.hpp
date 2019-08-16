@@ -3,9 +3,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *     http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -32,12 +32,12 @@ class GameObject;
  */
 class Component {
 protected:
-  GameObject *m_target{nullptr};
+  Ref<GameObject> m_target;
 
 public:
   virtual ~Component();
 
-  void target(GameObject *target);
+  void target(Ref<GameObject> &target);
 
   virtual void update(const Timestep &timestep) = 0;
   virtual void fixed_update(const Timestep &timestep) = 0;

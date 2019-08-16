@@ -16,29 +16,29 @@
 
 namespace eq {
 
-void Painter::recursive(const GameObject &object) {
-  if (object.visible()) {
+void Painter::recursive(const Ref<GameObject> &object) {
+  if (object->visible()) {
     draw(object);
 
-    for (GameObject *child : object.GetComponent<TransformComponent>()->children()) {
-      recursive(*child);
+    for (const Ref<GameObject> &child : object->GetComponent<TransformComponent>()->children()) {
+      recursive(child);
     }
   }
 }
 
-void Painter::draw(const Scene &scene) {
-  for (GameObject *object : scene.objects()) {
-    recursive(*object);
+void Painter::draw(const Scope<Scene> &scene) {
+  for (const Ref<GameObject> &object : scene->objects()) {
+    recursive(object);
   }
 
-  recursive(*static_cast<GameObject *>(scene.canvas()));
+  recursive(static_cast<Ref<GameObject>>(scene->canvas()));
 }
 
-void Painter::draw(const GameObject &object) {
-  if (object.HasComponent<RendererComponent>()) {
-    draw(*object.GetComponent<RendererComponent>(), *object.GetComponent<TransformComponent>());
-  } else if (object.HasComponent<TextComponent>()) {
-    draw(*object.GetComponent<TextComponent>(), *object.GetComponent<TransformComponent>());
+void Painter::draw(const Ref<GameObject> &object) {
+  if (object->HasComponent<RendererComponent>()) {
+    draw(*object->GetComponent<RendererComponent>(), *object->GetComponent<TransformComponent>());
+  } else if (object->HasComponent<TextComponent>()) {
+    draw(*object->GetComponent<TextComponent>(), *object->GetComponent<TransformComponent>());
   }
 }
 

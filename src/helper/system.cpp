@@ -23,11 +23,11 @@
 
 namespace eq {
 
-EventSystem *GetEventSystem() { return g_app.scene->event_system(); }
+const Scope<EventSystem> &GetEventSystem() { return g_app.scene->event_system(); }
 
-ComponentSystem *GetComponentSystem() { return g_app.scene->component_system(); }
+const Scope<ComponentSystem> &GetComponentSystem() { return g_app.scene->component_system(); }
 
-ScriptSystem *GetScriptSystem() { return g_app.scene->script_system(); }
+const Scope<ScriptSystem> &GetScriptSystem() { return g_app.scene->script_system(); }
 
 const Scope<Scene> &GetScene() { return g_app.scene; }
 

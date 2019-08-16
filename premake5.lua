@@ -50,6 +50,7 @@ workspace "Equal"
       files (GetSources("src/platform/sdl"))
 
     postbuildcommands {
+      "cd tests && premake5 gmake2 && make -B && ./build/Test && cd ..",
       "premake5 docs",
       "premake5 install",
     }
