@@ -16,7 +16,7 @@ Can be found on [here](https://github.com/equal-games/equal/releases).
 
 The community can be found on [Discord](https://discord.gg/QHZc8xq).
 
-For contribuitions [see the guide](https://github.com/equal-games/equal/blob/master/CONTRIBUTING.md) for instructions.
+For contribuitions [see the guide](CONTRIBUTING.md) for instructions.
 
 ## Dependencies
 
