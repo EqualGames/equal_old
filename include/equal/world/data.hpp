@@ -3,9 +3,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *     http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -38,7 +38,7 @@ struct Chunk {
  * @brief Floor data structure
  */
 struct Floor {
-  Chunk *chunk{nullptr};
+  Ref<Chunk> chunk;
   int number;
 
   bool operator==(const Floor &rhs) const { return std::tie(chunk, number) == std::tie(rhs.chunk, rhs.number); }
@@ -59,7 +59,7 @@ enum TileFlags : uint8_t {
  * @brief Tile data structure
  */
 struct Tile {
-  Floor *floor{nullptr};
+  Ref<Floor> floor;
   Position position{0};
   uint8_t flags;
 };
@@ -101,7 +101,7 @@ enum ThingType : uint8_t {
  * @brief Thing data structure
  */
 struct Thing {
-  Tile *tile{nullptr};
+  Ref<Tile> tile;
   uint32_t id;
   ThingType type;
 };
@@ -115,16 +115,16 @@ struct World {
   Size tileset_size{256};
   Size chunk_size{16};
   std::unordered_map<uint32_t, std::string> tilesets;
-  std::vector<Chunk *> chunks;
-  std::vector<Floor *> floors;
-  std::vector<Tile *> tiles;
-  std::vector<Thing *> things;
+  std::vector<Ref<Chunk>> chunks;
+  std::vector<Ref<Floor>> floors;
+  std::vector<Ref<Tile>> tiles;
+  std::vector<Ref<Thing>> things;
 
-  std::vector<Tile *> get_chunk_tiles(const Position &position, int floor) {
-    std::vector<Tile *> chunk_tiles;
-    Tile *ref_tile = get_tile(position, floor);
+  const std::vector<Ref<Tile>> get_chunk_tiles(const Position &position, int floor) {
+    std::vector<Ref<Tile>> chunk_tiles;
+    const Ref<Tile> &ref_tile = get_tile(position, floor);
 
-    for (Tile *tile : tiles) {
+    for (const Ref<Tile> &tile : tiles) {
       continue(tile->floor != ref_tile->floor);
       chunk_tiles.emplace_back(tile);
     }
@@ -132,22 +132,22 @@ struct World {
     return chunk_tiles;
   }
 
-  Tile *get_tile(const Position &position, int floor) {
-    auto it = std::find_if(tiles.begin(), tiles.end(), [position, floor](Tile *tile) -> bool {
+  Ref<Tile> get_tile(const Position &position, int floor) {
+    auto it = std::find_if(tiles.begin(), tiles.end(), [position, floor](const Ref<Tile> &tile) -> bool {
       return ((tile->floor->number == floor) && (tile->position == position));
     });
     return *it;
   }
 
-  Floor *get_floor(int number) {
-    auto it =
-        std::find_if(floors.begin(), floors.end(), [number](Floor *floor) -> bool { return floor->number == number; });
+  Ref<Floor> get_floor(int number) {
+    auto it = std::find_if(floors.begin(), floors.end(),
+                           [number](const Ref<Floor> &floor) -> bool { return floor->number == number; });
     return *it;
   }
 
-  Chunk *get_chunk(const Position &position) {
+  Ref<Chunk> get_chunk(const Position &position) {
     auto it = std::find_if(chunks.begin(), chunks.end(),
-                           [position](Chunk *chunk) -> bool { return chunk->position == position; });
+                           [position](const Ref<Chunk> &chunk) -> bool { return chunk->position == position; });
     return *it;
   }
 };

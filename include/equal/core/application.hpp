@@ -30,10 +30,10 @@ namespace eq {
  * @brief Application
  */
 struct Application {
-  Scope<Window> window{nullptr};
-  Scope<Painter> painter{nullptr};
-  Scope<Scene> scene{nullptr};
-  Scope<Timestep> timestep{nullptr};
+  Scope<Window> window;
+  Scope<Painter> painter;
+  Scope<Scene> scene;
+  Scope<Timestep> timestep;
 };
 
 extern Application g_app;
@@ -43,8 +43,9 @@ extern Application g_app;
  *
  * @tparam T eq::Scene
  */
-template <typename T> void LoadScene() {
-  g_app.scene = std::make_unique<T>();
+template <typename T>
+void LoadScene() {
+  g_app.scene.reset(new T());
 }
 
 /**

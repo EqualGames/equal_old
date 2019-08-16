@@ -3,9 +3,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *     http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -35,15 +35,15 @@ namespace eq {
  */
 class Scene {
 protected:
-  World *m_world{nullptr};
+  Ref<World> m_world;
   bool m_initialized{false};
   // ---------- Systems ----------
-  EventSystem *m_event{nullptr};
-  ComponentSystem *m_component{nullptr};
-  ScriptSystem *m_script{nullptr};
+  Scope<EventSystem> m_event;
+  Scope<ComponentSystem> m_component;
+  Scope<ScriptSystem> m_script;
   // ---------- Game Objects ----------
-  ui::Canvas *m_canvas{nullptr};
-  std::vector<GameObject *> m_objects;
+  Ref<ui::Canvas> m_canvas;
+  std::vector<Ref<GameObject>> m_objects;
 
 public:
   /**
@@ -69,42 +69,44 @@ public:
   /**
    * @brief Get world data
    *
-   * @return eq::World*
+   * @return const eq::Ref<eq::World>&
    */
-  World *world() const;
+  const Ref<World> &world() const;
 
   /**
    * @brief Set world data
+   *
+   * @param world eq::Ref<eq::World>&
    */
-  void world(World *world);
+  void world(Ref<World> &world);
 
   /**
    * @brief Set ui canvas
    *
-   * @param canvas eq::ui::Canvas
+   * @param canvas eq::Ref<eq::ui::Canvas>&
    */
-  void canvas(ui::Canvas *canvas);
+  void canvas(Ref<ui::Canvas> &canvas);
 
   /**
    * @brief Get ui canvas
    *
-   * @return eq::ui::Canvas*
+   * @return const eq::Ref<eq::ui::Canvas>&
    */
-  ui::Canvas *canvas() const;
+  const Ref<ui::Canvas> &canvas() const;
 
   /**
    * @brief Get all game objects in scene
    *
-   * @return std::vector<eq::GameObject *>
+   * @return const std::vector<eq::Ref<GameObject>>&
    */
-  std::vector<GameObject *> objects() const;
+  const std::vector<Ref<GameObject>> &objects() const;
 
   /**
    * @brief Add game object in scene
    *
-   * @param object eq::GameObject
+   * @param object eq::Ref<eq::GameObject>&
    */
-  void add(GameObject *object);
+  void add(Ref<GameObject> &object);
 
   /**
    * @brief Update scene loop
@@ -123,39 +125,39 @@ public:
   /**
    * @brief get event system
    *
-   * @return eq::World*
+   * @return const eq::Scope<eq::EventSystem>&
    */
-  EventSystem *event_system() const;
+  const Scope<EventSystem> &event_system() const;
 
   /**
    * @brief Get component system
    *
-   * @return eq::ComponentSystem*
+   * @return const eq::Scope<eq::ComponentSystem>&
    */
-  ComponentSystem *component_system() const;
+  const Scope<ComponentSystem> &component_system() const;
 
   /**
    * @brief Get script system
    *
-   * @return eq::ScriptSystem*
+   * @return const Scope<ScriptSystem>&
    */
-  ScriptSystem *script_system() const;
+  const Scope<ScriptSystem> &script_system() const;
 
   /**
    * @brief Update scene loop
    *
-   * @param world eq::World*
+   * @param world eq::Ref<eq::World>&
    * @param timestep const eq::Timestep&
    */
-  virtual void update(World *world, const Timestep &timestep) = 0;
+  virtual void update(Ref<World> &world, const Timestep &timestep) = 0;
 
   /**
    * @brief Fixed update scene loop
    *
-   * @param world eq::World*
+   * @param world eq::Ref<eq::World>&
    * @param timestep const eq::Timestep&
    */
-  virtual void fixed_update(World *world, const Timestep &timestep) = 0;
+  virtual void fixed_update(Ref<World> &world, const Timestep &timestep) = 0;
 };
 
 } // namespace eq

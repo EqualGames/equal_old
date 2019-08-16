@@ -29,31 +29,31 @@ class Painter;
  * @ingroup helpers
  * @brief Get the Event System object
  *
- * @return eq::EventSystem*
+ * @return const eq::Scope<eq::EventSystem>&
  */
-EventSystem *GetEventSystem();
+const Scope<EventSystem> &GetEventSystem();
 
 /**
  * @ingroup helpers
  * @brief Get the Component System object
  *
- * @return eq::ComponentSystem*
+ * @return const eq::Scope<eq::ComponentSystem>&
  */
-ComponentSystem *GetComponentSystem();
+const Scope<ComponentSystem> &GetComponentSystem();
 
 /**
  * @ingroup helpers
  * @brief Get the Script System object
  *
- * @return eq::ScriptSystem*
+ * @return const eq::Scope<eq::ScriptSystem>&
  */
-ScriptSystem *GetScriptSystem();
+const Scope<ScriptSystem> &GetScriptSystem();
 
 /**
  * @ingroup helpers
  * @brief Get the Scene object
  *
- * @return const Scope<Scene> &
+ * @return const eq::Scope<eq::Scene>&
  */
 const Scope<Scene> &GetScene();
 
@@ -61,7 +61,7 @@ const Scope<Scene> &GetScene();
  * @ingroup helpers
  * @brief Get the Window object
  *
- * @return const Scope<Window> &
+ * @return const eq::Scope<eq::Window>&
  */
 const Scope<Window> &GetWindow();
 
@@ -69,7 +69,7 @@ const Scope<Window> &GetWindow();
  * @ingroup helpers
  * @brief Get the Painter object
  *
- * @return const Scope<Painter> &
+ * @return const eq::Scope<eq::Painter>&
  */
 const Scope<Painter> &GetPainter();
 

@@ -15,6 +15,7 @@
 #pragma once
 
 #include <string>
+#include <memory>
 #include <type_traits>
 #include <equal/helper/error.hpp>
 #include <equal/component/transform_component.hpp>
@@ -157,9 +158,9 @@ public:
    * @brief
    *
    * @param query const std::string&
-   * @return GameObject*
+   * @return const eq::Ref<eq::GameObject>
    */
-  GameObject *find(const std::string &query);
+  const Ref<GameObject> find(const std::string &query);
 
   /**
    * @brief Create a game object with a child
@@ -167,16 +168,17 @@ public:
    * @tparam T eq::GameObject
    * @tparam Args
    * @param args Args
-   * @return eq::GameObject*
+   * @return eq::Ref<eq::GameObject>
    */
   template <class T, typename... Args>
-  inline T *CreateObject(Args... args) {
+  inline Ref<T> CreateObject(Args... args) {
     if (!std::is_base_of_v<GameObject, T>) {
       EQ_THROW("Invalid object type, the type has need be a derived of eq::GameObject");
     }
 
-    T *object = new T(args...);
-    GetComponent<TransformComponent>()->add(this, object);
+    Ref<T> object = std::make_shared<T>(args...);
+    Ref<GameObject> parent(this);
+    GetComponent<TransformComponent>()->add(parent, std::dynamic_pointer_cast<GameObject>(object));
     return object;
   }
 
@@ -194,8 +196,9 @@ public:
     }
 
     T *component = new T(args...);
-    component->target(this);
-    eq::GetComponentSystem()->add<T>(m_id, component);
+    Ref<GameObject> parent(this);
+    component->target(parent);
+    GetComponentSystem()->add<T>(m_id, component);
   }
 
   /**
@@ -224,7 +227,7 @@ public:
     if (!std::is_base_of<Component, T>::value) {
       EQ_THROW("Invalid object type, the type has need be a derived of eq::Component");
     }
-    
+
     return GetComponentSystem()->get<T>(m_id);
   }
 
@@ -235,13 +238,14 @@ public:
    * @tparam Args
    */
   template <class T, typename... Args>
-  inline void AddScript() {
+  inline void AddScript(Args... args) {
     if (!std::is_base_of<Script, T>::value) {
       EQ_THROW("Invalid object type, the type has need be a derived of eq::Script");
     }
 
-    T *script = new T();
-    script->target(this);
+    T *script = new T(args...);
+    Ref<GameObject> parent(this);
+    script->target(parent);
     GetScriptSystem()->add<T>(m_id, script);
   }
 

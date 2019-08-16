@@ -3,9 +3,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *     http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -22,35 +22,35 @@
 namespace eq {
 
 Scene::Scene() {
-  m_event = new EventSystem();
-  m_component = new ComponentSystem();
-  m_script = new ScriptSystem();
+  m_event = std::make_unique<EventSystem>();
+  m_component = std::make_unique<ComponentSystem>();
+  m_script = std::make_unique<ScriptSystem>();
 }
 
 Scene::~Scene() {
   GetWindow()->capture_events(false);
   end();
-  delete m_event;
-  delete m_script;
-  delete m_component;
-  delete m_canvas;
+  m_event = nullptr;
+  m_script = nullptr;
+  m_component = nullptr;
+  m_canvas = nullptr;
   m_objects.clear();
 }
 
-World *Scene::world() const { return m_world; }
+const Ref<World> &Scene::world() const { return m_world; }
 
-void Scene::world(World *world) { m_world = world; }
+void Scene::world(Ref<World> &world) { m_world = world; }
 
-EventSystem *Scene::event_system() const { return m_event; }
+const Scope<EventSystem> &Scene::event_system() const { return m_event; }
 
-ComponentSystem *Scene::component_system() const { return m_component; }
+const Scope<ComponentSystem> &Scene::component_system() const { return m_component; }
 
-ScriptSystem *Scene::script_system() const { return m_script; }
+const Scope<ScriptSystem> &Scene::script_system() const { return m_script; }
 
-void Scene::canvas(ui::Canvas *canvas) {
+void Scene::canvas(Ref<ui::Canvas> &canvas) {
   if (canvas) {
     if (m_canvas) {
-      delete m_canvas;
+      m_canvas = nullptr;
     }
     m_canvas = canvas;
   } else {
@@ -58,11 +58,11 @@ void Scene::canvas(ui::Canvas *canvas) {
   }
 }
 
-ui::Canvas *Scene::canvas() const { return m_canvas; }
+const Ref<ui::Canvas> &Scene::canvas() const { return m_canvas; }
 
-std::vector<GameObject *> Scene::objects() const { return m_objects; }
+const std::vector<Ref<GameObject>> &Scene::objects() const { return m_objects; }
 
-void Scene::add(GameObject *object) {
+void Scene::add(Ref<GameObject> &object) {
   if (object) {
     m_objects.push_back(object);
   } else {
@@ -73,7 +73,7 @@ void Scene::add(GameObject *object) {
 void Scene::update(const Timestep &timestep) {
   // Start scene
   if (!m_initialized) {
-    m_canvas = new ui::Canvas(Position{0, 0}, GetWindow()->size());
+    m_canvas = std::make_shared<ui::Canvas>(Position{0, 0}, GetWindow()->size());
     start();
     m_component->start();
     m_script->start();

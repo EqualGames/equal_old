@@ -3,9 +3,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *     http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 #include <fstream>
+#include <memory>
 #include <chrono>
 #include <equal/core/logger.hpp>
 #include <equal/core/window.hpp>
@@ -29,15 +30,15 @@
 
 namespace eq {
 
-ui::Canvas *ParserUI(const std::string &filename, const Parser::Actions &actions) {
+Ref<ui::Canvas> ParserUI(const std::string &filename, const Parser::Actions &actions) {
   try {
     eq::Timer timer("Parsing UI");
-    ui::Canvas *canvas = new ui::Canvas(Position{0, 0}, GetWindow()->size());
+    Ref<ui::Canvas> canvas = std::make_shared<ui::Canvas>(Position{0, 0}, GetWindow()->size());
 
     std::ifstream ui_file(filename);
     std::string line;
 
-    GameObject *object = nullptr;
+    Ref<GameObject> object;
 
     while (std::getline(ui_file, line)) {
       std::istringstream iss(line);
@@ -72,7 +73,7 @@ ui::Canvas *ParserUI(const std::string &filename, const Parser::Actions &actions
         std::string type = p.first;
         std::string id = p.second;
 
-        GameObject *parent{nullptr};
+        Ref<GameObject> parent;
 
         if (level_child == 0) {
           parent = canvas;
@@ -123,13 +124,13 @@ ui::Canvas *ParserUI(const std::string &filename, const Parser::Actions &actions
         } else if (object->name() == "Container") {
 
         } else if (object->name() == "Text") {
-          ui::Text *obj = static_cast<ui::Text *>(object);
+          Ref<ui::Text> obj = std::dynamic_pointer_cast<ui::Text>(object);
 
           if (attr == "text") {
             obj->text(value);
           }
         } else if (object->name() == "Button") {
-          ui::Button *obj = static_cast<ui::Button *>(object);
+          Ref<ui::Button> obj = std::dynamic_pointer_cast<ui::Button>(object);
 
           if (attr == "text") {
             obj->text(value);
@@ -147,13 +148,13 @@ ui::Canvas *ParserUI(const std::string &filename, const Parser::Actions &actions
             }
           }
         } else if (object->name() == "Window") {
-          ui::Window *obj = static_cast<ui::Window *>(object);
+          Ref<ui::Window> obj = std::dynamic_pointer_cast<ui::Window>(object);
 
           if (attr == "title") {
             obj->title(value);
           }
         } else if (object->name() == "TextInput") {
-          ui::TextInput *obj = static_cast<ui::TextInput *>(object);
+          Ref<ui::TextInput> obj = std::dynamic_pointer_cast<ui::TextInput>(object);
 
           if (attr == "masked") {
             obj->masked(value == "true" ? true : false);
@@ -161,7 +162,7 @@ ui::Canvas *ParserUI(const std::string &filename, const Parser::Actions &actions
             obj->text(value);
           }
         } else if (object->name() == "ProgressBar") {
-          ui::ProgressBar *obj = static_cast<ui::ProgressBar *>(object);
+          Ref<ui::ProgressBar> obj = std::dynamic_pointer_cast<ui::ProgressBar>(object);
 
           if (attr == "value") {
             obj->value(std::atof(value.c_str()));

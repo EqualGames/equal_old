@@ -24,29 +24,30 @@ namespace eq {
 Application g_app;
 
 void Init() {
+  Scope<Window> &window = g_app.window;
+  Scope<Painter> &painter = g_app.painter;
+  Scope<Timestep> &timestep = g_app.timestep;
+  Scope<Scene> &scene = g_app.scene;
   const WindowOptions &options = g_app.window->options();
 
-  while (g_app.window->opened()) {
-    Scope<Timestep> &timestep = g_app.timestep;
+  while (window->opened()) {
     // Timestep
     timestep->reset();
-
     EQ_CORE_TRACE("FPS: {0:6d} | Delta Time: {1:.4f} | Fixed Delta Time: {2:.4f}", timestep->fps, timestep->time,
                   timestep->fixed_time);
 
     // Window
-    g_app.window->update();
+    window->update();
 
     // Scene
-    g_app.scene->update(*timestep);
-    timestep->fix([&](const Timestep &timestep_fixed) -> void { g_app.scene->fixed_update(timestep_fixed); });
+    scene->update(*timestep);
+    timestep->fix([&](const Timestep &timestep_fixed) -> void { scene->fixed_update(timestep_fixed); });
 
     // Painter
-    g_app.painter->clear(Color{128, 128, 128, 255});
-    g_app.painter->draw(*g_app.scene);
-    g_app.painter->display();
+    painter->clear(Color{128, 128, 128, 255});
+    painter->draw(scene);
+    painter->display();
 
-    // FPS options
     // Lock engine max FPS
     if (*timestep < timestep->MAX_FPS) {
       int delay = static_cast<int>(timestep->MAX_FPS - *timestep);

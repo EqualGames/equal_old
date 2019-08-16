@@ -3,9 +3,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *     http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,6 +17,7 @@
 #include <equal/component/renderer_component.hpp>
 #include <equal/prefab/ui/text_input.hpp>
 #include <equal/prefab/script/text_input_script.hpp>
+#include <memory>
 
 namespace eq {
 
@@ -32,7 +33,7 @@ void TextInputScript::end() {}
 
 void TextInputScript::update(const Timestep &timestep) {
   if (m_caret_visible) {
-    ui::TextInput *input = static_cast<ui::TextInput *>(m_target);
+    Ref<ui::TextInput> input = std::dynamic_pointer_cast<ui::TextInput>(m_target);
     input->move_caret();
   }
 }
@@ -46,7 +47,7 @@ void TextInputScript::onMouseMove(const Position &position) {
       // Change cursor to text caret
     } else if (!m_target->focused()) {
       m_state = State::Normal;
-      ui::TextInput *input = static_cast<ui::TextInput *>(m_target);
+      Ref<ui::TextInput> input = std::dynamic_pointer_cast<ui::TextInput>(m_target);
       m_caret_visible = false;
       input->caret(false);
     }
@@ -57,13 +58,13 @@ void TextInputScript::onMousePress(Mouse::Button button, const Position &positio
   if (m_state == State::Focused) {
     m_state = State::Normal;
     m_target->focused(false);
-    ui::TextInput *input = static_cast<ui::TextInput *>(m_target);
+    Ref<ui::TextInput> input = std::dynamic_pointer_cast<ui::TextInput>(m_target);
     m_caret_visible = false;
     input->caret(false);
   } else if (m_target->GetComponent<TransformComponent>()->contain(position)) {
     m_state = State::Focused;
     m_target->focused(true);
-    ui::TextInput *input = static_cast<ui::TextInput *>(m_target);
+    Ref<ui::TextInput> input = std::dynamic_pointer_cast<ui::TextInput>(m_target);
     m_caret_visible = true;
     input->caret(true);
   }
@@ -71,7 +72,7 @@ void TextInputScript::onMousePress(Mouse::Button button, const Position &positio
 
 void TextInputScript::onKeyPress(Keyboard::Key key) {
   if (m_state == State::Focused) {
-    ui::TextInput *input = static_cast<ui::TextInput *>(m_target);
+    Ref<ui::TextInput> input = std::dynamic_pointer_cast<ui::TextInput>(m_target);
     if (key == Keyboard::Key::Backspace && input->text().size()) {
       std::wstring new_text = input->text();
       new_text.erase(new_text.size() - 1, 1);
@@ -82,7 +83,7 @@ void TextInputScript::onKeyPress(Keyboard::Key key) {
 
 void TextInputScript::onInsertText(const std::wstring &text) {
   if (m_state == State::Focused) {
-    ui::TextInput *input = static_cast<ui::TextInput *>(m_target);
+    Ref<ui::TextInput> input = std::dynamic_pointer_cast<ui::TextInput>(m_target);
     input->text(input->text() + text);
   }
 }

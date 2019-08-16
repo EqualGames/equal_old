@@ -40,6 +40,16 @@ namespace eq {
  * @tparam T
  */
 template <typename T>
+using WeakRef = std::weak_ptr<T>;
+
+/**
+ * @ingroup types
+ *
+ * Shared pointer alias
+ *
+ * @tparam T
+ */
+template <typename T>
 using Ref = std::shared_ptr<T>;
 
 /**
