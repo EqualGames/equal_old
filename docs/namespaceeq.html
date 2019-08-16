@@ -233,6 +233,9 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
+<tr class="memitem:ga69a134e5b4619076d4c094152090fe6f"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ga69a134e5b4619076d4c094152090fe6f"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__types.html#ga69a134e5b4619076d4c094152090fe6f">WeakRef</a> = std::weak_ptr&lt; T &gt;</td></tr>
+<tr class="separator:ga69a134e5b4619076d4c094152090fe6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab82b8382f925f2c4b89e32c126ad1518"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:gab82b8382f925f2c4b89e32c126ad1518"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__types.html#gab82b8382f925f2c4b89e32c126ad1518">Ref</a> = std::shared_ptr&lt; T &gt;</td></tr>
 <tr class="separator:gab82b8382f925f2c4b89e32c126ad1518"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -327,24 +330,24 @@ Functions</h2></td></tr>
 <tr class="memitem:ga039a00f36b12a3b110e3fa41a3843bd0"><td class="memTemplItemLeft" align="right" valign="top">T *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__factories.html#ga039a00f36b12a3b110e3fa41a3843bd0">create_canvas</a> (Args... args)</td></tr>
 <tr class="memdesc:ga039a00f36b12a3b110e3fa41a3843bd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a Canvas object.  <a href="group__factories.html#ga039a00f36b12a3b110e3fa41a3843bd0">More...</a><br /></td></tr>
 <tr class="separator:ga039a00f36b12a3b110e3fa41a3843bd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3caee32a1fd46fabe2d0990fcd92c023"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structeq_1_1World.html">World</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceeq.html#a3caee32a1fd46fabe2d0990fcd92c023">create_world</a> (const <a class="el" href="group__types.html#ga76d4fc39adf35167b5a34270730625d6">Size</a> &amp;tile_size=<a class="el" href="group__types.html#ga76d4fc39adf35167b5a34270730625d6">Size</a>{32}, const <a class="el" href="group__types.html#ga76d4fc39adf35167b5a34270730625d6">Size</a> &amp;chunk_size=<a class="el" href="group__types.html#ga76d4fc39adf35167b5a34270730625d6">Size</a>{16})</td></tr>
-<tr class="memdesc:a3caee32a1fd46fabe2d0990fcd92c023"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a world object.  <a href="#a3caee32a1fd46fabe2d0990fcd92c023">More...</a><br /></td></tr>
-<tr class="separator:a3caee32a1fd46fabe2d0990fcd92c023"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a30182ce2e590f007e3632aac8aceb562"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structeq_1_1Chunk.html">Chunk</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceeq.html#a30182ce2e590f007e3632aac8aceb562">create_world_chunk</a> (<a class="el" href="structeq_1_1World.html">World</a> *world, const <a class="el" href="group__types.html#ga51bf710cf599ec90ff40cf61050135dd">Position</a> &amp;position=<a class="el" href="group__types.html#ga51bf710cf599ec90ff40cf61050135dd">Position</a>{0})</td></tr>
-<tr class="memdesc:a30182ce2e590f007e3632aac8aceb562"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a world chunk object.  <a href="#a30182ce2e590f007e3632aac8aceb562">More...</a><br /></td></tr>
-<tr class="separator:a30182ce2e590f007e3632aac8aceb562"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0ed5e52ca3fcf97495311d0482a9c3f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structeq_1_1Floor.html">Floor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceeq.html#ab0ed5e52ca3fcf97495311d0482a9c3f">create_world_floor</a> (<a class="el" href="structeq_1_1World.html">World</a> *world, <a class="el" href="structeq_1_1Chunk.html">Chunk</a> *chunk, int number=0)</td></tr>
-<tr class="memdesc:ab0ed5e52ca3fcf97495311d0482a9c3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a world floor object.  <a href="#ab0ed5e52ca3fcf97495311d0482a9c3f">More...</a><br /></td></tr>
-<tr class="separator:ab0ed5e52ca3fcf97495311d0482a9c3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9aec9c3d73c1ff3f355fa1f559142a42"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structeq_1_1Tile.html">Tile</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceeq.html#a9aec9c3d73c1ff3f355fa1f559142a42">create_world_tile</a> (<a class="el" href="structeq_1_1World.html">World</a> *world, <a class="el" href="structeq_1_1Floor.html">Floor</a> *floor, const <a class="el" href="group__types.html#ga51bf710cf599ec90ff40cf61050135dd">Position</a> &amp;position=<a class="el" href="group__types.html#ga51bf710cf599ec90ff40cf61050135dd">Position</a>{0})</td></tr>
-<tr class="memdesc:a9aec9c3d73c1ff3f355fa1f559142a42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a world tile object.  <a href="#a9aec9c3d73c1ff3f355fa1f559142a42">More...</a><br /></td></tr>
-<tr class="separator:a9aec9c3d73c1ff3f355fa1f559142a42"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11aef0efbf48bb57ebc87f76e2a0506e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structeq_1_1Thing.html">Thing</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceeq.html#a11aef0efbf48bb57ebc87f76e2a0506e">create_world_thing</a> (<a class="el" href="structeq_1_1World.html">World</a> *world, <a class="el" href="structeq_1_1Tile.html">Tile</a> *tile, uint32_t id=1)</td></tr>
-<tr class="memdesc:a11aef0efbf48bb57ebc87f76e2a0506e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a world thing object.  <a href="#a11aef0efbf48bb57ebc87f76e2a0506e">More...</a><br /></td></tr>
-<tr class="separator:a11aef0efbf48bb57ebc87f76e2a0506e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae21a2079f0919e58b4e05058fd5b8e72"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceeq.html#ae21a2079f0919e58b4e05058fd5b8e72">create_world_tileset</a> (<a class="el" href="structeq_1_1World.html">World</a> *world, uint32_t first_id, const std::string &amp;texture)</td></tr>
-<tr class="memdesc:ae21a2079f0919e58b4e05058fd5b8e72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a world tileset object.  <a href="#ae21a2079f0919e58b4e05058fd5b8e72">More...</a><br /></td></tr>
-<tr class="separator:ae21a2079f0919e58b4e05058fd5b8e72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada57b1d0bbbec460d2397558fc35e10f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gab82b8382f925f2c4b89e32c126ad1518">Ref</a>&lt; <a class="el" href="structeq_1_1World.html">World</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceeq.html#ada57b1d0bbbec460d2397558fc35e10f">create_world</a> (const <a class="el" href="group__types.html#ga76d4fc39adf35167b5a34270730625d6">Size</a> &amp;tile_size=<a class="el" href="group__types.html#ga76d4fc39adf35167b5a34270730625d6">Size</a>{32}, const <a class="el" href="group__types.html#ga76d4fc39adf35167b5a34270730625d6">Size</a> &amp;chunk_size=<a class="el" href="group__types.html#ga76d4fc39adf35167b5a34270730625d6">Size</a>{16})</td></tr>
+<tr class="memdesc:ada57b1d0bbbec460d2397558fc35e10f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a world object.  <a href="#ada57b1d0bbbec460d2397558fc35e10f">More...</a><br /></td></tr>
+<tr class="separator:ada57b1d0bbbec460d2397558fc35e10f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7543d669147e76fadf7d63383209c1a7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gab82b8382f925f2c4b89e32c126ad1518">Ref</a>&lt; <a class="el" href="structeq_1_1Chunk.html">Chunk</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceeq.html#a7543d669147e76fadf7d63383209c1a7">create_world_chunk</a> (<a class="el" href="group__types.html#gab82b8382f925f2c4b89e32c126ad1518">Ref</a>&lt; <a class="el" href="structeq_1_1World.html">World</a> &gt; &amp;world, const <a class="el" href="group__types.html#ga51bf710cf599ec90ff40cf61050135dd">Position</a> &amp;position=<a class="el" href="group__types.html#ga51bf710cf599ec90ff40cf61050135dd">Position</a>{0})</td></tr>
+<tr class="memdesc:a7543d669147e76fadf7d63383209c1a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a world chunk object.  <a href="#a7543d669147e76fadf7d63383209c1a7">More...</a><br /></td></tr>
+<tr class="separator:a7543d669147e76fadf7d63383209c1a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0eb3817ffcc25f4ffac1a69af433fccc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gab82b8382f925f2c4b89e32c126ad1518">Ref</a>&lt; <a class="el" href="structeq_1_1Floor.html">Floor</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceeq.html#a0eb3817ffcc25f4ffac1a69af433fccc">create_world_floor</a> (<a class="el" href="group__types.html#gab82b8382f925f2c4b89e32c126ad1518">Ref</a>&lt; <a class="el" href="structeq_1_1World.html">World</a> &gt; &amp;world, <a class="el" href="group__types.html#gab82b8382f925f2c4b89e32c126ad1518">Ref</a>&lt; <a class="el" href="structeq_1_1Chunk.html">Chunk</a> &gt; &amp;chunk, int number=0)</td></tr>
+<tr class="memdesc:a0eb3817ffcc25f4ffac1a69af433fccc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a world floor object.  <a href="#a0eb3817ffcc25f4ffac1a69af433fccc">More...</a><br /></td></tr>
+<tr class="separator:a0eb3817ffcc25f4ffac1a69af433fccc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad961e90d23fc1a17d6bea310d35caf3b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gab82b8382f925f2c4b89e32c126ad1518">Ref</a>&lt; <a class="el" href="structeq_1_1Tile.html">Tile</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceeq.html#ad961e90d23fc1a17d6bea310d35caf3b">create_world_tile</a> (<a class="el" href="group__types.html#gab82b8382f925f2c4b89e32c126ad1518">Ref</a>&lt; <a class="el" href="structeq_1_1World.html">World</a> &gt; &amp;world, <a class="el" href="group__types.html#gab82b8382f925f2c4b89e32c126ad1518">Ref</a>&lt; <a class="el" href="structeq_1_1Floor.html">Floor</a> &gt; &amp;floor, const <a class="el" href="group__types.html#ga51bf710cf599ec90ff40cf61050135dd">Position</a> &amp;position=<a class="el" href="group__types.html#ga51bf710cf599ec90ff40cf61050135dd">Position</a>{0})</td></tr>
+<tr class="memdesc:ad961e90d23fc1a17d6bea310d35caf3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a world tile object.  <a href="#ad961e90d23fc1a17d6bea310d35caf3b">More...</a><br /></td></tr>
+<tr class="separator:ad961e90d23fc1a17d6bea310d35caf3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bfb5fbde117e70b127af64b081ac40d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gab82b8382f925f2c4b89e32c126ad1518">Ref</a>&lt; <a class="el" href="structeq_1_1Thing.html">Thing</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceeq.html#a4bfb5fbde117e70b127af64b081ac40d">create_world_thing</a> (<a class="el" href="group__types.html#gab82b8382f925f2c4b89e32c126ad1518">Ref</a>&lt; <a class="el" href="structeq_1_1World.html">World</a> &gt; &amp;world, <a class="el" href="group__types.html#gab82b8382f925f2c4b89e32c126ad1518">Ref</a>&lt; <a class="el" href="structeq_1_1Tile.html">Tile</a> &gt; &amp;tile, uint32_t id=1)</td></tr>
+<tr class="memdesc:a4bfb5fbde117e70b127af64b081ac40d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a world thing object.  <a href="#a4bfb5fbde117e70b127af64b081ac40d">More...</a><br /></td></tr>
+<tr class="separator:a4bfb5fbde117e70b127af64b081ac40d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac8c9921d4302d7bc7ba36c4fdbc7fcc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceeq.html#aac8c9921d4302d7bc7ba36c4fdbc7fcc">create_world_tileset</a> (<a class="el" href="group__types.html#gab82b8382f925f2c4b89e32c126ad1518">Ref</a>&lt; <a class="el" href="structeq_1_1World.html">World</a> &gt; &amp;world, uint32_t first_id, const std::string &amp;texture)</td></tr>
+<tr class="memdesc:aac8c9921d4302d7bc7ba36c4fdbc7fcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a world tileset object.  <a href="#aac8c9921d4302d7bc7ba36c4fdbc7fcc">More...</a><br /></td></tr>
+<tr class="separator:aac8c9921d4302d7bc7ba36c4fdbc7fcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga13a86b10de36b81bc997fb0c56d4b672"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__factories.html#ga13a86b10de36b81bc997fb0c56d4b672">create_application</a> (const <a class="el" href="structeq_1_1WindowOptions.html">WindowOptions</a> &amp;options)</td></tr>
 <tr class="memdesc:ga13a86b10de36b81bc997fb0c56d4b672"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a <a class="el" href="structeq_1_1Application.html" title="Application. ">Application</a> object.  <a href="group__factories.html#ga13a86b10de36b81bc997fb0c56d4b672">More...</a><br /></td></tr>
 <tr class="separator:ga13a86b10de36b81bc997fb0c56d4b672"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -374,18 +377,18 @@ Functions</h2></td></tr>
 <tr class="memitem:gaa78c7e2b2559303cf9ad1a90dc81e4c7"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__helpers.html#gaa78c7e2b2559303cf9ad1a90dc81e4c7">GenerateUUID</a> ()</td></tr>
 <tr class="memdesc:gaa78c7e2b2559303cf9ad1a90dc81e4c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate UUID.  <a href="group__helpers.html#gaa78c7e2b2559303cf9ad1a90dc81e4c7">More...</a><br /></td></tr>
 <tr class="separator:gaa78c7e2b2559303cf9ad1a90dc81e4c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8059f51e10b955a09874f02d410a7862"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classeq_1_1ui_1_1Canvas.html">ui::Canvas</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__helpers.html#ga8059f51e10b955a09874f02d410a7862">ParserUI</a> (const std::string &amp;filename, const <a class="el" href="classeq_1_1Parser_1_1Actions.html">eq::Parser::Actions</a> &amp;actions)</td></tr>
-<tr class="memdesc:ga8059f51e10b955a09874f02d410a7862"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classeq_1_1Parser.html" title="UI Parser. ">Parser</a> UI file and generate GUI elements.  <a href="group__helpers.html#ga8059f51e10b955a09874f02d410a7862">More...</a><br /></td></tr>
-<tr class="separator:ga8059f51e10b955a09874f02d410a7862"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga39cd389d70aec48ad3bea1708b465fa4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classeq_1_1EventSystem.html">EventSystem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__helpers.html#ga39cd389d70aec48ad3bea1708b465fa4">GetEventSystem</a> ()</td></tr>
-<tr class="memdesc:ga39cd389d70aec48ad3bea1708b465fa4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Event <a class="el" href="classeq_1_1System.html" title="System base. ">System</a> object.  <a href="group__helpers.html#ga39cd389d70aec48ad3bea1708b465fa4">More...</a><br /></td></tr>
-<tr class="separator:ga39cd389d70aec48ad3bea1708b465fa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga83b961d89882c681ba755a05e0ff105c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classeq_1_1ComponentSystem.html">ComponentSystem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__helpers.html#ga83b961d89882c681ba755a05e0ff105c">GetComponentSystem</a> ()</td></tr>
-<tr class="memdesc:ga83b961d89882c681ba755a05e0ff105c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <a class="el" href="classeq_1_1Component.html" title="Component Base. ">Component</a> <a class="el" href="classeq_1_1System.html" title="System base. ">System</a> object.  <a href="group__helpers.html#ga83b961d89882c681ba755a05e0ff105c">More...</a><br /></td></tr>
-<tr class="separator:ga83b961d89882c681ba755a05e0ff105c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga877eb98e6afafd9c9b0fd4db78fdfe5a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classeq_1_1ScriptSystem.html">ScriptSystem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__helpers.html#ga877eb98e6afafd9c9b0fd4db78fdfe5a">GetScriptSystem</a> ()</td></tr>
-<tr class="memdesc:ga877eb98e6afafd9c9b0fd4db78fdfe5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <a class="el" href="classeq_1_1Script.html" title="Scripts definitions. ">Script</a> <a class="el" href="classeq_1_1System.html" title="System base. ">System</a> object.  <a href="group__helpers.html#ga877eb98e6afafd9c9b0fd4db78fdfe5a">More...</a><br /></td></tr>
-<tr class="separator:ga877eb98e6afafd9c9b0fd4db78fdfe5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6c6d8dc811472b16b8261227e8615784"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gab82b8382f925f2c4b89e32c126ad1518">Ref</a>&lt; <a class="el" href="classeq_1_1ui_1_1Canvas.html">ui::Canvas</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__helpers.html#ga6c6d8dc811472b16b8261227e8615784">ParserUI</a> (const std::string &amp;filename, const <a class="el" href="classeq_1_1Parser_1_1Actions.html">eq::Parser::Actions</a> &amp;actions)</td></tr>
+<tr class="memdesc:ga6c6d8dc811472b16b8261227e8615784"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classeq_1_1Parser.html" title="UI Parser. ">Parser</a> UI file and generate GUI elements.  <a href="group__helpers.html#ga6c6d8dc811472b16b8261227e8615784">More...</a><br /></td></tr>
+<tr class="separator:ga6c6d8dc811472b16b8261227e8615784"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga32a44f37a489d1b3a117cb8617fadcd4"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="group__types.html#gabc2d232c5d6a4af7768a7202707bc3bd">Scope</a>&lt; <a class="el" href="classeq_1_1EventSystem.html">EventSystem</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__helpers.html#ga32a44f37a489d1b3a117cb8617fadcd4">GetEventSystem</a> ()</td></tr>
+<tr class="memdesc:ga32a44f37a489d1b3a117cb8617fadcd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Event <a class="el" href="classeq_1_1System.html" title="System base. ">System</a> object.  <a href="group__helpers.html#ga32a44f37a489d1b3a117cb8617fadcd4">More...</a><br /></td></tr>
+<tr class="separator:ga32a44f37a489d1b3a117cb8617fadcd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaa0d2ab884b548352f91ceaba8dd521d"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="group__types.html#gabc2d232c5d6a4af7768a7202707bc3bd">Scope</a>&lt; <a class="el" href="classeq_1_1ComponentSystem.html">ComponentSystem</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__helpers.html#gaaa0d2ab884b548352f91ceaba8dd521d">GetComponentSystem</a> ()</td></tr>
+<tr class="memdesc:gaaa0d2ab884b548352f91ceaba8dd521d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <a class="el" href="classeq_1_1Component.html" title="Component Base. ">Component</a> <a class="el" href="classeq_1_1System.html" title="System base. ">System</a> object.  <a href="group__helpers.html#gaaa0d2ab884b548352f91ceaba8dd521d">More...</a><br /></td></tr>
+<tr class="separator:gaaa0d2ab884b548352f91ceaba8dd521d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gada412e82e1c07ce3435dd8eb19d77e5a"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="group__types.html#gabc2d232c5d6a4af7768a7202707bc3bd">Scope</a>&lt; <a class="el" href="classeq_1_1ScriptSystem.html">ScriptSystem</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__helpers.html#gada412e82e1c07ce3435dd8eb19d77e5a">GetScriptSystem</a> ()</td></tr>
+<tr class="memdesc:gada412e82e1c07ce3435dd8eb19d77e5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <a class="el" href="classeq_1_1Script.html" title="Scripts definitions. ">Script</a> <a class="el" href="classeq_1_1System.html" title="System base. ">System</a> object.  <a href="group__helpers.html#gada412e82e1c07ce3435dd8eb19d77e5a">More...</a><br /></td></tr>
+<tr class="separator:gada412e82e1c07ce3435dd8eb19d77e5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga6da9c914f4a2cd1c8bdd1c2fc5a56ccd"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="group__types.html#gabc2d232c5d6a4af7768a7202707bc3bd">Scope</a>&lt; <a class="el" href="classeq_1_1Scene.html">Scene</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__helpers.html#ga6da9c914f4a2cd1c8bdd1c2fc5a56ccd">GetScene</a> ()</td></tr>
 <tr class="memdesc:ga6da9c914f4a2cd1c8bdd1c2fc5a56ccd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <a class="el" href="classeq_1_1Scene.html" title="Scene class. ">Scene</a> object.  <a href="group__helpers.html#ga6da9c914f4a2cd1c8bdd1c2fc5a56ccd">More...</a><br /></td></tr>
 <tr class="separator:ga6da9c914f4a2cd1c8bdd1c2fc5a56ccd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -408,14 +411,14 @@ Variables</h2></td></tr>
 <tr class="separator:aa704d20bdafc287a322abc527246ff9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a3caee32a1fd46fabe2d0990fcd92c023"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3caee32a1fd46fabe2d0990fcd92c023">&#9670;&nbsp;</a></span>create_world()</h2>
+<a id="ada57b1d0bbbec460d2397558fc35e10f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada57b1d0bbbec460d2397558fc35e10f">&#9670;&nbsp;</a></span>create_world()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structeq_1_1World.html">World</a>* eq::create_world </td>
+          <td class="memname"><a class="el" href="group__types.html#gab82b8382f925f2c4b89e32c126ad1518">Ref</a>&lt;<a class="el" href="structeq_1_1World.html">World</a>&gt; eq::create_world </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__types.html#ga76d4fc39adf35167b5a34270730625d6">Size</a> &amp;&#160;</td>
           <td class="paramname"><em>tile_size</em> = <code><a class="el" href="group__types.html#ga76d4fc39adf35167b5a34270730625d6">Size</a>{32}</code>, </td>
@@ -440,20 +443,20 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structeq_1_1World.html" title="World data structure. ">eq::World</a>* </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__types.html#gab82b8382f925f2c4b89e32c126ad1518">eq::Ref&lt;eq::World&gt;</a> </dd></dl>
 
 </div>
 </div>
-<a id="a30182ce2e590f007e3632aac8aceb562"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a30182ce2e590f007e3632aac8aceb562">&#9670;&nbsp;</a></span>create_world_chunk()</h2>
+<a id="a7543d669147e76fadf7d63383209c1a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7543d669147e76fadf7d63383209c1a7">&#9670;&nbsp;</a></span>create_world_chunk()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structeq_1_1Chunk.html">Chunk</a>* eq::create_world_chunk </td>
+          <td class="memname"><a class="el" href="group__types.html#gab82b8382f925f2c4b89e32c126ad1518">Ref</a>&lt;<a class="el" href="structeq_1_1Chunk.html">Chunk</a>&gt; eq::create_world_chunk </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structeq_1_1World.html">World</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gab82b8382f925f2c4b89e32c126ad1518">Ref</a>&lt; <a class="el" href="structeq_1_1World.html">World</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>world</em>, </td>
         </tr>
         <tr>
@@ -471,31 +474,31 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">world</td><td><a class="el" href="structeq_1_1World.html" title="World data structure. ">eq::World</a>* </td></tr>
+    <tr><td class="paramname">world</td><td><a class="el" href="group__types.html#gab82b8382f925f2c4b89e32c126ad1518">eq::Ref&lt;eq::World&gt;</a>&amp; </td></tr>
     <tr><td class="paramname">position</td><td>const <a class="el" href="group__types.html#ga51bf710cf599ec90ff40cf61050135dd">eq::Position</a>&amp; </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structeq_1_1Chunk.html" title="Chunk data structure. ">eq::Chunk</a>* </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__types.html#gab82b8382f925f2c4b89e32c126ad1518">eq::Ref&lt;eq::Chunk&gt;</a> </dd></dl>
 
 </div>
 </div>
-<a id="ab0ed5e52ca3fcf97495311d0482a9c3f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab0ed5e52ca3fcf97495311d0482a9c3f">&#9670;&nbsp;</a></span>create_world_floor()</h2>
+<a id="a0eb3817ffcc25f4ffac1a69af433fccc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0eb3817ffcc25f4ffac1a69af433fccc">&#9670;&nbsp;</a></span>create_world_floor()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structeq_1_1Floor.html">Floor</a>* eq::create_world_floor </td>
+          <td class="memname"><a class="el" href="group__types.html#gab82b8382f925f2c4b89e32c126ad1518">Ref</a>&lt;<a class="el" href="structeq_1_1Floor.html">Floor</a>&gt; eq::create_world_floor </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structeq_1_1World.html">World</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gab82b8382f925f2c4b89e32c126ad1518">Ref</a>&lt; <a class="el" href="structeq_1_1World.html">World</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>world</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structeq_1_1Chunk.html">Chunk</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gab82b8382f925f2c4b89e32c126ad1518">Ref</a>&lt; <a class="el" href="structeq_1_1Chunk.html">Chunk</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>chunk</em>, </td>
         </tr>
         <tr>
@@ -513,32 +516,32 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">world</td><td><a class="el" href="structeq_1_1World.html" title="World data structure. ">eq::World</a>* </td></tr>
-    <tr><td class="paramname">chunk</td><td><a class="el" href="structeq_1_1Chunk.html" title="Chunk data structure. ">eq::Chunk</a>* </td></tr>
+    <tr><td class="paramname">world</td><td><a class="el" href="group__types.html#gab82b8382f925f2c4b89e32c126ad1518">eq::Ref&lt;eq::World&gt;</a>&amp; </td></tr>
+    <tr><td class="paramname">chunk</td><td><a class="el" href="group__types.html#gab82b8382f925f2c4b89e32c126ad1518">eq::Ref&lt;eq::Chunk&gt;</a>&amp; </td></tr>
     <tr><td class="paramname">number</td><td>int </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structeq_1_1Floor.html" title="Floor data structure. ">eq::Floor</a>* </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__types.html#gab82b8382f925f2c4b89e32c126ad1518">eq::Ref&lt;eq::Floor&gt;</a> </dd></dl>
 
 </div>
 </div>
-<a id="a11aef0efbf48bb57ebc87f76e2a0506e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a11aef0efbf48bb57ebc87f76e2a0506e">&#9670;&nbsp;</a></span>create_world_thing()</h2>
+<a id="a4bfb5fbde117e70b127af64b081ac40d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bfb5fbde117e70b127af64b081ac40d">&#9670;&nbsp;</a></span>create_world_thing()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structeq_1_1Thing.html">Thing</a>* eq::create_world_thing </td>
+          <td class="memname"><a class="el" href="group__types.html#gab82b8382f925f2c4b89e32c126ad1518">Ref</a>&lt;<a class="el" href="structeq_1_1Thing.html">Thing</a>&gt; eq::create_world_thing </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structeq_1_1World.html">World</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gab82b8382f925f2c4b89e32c126ad1518">Ref</a>&lt; <a class="el" href="structeq_1_1World.html">World</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>world</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structeq_1_1Tile.html">Tile</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gab82b8382f925f2c4b89e32c126ad1518">Ref</a>&lt; <a class="el" href="structeq_1_1Tile.html">Tile</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>tile</em>, </td>
         </tr>
         <tr>
@@ -556,32 +559,32 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">world</td><td><a class="el" href="structeq_1_1World.html" title="World data structure. ">eq::World</a>* </td></tr>
-    <tr><td class="paramname">tile</td><td><a class="el" href="structeq_1_1Tile.html" title="Tile data structure. ">eq::Tile</a>* </td></tr>
+    <tr><td class="paramname">world</td><td><a class="el" href="group__types.html#gab82b8382f925f2c4b89e32c126ad1518">eq::Ref&lt;eq::World&gt;</a>&amp; </td></tr>
+    <tr><td class="paramname">tile</td><td><a class="el" href="group__types.html#gab82b8382f925f2c4b89e32c126ad1518">eq::Ref&lt;eq::Tile&gt;</a>&amp; </td></tr>
     <tr><td class="paramname">id</td><td>uint32_t </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structeq_1_1Thing.html" title="Thing data structure. ">eq::Thing</a>* </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__types.html#gab82b8382f925f2c4b89e32c126ad1518">eq::Ref&lt;eq::Thing&gt;</a> </dd></dl>
 
 </div>
 </div>
-<a id="a9aec9c3d73c1ff3f355fa1f559142a42"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9aec9c3d73c1ff3f355fa1f559142a42">&#9670;&nbsp;</a></span>create_world_tile()</h2>
+<a id="ad961e90d23fc1a17d6bea310d35caf3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad961e90d23fc1a17d6bea310d35caf3b">&#9670;&nbsp;</a></span>create_world_tile()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structeq_1_1Tile.html">Tile</a>* eq::create_world_tile </td>
+          <td class="memname"><a class="el" href="group__types.html#gab82b8382f925f2c4b89e32c126ad1518">Ref</a>&lt;<a class="el" href="structeq_1_1Tile.html">Tile</a>&gt; eq::create_world_tile </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structeq_1_1World.html">World</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gab82b8382f925f2c4b89e32c126ad1518">Ref</a>&lt; <a class="el" href="structeq_1_1World.html">World</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>world</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structeq_1_1Floor.html">Floor</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gab82b8382f925f2c4b89e32c126ad1518">Ref</a>&lt; <a class="el" href="structeq_1_1Floor.html">Floor</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>floor</em>, </td>
         </tr>
         <tr>
@@ -599,18 +602,18 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">world</td><td><a class="el" href="structeq_1_1World.html" title="World data structure. ">eq::World</a>* </td></tr>
-    <tr><td class="paramname">floor</td><td><a class="el" href="structeq_1_1Floor.html" title="Floor data structure. ">eq::Floor</a>* </td></tr>
+    <tr><td class="paramname">world</td><td><a class="el" href="group__types.html#gab82b8382f925f2c4b89e32c126ad1518">eq::Ref&lt;eq::World&gt;</a>&amp; </td></tr>
+    <tr><td class="paramname">floor</td><td><a class="el" href="group__types.html#gab82b8382f925f2c4b89e32c126ad1518">eq::Ref&lt;eq::Floor&gt;</a>&amp; </td></tr>
     <tr><td class="paramname">position</td><td>const Position&amp; </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Tile* </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__types.html#gab82b8382f925f2c4b89e32c126ad1518">eq::Ref&lt;eq::Tile&gt;</a> </dd></dl>
 
 </div>
 </div>
-<a id="ae21a2079f0919e58b4e05058fd5b8e72"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae21a2079f0919e58b4e05058fd5b8e72">&#9670;&nbsp;</a></span>create_world_tileset()</h2>
+<a id="aac8c9921d4302d7bc7ba36c4fdbc7fcc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac8c9921d4302d7bc7ba36c4fdbc7fcc">&#9670;&nbsp;</a></span>create_world_tileset()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -618,7 +621,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">void eq::create_world_tileset </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structeq_1_1World.html">World</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gab82b8382f925f2c4b89e32c126ad1518">Ref</a>&lt; <a class="el" href="structeq_1_1World.html">World</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>world</em>, </td>
         </tr>
         <tr>
@@ -642,7 +645,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">world</td><td><a class="el" href="structeq_1_1World.html" title="World data structure. ">eq::World</a>* </td></tr>
+    <tr><td class="paramname">world</td><td><a class="el" href="group__types.html#gab82b8382f925f2c4b89e32c126ad1518">eq::Ref&lt;eq::World&gt;</a>&amp; </td></tr>
     <tr><td class="paramname">first_id</td><td>uint32_t </td></tr>
     <tr><td class="paramname">texture</td><td>const std::string&amp; </td></tr>
   </table>
@@ -730,7 +733,7 @@ template&lt;typename T &gt; </div>
 </div><!-- contents -->
 <address class="footer">
   <p>
-    Last update on Mon Aug 12 2019 for Equal 1.0.0.0
+    Last update on Thu Aug 15 2019 for Equal 1.0.0.0
   </p>
 </address>
 </body>
