@@ -47,7 +47,7 @@ var searchData=
   ['string',['String',['../group__str.html',1,'']]],
   ['strikethrough',['StrikeThrough',['../classeq_1_1Text.html#a431412a59d22bdeeb051b0dc8329d8f6aa8ce8c36764539a4024fa0021292c94a',1,'eq::Text']]],
   ['string_2ehpp',['string.hpp',['../string_8hpp.html',1,'']]],
-  ['style',['Style',['../classeq_1_1Text.html#a431412a59d22bdeeb051b0dc8329d8f6',1,'eq::Text::Style()'],['../classeq_1_1TextComponent.html#a3531bbc7002dff23f53333c21ee152ee',1,'eq::TextComponent::style()'],['../classeq_1_1ui_1_1Text.html#aacef26c8e4dac607a289ae013635b9ef',1,'eq::ui::Text::style()']]],
+  ['style',['style',['../classeq_1_1TextComponent.html#a3531bbc7002dff23f53333c21ee152ee',1,'eq::TextComponent::style()'],['../classeq_1_1ui_1_1Text.html#aacef26c8e4dac607a289ae013635b9ef',1,'eq::ui::Text::style()'],['../classeq_1_1Text.html#a431412a59d22bdeeb051b0dc8329d8f6',1,'eq::Text::Style()']]],
   ['subtract',['Subtract',['../classeq_1_1Keyboard.html#a5d27e13f1857f208de6a2e16c3b322fba9129d152926822da0d606092415debe0',1,'eq::Keyboard']]],
   ['system',['System',['../classeq_1_1System.html',1,'eq']]],
   ['systems',['Systems',['../group__systems.html',1,'']]]
