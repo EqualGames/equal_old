@@ -14,10 +14,10 @@
  */
 #pragma once
 
-#include <string>
 #include <cstdint>
-#include <equal/core/types.hpp>
 #include <equal/core/game_object.hpp>
+#include <equal/core/types.hpp>
+#include <string>
 
 namespace eq::ui {
 

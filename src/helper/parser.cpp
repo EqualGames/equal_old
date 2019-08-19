@@ -12,21 +12,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#include <fstream>
-#include <memory>
 #include <chrono>
-#include <equal/core/logger.hpp>
-#include <equal/core/window.hpp>
-#include <equal/core/game_object.hpp>
-#include <equal/component/transform_component.hpp>
 #include <equal/component/renderer_component.hpp>
 #include <equal/component/text_component.hpp>
+#include <equal/component/transform_component.hpp>
+#include <equal/core/game_object.hpp>
+#include <equal/core/logger.hpp>
+#include <equal/core/window.hpp>
 #include <equal/helper/error.hpp>
-#include <equal/helper/system.hpp>
-#include <equal/helper/string.hpp>
 #include <equal/helper/parser.hpp>
+#include <equal/helper/string.hpp>
+#include <equal/helper/system.hpp>
 #include <equal/helper/timer.hpp>
 #include <equal/prefab/ui/ui.hpp>
+#include <fstream>
+#include <memory>
 
 namespace eq {
 

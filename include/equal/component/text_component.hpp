@@ -3,9 +3,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *     http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -14,9 +14,9 @@
  */
 #pragma once
 
-#include <string>
 #include <cstdint>
 #include <equal/core/component.hpp>
+#include <string>
 
 namespace eq {
 
@@ -24,7 +24,7 @@ class GameObject;
 
 /**
  * @ingroup components
- * @brief 
+ * @brief
  */
 class TextComponent : public Component {
 private:
@@ -72,8 +72,8 @@ public:
   void alignment(const Text::Alignment &align);
   void style(const Text::Style &style);
 
-  void update(const Timestep& timestep);
-  void fixed_update(const Timestep& timestep);
+  void update(const Timestep &timestep);
+  void fixed_update(const Timestep &timestep);
 };
 
 } // namespace eq

@@ -15,6 +15,17 @@
 #pragma once
 
 /**
+ * @defgroup components Components
+ * @ingroup core
+ * @brief Components definitions
+ */
+
+#include <equal/component/map_component.hpp>
+#include <equal/component/renderer_component.hpp>
+#include <equal/component/text_component.hpp>
+#include <equal/component/transform_component.hpp>
+
+/**
  * @defgroup core Core
  * @brief Core classes and structures of engine.
  */
@@ -33,11 +44,6 @@
 #include <equal/core/types.hpp>
 #include <equal/core/window.hpp>
 
-#include <equal/component/map_component.hpp>
-#include <equal/component/renderer_component.hpp>
-#include <equal/component/text_component.hpp>
-#include <equal/component/transform_component.hpp>
-
 /**
  * @defgroup factories Factories
  * @brief Factories definitions
@@ -45,8 +51,8 @@
 #include <equal/factory/create.hpp>
 #include <equal/factory/dat.hpp>
 #include <equal/factory/font.hpp>
-#include <equal/factory/texture.hpp>
 #include <equal/factory/map.hpp>
+#include <equal/factory/texture.hpp>
 
 /**
  * @defgroup helpers Helpers
@@ -56,8 +62,8 @@
 #include <equal/helper/guid.hpp>
 #include <equal/helper/math.hpp>
 #include <equal/helper/parser.hpp>
-#include <equal/helper/system.hpp>
 #include <equal/helper/string.hpp>
+#include <equal/helper/system.hpp>
 #include <equal/helper/texture.hpp>
 #include <equal/helper/timer.hpp>
 
@@ -65,8 +71,8 @@
  * @defgroup prefabs Prefabs
  * @brief Prefabs definitions
  */
-#include <equal/prefab/ui/ui.hpp>
 #include <equal/prefab/scene/blank.hpp>
+#include <equal/prefab/ui/ui.hpp>
 
 /**
  * @defgroup worlds Worlds

@@ -14,16 +14,16 @@
  */
 #pragma once
 
-#include <string>
-#include <equal/core/types.hpp>
 #include <equal/core/game_object.hpp>
 #include <equal/core/system.hpp>
+#include <equal/core/types.hpp>
+#include <equal/event/insert_text.hpp>
+#include <equal/event/key_press.hpp>
+#include <equal/event/key_release.hpp>
 #include <equal/event/mouse_move.hpp>
 #include <equal/event/mouse_press.hpp>
 #include <equal/event/mouse_release.hpp>
-#include <equal/event/key_press.hpp>
-#include <equal/event/key_release.hpp>
-#include <equal/event/insert_text.hpp>
+#include <string>
 
 namespace eq {
 

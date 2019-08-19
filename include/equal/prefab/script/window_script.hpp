@@ -3,9 +3,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *     http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -14,8 +14,8 @@
  */
 #pragma once
 
-#include <equal/core/types.hpp>
 #include <equal/core/script.hpp>
+#include <equal/core/types.hpp>
 #include <equal/event/mouse_move.hpp>
 #include <equal/event/mouse_press.hpp>
 #include <equal/event/mouse_release.hpp>
@@ -24,7 +24,7 @@ namespace eq {
 
 /**
  * @ingroup scripts
- * @brief 
+ * @brief
  */
 class WindowScript : public Script, public IOnMouseMove, public IOnMousePress, public IOnMouseRelease {
 private:
@@ -38,8 +38,8 @@ private:
 public:
   void start() override;
   void end() override;
-  void update(const Timestep& timestep) override;
-  void fixed_update(const Timestep& timestep) override;
+  void update(const Timestep &timestep) override;
+  void fixed_update(const Timestep &timestep) override;
 
   void onMouseMove(const Position &position) override;
   void onMousePress(Mouse::Button button, const Position &position) override;

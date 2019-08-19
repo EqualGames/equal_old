@@ -12,9 +12,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+#include <equal/component/transform_component.hpp>
 #include <equal/core/application.hpp>
 #include <equal/core/game_object.hpp>
-#include <equal/component/transform_component.hpp>
 #include <equal/helper/system.hpp>
 
 namespace eq {

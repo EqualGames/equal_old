@@ -1,8 +1,8 @@
+#include <equal/engine.hpp>
+#include <gtest/gtest.h>
 #include <string>
 #include <string_view>
 #include <utility>
-#include <gtest/gtest.h>
-#include <equal/engine.hpp>
 
 class HELPER_GUID : public testing::Test {
 public:

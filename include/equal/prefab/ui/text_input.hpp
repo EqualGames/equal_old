@@ -14,13 +14,13 @@
  */
 #pragma once
 
-#include <string>
 #include <cstdint>
-#include <equal/core/types.hpp>
 #include <equal/component/transform_component.hpp>
+#include <equal/core/types.hpp>
 #include <equal/prefab/ui/container.hpp>
-#include <equal/prefab/ui/text.hpp>
 #include <equal/prefab/ui/image.hpp>
+#include <equal/prefab/ui/text.hpp>
+#include <string>
 
 namespace eq::ui {
 

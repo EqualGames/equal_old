@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 #ifdef EQ_SDL
-#include <equal/core/logger.hpp>
 #include <equal/core/application.hpp>
+#include <equal/core/logger.hpp>
 #include <equal/core/scene.hpp>
 #include <equal/helper/error.hpp>
 #include <equal/helper/string.hpp>

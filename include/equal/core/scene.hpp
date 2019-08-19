@@ -14,11 +14,11 @@
  */
 #pragma once
 
-#include <equal/core/timestep.hpp>
 #include <equal/core/game_object.hpp>
+#include <equal/core/timestep.hpp>
 #include <equal/prefab/ui/canvas.hpp>
-#include <equal/system/event_system.hpp>
 #include <equal/system/component_system.hpp>
+#include <equal/system/event_system.hpp>
 #include <equal/system/script_system.hpp>
 #include <equal/world/data.hpp>
 

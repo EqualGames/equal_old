@@ -14,8 +14,8 @@
  */
 #pragma once
 
-#include <equal/core/types.hpp>
 #include <equal/core/game_object.hpp>
+#include <equal/core/types.hpp>
 
 namespace eq::ui {
 

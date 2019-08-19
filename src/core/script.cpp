@@ -12,11 +12,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#include <equal/core/logger.hpp>
 #include <equal/core/game_object.hpp>
+#include <equal/core/logger.hpp>
+#include <equal/core/script.hpp>
 #include <equal/helper/error.hpp>
 #include <equal/helper/system.hpp>
-#include <equal/core/script.hpp>
 #include <equal/system/event_system.hpp>
 
 namespace eq {

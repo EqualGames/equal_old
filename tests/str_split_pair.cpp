@@ -1,10 +1,10 @@
+#include <equal/engine.hpp>
+#include <gtest/gtest.h>
 #include <string>
 #include <string_view>
 #include <utility>
-#include <gtest/gtest.h>
-#include <equal/engine.hpp>
 
-typedef std::pair<std::string, std::string> str_pair;
+using str_pair = std::pair<std::string, std::string>;
 
 class STR_SPLIT_PAIR : public testing::Test {
 public:

@@ -14,9 +14,9 @@
  */
 #pragma once
 
-#include <vector>
-#include <equal/core/types.hpp>
 #include <equal/core/component.hpp>
+#include <equal/core/types.hpp>
+#include <vector>
 
 namespace eq {
 

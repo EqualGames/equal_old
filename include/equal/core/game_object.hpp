@@ -14,14 +14,14 @@
  */
 #pragma once
 
-#include <string>
-#include <memory>
-#include <type_traits>
-#include <equal/helper/error.hpp>
 #include <equal/component/transform_component.hpp>
+#include <equal/helper/error.hpp>
 #include <equal/helper/system.hpp>
 #include <equal/system/component_system.hpp>
 #include <equal/system/script_system.hpp>
+#include <memory>
+#include <string>
+#include <type_traits>
 
 namespace eq {
 

@@ -12,19 +12,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+#include <equal/component/transform_component.hpp>
 #include <equal/core/scene.hpp>
 #include <equal/core/script.hpp>
+#include <equal/event/key_press.hpp>
+#include <equal/event/key_release.hpp>
 #include <equal/event/mouse_move.hpp>
 #include <equal/event/mouse_press.hpp>
 #include <equal/event/mouse_release.hpp>
-#include <equal/event/key_press.hpp>
-#include <equal/event/key_release.hpp>
-#include <equal/component/transform_component.hpp>
-#include <equal/system/event_system.hpp>
-#include <equal/system/script_system.hpp>
 #include <equal/helper/error.hpp>
 #include <equal/helper/system.hpp>
 #include <equal/prefab/ui/canvas.hpp>
+#include <equal/system/event_system.hpp>
+#include <equal/system/script_system.hpp>
 
 namespace eq {
 

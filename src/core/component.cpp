@@ -12,8 +12,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#include <equal/core/game_object.hpp>
 #include <equal/core/component.hpp>
+#include <equal/core/game_object.hpp>
 
 namespace eq {
 
