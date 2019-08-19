@@ -12,9 +12,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+#include <equal/core/application.hpp>
 #include <equal/core/logger.hpp>
 #include <equal/factory/create.hpp>
-#include <equal/core/application.hpp>
 #include <memory>
 
 namespace eq {

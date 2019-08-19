@@ -14,8 +14,8 @@
  */
 #pragma once
 
-#include <string>
 #include <equal/core/types.hpp>
+#include <string>
 
 namespace eq {
 

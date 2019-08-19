@@ -14,12 +14,12 @@
  */
 #pragma once
 
-#include <equal/core/scene.hpp>
-#include <equal/core/types.hpp>
-#include <equal/core/game_object.hpp>
-#include <equal/component/transform_component.hpp>
 #include <equal/component/renderer_component.hpp>
 #include <equal/component/text_component.hpp>
+#include <equal/component/transform_component.hpp>
+#include <equal/core/game_object.hpp>
+#include <equal/core/scene.hpp>
+#include <equal/core/types.hpp>
 
 namespace eq {
 

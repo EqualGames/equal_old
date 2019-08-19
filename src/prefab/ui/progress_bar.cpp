@@ -12,9 +12,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#include <equal/core/resource.hpp>
-#include <equal/component/transform_component.hpp>
 #include <equal/component/renderer_component.hpp>
+#include <equal/component/transform_component.hpp>
+#include <equal/core/resource.hpp>
 #include <equal/helper/string.hpp>
 #include <equal/prefab/ui/image.hpp>
 #include <equal/prefab/ui/progress_bar.hpp>

@@ -12,13 +12,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#include <equal/core/logger.hpp>
-#include <equal/helper/error.hpp>
-#include <equal/core/resource.hpp>
-#include <equal/core/game_object.hpp>
-#include <equal/component/transform_component.hpp>
-#include <equal/helper/string.hpp>
 #include <equal/component/text_component.hpp>
+#include <equal/component/transform_component.hpp>
+#include <equal/core/game_object.hpp>
+#include <equal/core/logger.hpp>
+#include <equal/core/resource.hpp>
+#include <equal/helper/error.hpp>
+#include <equal/helper/string.hpp>
 
 #ifdef EQ_SDL
 #include <SDL2/SDL_ttf.h>

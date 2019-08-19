@@ -21,12 +21,6 @@ namespace eq {
 class GameObject;
 
 /**
- * @defgroup components Components
- * @ingroup core
- * @brief Components definitions
- */
-
-/**
  * @brief Component Base
  * @ingroup core
  */

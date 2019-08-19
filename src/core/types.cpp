@@ -12,8 +12,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#include <equal/core/types.hpp>
 #include <equal/core/logger.hpp>
+#include <equal/core/types.hpp>
 #include <equal/helper/error.hpp>
 
 namespace eq {

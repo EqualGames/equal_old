@@ -3,9 +3,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *     http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -32,7 +32,7 @@ const std::unordered_map<std::type_index, Component *> &ComponentSystem::get_all
   EQ_THROW("Invalid game object id");
 }
 
-void ComponentSystem::update(const Timestep& timestep) {
+void ComponentSystem::update(const Timestep &timestep) {
   for (auto &[id, list] : m_components) {
     for (auto &[type, component] : list) {
       component->update(timestep);
@@ -40,7 +40,7 @@ void ComponentSystem::update(const Timestep& timestep) {
   }
 }
 
-void ComponentSystem::fixed_update(const Timestep& timestep) {
+void ComponentSystem::fixed_update(const Timestep &timestep) {
   for (auto &[id, list] : m_components) {
     for (auto &[type, component] : list) {
       component->fixed_update(timestep);

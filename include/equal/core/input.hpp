@@ -3,9 +3,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *     http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,6 +17,32 @@
 #include <equal/core/types.hpp>
 
 namespace eq {
+
+/**
+ * @ingroup core
+ * @brief Cursor types and functions
+ */
+class Cursor {
+public:
+  /**
+   * @brief Cursor types
+   */
+  enum Type {
+    Arrow,
+    ArrowWait,
+    Wait,
+    Text,
+    Hand,
+    SizeHorizontal,
+    SizeVertical,
+    SizeTopLeftBottomRight,
+    SizeBottomLeftTopRight,
+    SizeAll,
+    Cross,
+    Help,
+    NotAllowed
+  };
+};
 
 /**
  * @ingroup core
@@ -171,32 +197,6 @@ public:
 
 /**
  * @ingroup core
- * @brief Cursor types and functions
- */
-class Cursor {
-public:
-  /**
-   * @brief Cursor types
-   */
-  enum Type {
-    Arrow,
-    ArrowWait,
-    Wait,
-    Text,
-    Hand,
-    SizeHorizontal,
-    SizeVertical,
-    SizeTopLeftBottomRight,
-    SizeBottomLeftTopRight,
-    SizeAll,
-    Cross,
-    Help,
-    NotAllowed
-  };
-};
-
-/**
- * @ingroup core
  * @brief Input types and data
  */
 class Input {
@@ -219,37 +219,37 @@ public:
   /**
    * @see https://www.boost.org/doc/libs/1_67_0/doc/html/signals2.html
    */
-  typedef std::function<void(EventData *)> EventHandler;
+  using EventHandler = std::function<void(EventData *)>;
 
   /**
    * @see https://www.boost.org/doc/libs/1_67_0/doc/html/signals2.html
    */
-  typedef boost::signals2::signal<void(EventData *)> OnMouseMove;
+  using OnMouseMove = boost::signals2::signal<void(EventData *)>;
 
   /**
    * @see https://www.boost.org/doc/libs/1_67_0/doc/html/signals2.html
    */
-  typedef boost::signals2::signal<void(EventData *)> OnMousePress;
+  using OnMousePress = boost::signals2::signal<void(EventData *)>;
 
   /**
    * @see https://www.boost.org/doc/libs/1_67_0/doc/html/signals2.html
    */
-  typedef boost::signals2::signal<void(EventData *)> OnMouseRelease;
+  using OnMouseRelease = boost::signals2::signal<void(EventData *)>;
 
   /**
    * @see https://www.boost.org/doc/libs/1_67_0/doc/html/signals2.html
    */
-  typedef boost::signals2::signal<void(EventData *)> OnKeyPress;
+  using OnKeyPress = boost::signals2::signal<void(EventData *)>;
 
   /**
    * @see https://www.boost.org/doc/libs/1_67_0/doc/html/signals2.html
    */
-  typedef boost::signals2::signal<void(EventData *)> OnKeyRelease;
+  using OnKeyRelease = boost::signals2::signal<void(EventData *)>;
 
   /**
    * @see https://www.boost.org/doc/libs/1_67_0/doc/html/signals2.html
    */
-  typedef boost::signals2::signal<void(EventData *)> OnInsertText;
+  using OnInsertText = boost::signals2::signal<void(EventData *)>;
 };
 
 } // namespace eq

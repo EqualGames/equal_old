@@ -15,11 +15,11 @@
 
 #include <equal/core/logger.hpp>
 #include <equal/core/painter.hpp>
+#include <equal/factory/dat.hpp>
+#include <equal/factory/texture.hpp>
 #include <equal/helper/error.hpp>
 #include <equal/helper/string.hpp>
 #include <equal/helper/system.hpp>
-#include <equal/factory/dat.hpp>
-#include <equal/factory/texture.hpp>
 #ifdef EQ_SDL
 #include <SDL2/SDL.h>
 #endif

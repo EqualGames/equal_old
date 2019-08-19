@@ -3,9 +3,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *     http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -46,7 +46,7 @@ const std::unordered_map<std::type_index, Script *> &ScriptSystem::get_all(const
   EQ_THROW("Invalid game object id");
 }
 
-void ScriptSystem::update(const Timestep& timestep) {
+void ScriptSystem::update(const Timestep &timestep) {
   for (auto &[id, list] : m_scripts) {
     for (auto &[type, script] : list) {
       script->update(timestep);
@@ -54,7 +54,7 @@ void ScriptSystem::update(const Timestep& timestep) {
   }
 }
 
-void ScriptSystem::fixed_update(const Timestep& timestep) {
+void ScriptSystem::fixed_update(const Timestep &timestep) {
   for (auto &[id, list] : m_scripts) {
     for (auto &[type, script] : list) {
       script->fixed_update(timestep);

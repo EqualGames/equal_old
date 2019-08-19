@@ -14,12 +14,12 @@
  */
 #pragma once
 
+#include <equal/component/renderer_component.hpp>
+#include <equal/component/text_component.hpp>
+#include <equal/component/transform_component.hpp>
 #include <equal/core/application.hpp>
 #include <equal/core/game_object.hpp>
 #include <equal/core/scene.hpp>
-#include <equal/component/transform_component.hpp>
-#include <equal/component/text_component.hpp>
-#include <equal/component/renderer_component.hpp>
 #include <equal/helper/system.hpp>
 #include <equal/prefab/ui/canvas.hpp>
 #include <equal/world/data.hpp>

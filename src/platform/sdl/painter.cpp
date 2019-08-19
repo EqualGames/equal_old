@@ -13,13 +13,13 @@
  * limitations under the License.
  */
 #ifdef EQ_SDL
-#include <equal/core/logger.hpp>
 #include <equal/core/application.hpp>
-#include <equal/core/resource.hpp>
+#include <equal/core/logger.hpp>
 #include <equal/core/painter.hpp>
+#include <equal/core/resource.hpp>
 #include <equal/helper/error.hpp>
-#include <equal/helper/system.hpp>
 #include <equal/helper/string.hpp>
+#include <equal/helper/system.hpp>
 #include <equal/platform/sdl/painter.hpp>
 
 namespace eq {

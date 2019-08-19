@@ -12,11 +12,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#include <equal/core/game_object.hpp>
-#include <equal/component/transform_component.hpp>
 #include <equal/component/renderer_component.hpp>
-#include <equal/prefab/ui/text_input.hpp>
+#include <equal/component/transform_component.hpp>
+#include <equal/core/game_object.hpp>
 #include <equal/prefab/script/text_input_script.hpp>
+#include <equal/prefab/ui/text_input.hpp>
 #include <memory>
 
 namespace eq {

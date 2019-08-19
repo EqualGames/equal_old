@@ -16,10 +16,10 @@
 #include <equal/core/painter.hpp>
 #include <equal/core/scene.hpp>
 #include <equal/core/window.hpp>
-#include <equal/system/script_system.hpp>
+#include <equal/helper/system.hpp>
 #include <equal/system/component_system.hpp>
 #include <equal/system/event_system.hpp>
-#include <equal/helper/system.hpp>
+#include <equal/system/script_system.hpp>
 
 namespace eq {
 

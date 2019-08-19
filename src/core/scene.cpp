@@ -12,12 +12,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#include <equal/core/scene.hpp>
 #include <equal/core/application.hpp>
 #include <equal/core/logger.hpp>
+#include <equal/core/scene.hpp>
 #include <equal/helper/error.hpp>
 #include <equal/helper/system.hpp>
-#include <equal/helper/error.hpp>
 
 namespace eq {
 

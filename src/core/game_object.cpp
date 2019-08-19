@@ -12,11 +12,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#include <equal/core/game_object.hpp>
 #include <equal/component/transform_component.hpp>
-#include <equal/helper/string.hpp>
-#include <equal/helper/guid.hpp>
+#include <equal/core/game_object.hpp>
 #include <equal/core/script.hpp>
+#include <equal/helper/guid.hpp>
+#include <equal/helper/string.hpp>
 
 namespace eq {
 

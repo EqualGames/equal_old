@@ -14,15 +14,15 @@
  */
 #pragma once
 
+#include <boost/signals2/signal.hpp>
 #include <cstddef>
 #include <cstdint>
-#include <string>
-#include <vector>
-#include <unordered_map>
 #include <functional>
-#include <memory>
 #include <glm/glm.hpp>
-#include <boost/signals2/signal.hpp>
+#include <memory>
+#include <string>
+#include <unordered_map>
+#include <vector>
 
 /**
  * @defgroup types Types
@@ -78,8 +78,8 @@ using ActionPerform = std::function<void()>;
  * @li Blue
  * @li Alpha (opacity)
  *
- * Each component is a public member, an **uint8_t** in the range [0, 255]. Can be constructed and
- * manipulated very easily:
+ * Each component is a public member, an **uint8_t** in the range [0, 255]. Can be constructed and manipulated very
+ * easily:
  *
  * @code
  * eq::Color color{255, 0, 0, 255} // red color

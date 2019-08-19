@@ -8,7 +8,7 @@ var searchData=
   ['left',['Left',['../classeq_1_1Keyboard.html#a5d27e13f1857f208de6a2e16c3b322fba6b8bc185d2d8bf91326ce5de84f91639',1,'eq::Keyboard::Left()'],['../classeq_1_1Mouse.html#a131fb34bf5dfc6f593c0e8844125f300afeb99d851ba1a0077d82a120198848c8',1,'eq::Mouse::Left()'],['../classeq_1_1Render.html#aac509a041c2a7727a2cad68fa3dba5c2a21f5d9598ec3fc8c210e30157d83090f',1,'eq::Render::Left()'],['../classeq_1_1Text.html#a99c952e853ab0a424dc7f2e09d19da7da7b4147363eae0bbe49dbfc98aeaa0316',1,'eq::Text::Left()']]],
   ['legs',['Legs',['../group__worlds.html#ggab85cf0d35e59e17ed41a3de90cc7b164a1714e9c26e6d040a6e3e3a6a89d9a35b',1,'eq']]],
   ['lerp',['lerp',['../group__math.html#gab47c3a283b19ece98e89ce840f269e00',1,'eq::math::lerp(float a, float b, float t)'],['../group__math.html#gad22481d333b427c39f4651b32565f8e9',1,'eq::math::lerp(double a, double b, double t)'],['../group__math.html#ga7802fdb09cfc7ebc3c2d7f5c24d07ebe',1,'eq::math::lerp(long double a, long double b, long double t)']]],
-  ['level',['level',['../classeq_1_1Logger.html#a4d397c5940d9764e5daed82449815143',1,'eq::Logger::level(Level level)'],['../classeq_1_1Logger.html#af5829d31cca4dd3c9b530885a82171c5',1,'eq::Logger::Level()']]],
+  ['level',['Level',['../classeq_1_1Logger.html#af5829d31cca4dd3c9b530885a82171c5',1,'eq::Logger::Level()'],['../classeq_1_1Logger.html#a4d397c5940d9764e5daed82449815143',1,'eq::Logger::level(Level level)']]],
   ['light_5fblue',['LIGHT_BLUE',['../namespaceeq_1_1out.html#a7f591a3881fffcb3061e29f80e47a29a',1,'eq::out']]],
   ['light_5fcyan',['LIGHT_CYAN',['../namespaceeq_1_1out.html#a9bd9b6d5ddd676ce693f05db5a2adf03',1,'eq::out']]],
   ['light_5fgray',['LIGHT_GRAY',['../namespaceeq_1_1out.html#adaf25f6a1f8d82bb391fcf8d20008c4c',1,'eq::out']]],
