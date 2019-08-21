@@ -27,6 +27,13 @@ class Canvas : public GameObject {
 public:
   /**
    * @brief Construct a new Canvas object
+   * 
+   * @param id const std::string&
+   */
+  Canvas(const std::string& id);
+
+  /**
+   * @brief Construct a new Canvas object
    *
    * @param position
    * @param size

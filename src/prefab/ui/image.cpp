@@ -23,20 +23,20 @@ Image::Image(const std::string &id) : GameObject(id) {
   name("Image");
   interactive(false);
 
-  AddComponent<RendererComponent>();
-  GetComponent<RendererComponent>()->type(Render::Type::Simple);
+  add<RendererComponent>();
+  get<RendererComponent>()->type(Render::Type::Simple);
 }
 
 Image::Image(const Position &position, const Size &size) : GameObject(position, size) {
   name("Image");
   interactive(false);
 
-  AddComponent<RendererComponent>();
-  GetComponent<RendererComponent>()->type(Render::Type::Simple);
+  add<RendererComponent>();
+  get<RendererComponent>()->type(Render::Type::Simple);
 }
 
 Image::~Image() {}
 
-void Image::texture(Texture *texture) { GetComponent<RendererComponent>()->texture(texture); }
+void Image::texture(Texture *texture) { get<RendererComponent>()->texture(texture); }
 
 } // namespace eq::ui

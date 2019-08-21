@@ -20,7 +20,8 @@
 namespace eq {
 
 void WindowScript::start() {
-  m_drag_area.z = m_target->GetComponent<TransformComponent>()->size().x;
+  m_drag_area.z = m_target->get<TransformComponent>()->size().x;
+
   register_event(Input::Event::MouseMove, [&](Input::EventData *event) { this->onMouseMove(event->mouse); });
   register_event(Input::Event::MousePress,
                  [&](Input::EventData *event) { this->onMousePress(event->mouse_button, event->mouse); });
@@ -35,7 +36,7 @@ void WindowScript::update(const Timestep &timestep) {}
 void WindowScript::fixed_update(const Timestep &timestep) {}
 
 bool WindowScript::in_drag_area(const Position &position) {
-  TransformComponent *transform = m_target->GetComponent<TransformComponent>();
+  TransformComponent *transform = m_target->get<TransformComponent>();
   Position pos{transform->position() - transform->origin()};
 
   return (position.x > (pos.x + m_drag_area.x) && position.x < (pos.x + m_drag_area.z)) &&
@@ -44,14 +45,14 @@ bool WindowScript::in_drag_area(const Position &position) {
 
 void WindowScript::onMouseMove(const Position &position) {
   if (m_state == State::Dragging) {
-    m_target->GetComponent<TransformComponent>()->position(position + m_dragging_offset);
+    m_target->get<TransformComponent>()->position(position + m_dragging_offset);
   }
 }
 
 void WindowScript::onMousePress(Mouse::Button button, const Position &position) {
   if (m_state != State::Dragging && in_drag_area(position)) {
     m_state = State::Dragging;
-    m_dragging_offset = m_target->GetComponent<TransformComponent>()->local_position() - position;
+    m_dragging_offset = m_target->get<TransformComponent>()->local_position() - position;
   }
 }
 

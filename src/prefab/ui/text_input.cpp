@@ -25,55 +25,55 @@ namespace eq::ui {
 TextInput::TextInput(const std::string &id) : GameObject(id) {
   name("TextInput");
 
-  AddComponent<RendererComponent>(g_res.getTexture("container"));
-  GetComponent<RendererComponent>()->type(Render::Type::Sliced);
+  add<RendererComponent>(g_res.getTexture("container"));
+  get<RendererComponent>()->type(Render::Type::Sliced);
 
-  m_value = CreateObject<Text>("", Position{5, 0});
-  m_value->GetComponent<TransformComponent>()->anchor(Transform::Anchor::CL);
+  m_value = create_object<Text>("", Position{5, 0});
+  m_value->get<TransformComponent>()->anchor(Transform::Anchor::CL);
 
-  m_caret = CreateObject<Image>(Position{0, 0}, Size{4, 26});
-  m_caret->GetComponent<TransformComponent>()->anchor(Transform::Anchor::CL);
+  m_caret = create_object<Image>(Position{0, 0}, Size{4, 26});
+  m_caret->get<TransformComponent>()->anchor(Transform::Anchor::CL);
   m_caret->visible(false);
 
-  AddScript<TextInputScript>();
+  add<TextInputScript>();
 }
 
 TextInput::TextInput(const std::string &value, const Position &position, const Size &size)
     : GameObject(position, size) {
   name("TextInput");
 
-  AddComponent<RendererComponent>(g_res.getTexture("container"));
-  GetComponent<RendererComponent>()->type(Render::Type::Sliced);
+  add<RendererComponent>(g_res.getTexture("container"));
+  get<RendererComponent>()->type(Render::Type::Sliced);
 
-  m_value = CreateObject<Text>(value, Position{5, 0});
-  m_value->GetComponent<TransformComponent>()->anchor(Transform::Anchor::CL);
+  m_value = create_object<Text>(value, Position{5, 0});
+  m_value->get<TransformComponent>()->anchor(Transform::Anchor::CL);
 
-  m_caret = CreateObject<Image>(Position{0, 0}, Size{4, size.y - 10});
-  m_caret->GetComponent<TransformComponent>()->anchor(Transform::Anchor::CL);
+  m_caret = create_object<Image>(Position{0, 0}, Size{4, size.y - 10});
+  m_caret->get<TransformComponent>()->anchor(Transform::Anchor::CL);
   m_caret->visible(false);
 
-  AddScript<TextInputScript>();
+  add<TextInputScript>();
 }
 
 TextInput::~TextInput() {}
 
 void TextInput::move_caret() {
-  TransformComponent *transform = GetComponent<TransformComponent>();
-  TransformComponent *text_transform = m_value->GetComponent<TransformComponent>();
+  TransformComponent *transform{get<TransformComponent>()};
+  TransformComponent *text_transform{m_value->get<TransformComponent>()};
 
   Size box_size{transform->size()};
   Size text_size{text_transform->size()};
-  Size caret_size{m_caret->GetComponent<TransformComponent>()->size()};
+  Size caret_size{m_caret->get<TransformComponent>()->size()};
   Position caret_pos{text_size.x + caret_size.x * 2, 0};
 
   if (caret_pos.x < int(box_size.x - caret_size.x)) {
-    m_caret->GetComponent<TransformComponent>()->position(caret_pos);
+    m_caret->get<TransformComponent>()->position(caret_pos);
   } else {
-    m_caret->GetComponent<TransformComponent>()->position(Position{box_size.x - caret_size.x * 2, 0});
+    m_caret->get<TransformComponent>()->position(Position{box_size.x - caret_size.x * 2, 0});
   }
 }
 
-void TextInput::masked(bool masked) { m_value->GetComponent<TextComponent>()->masked(masked); }
+void TextInput::masked(bool masked) { m_value->get<TextComponent>()->masked(masked); }
 
 bool TextInput::caret() const { return m_caret->visible(); }
 

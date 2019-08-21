@@ -132,7 +132,7 @@ void TextComponent::update(const Timestep &timestep) {
     m_need_update = false;
     if (!m_text.empty()) {
       m_target->visible(true);
-      TransformComponent *transform = m_target->GetComponent<TransformComponent>();
+      TransformComponent *transform{m_target->get<TransformComponent>()};
 
 #ifdef EQ_SDL
       std::string text_value = str::wchar_to_utf8(m_text.c_str());

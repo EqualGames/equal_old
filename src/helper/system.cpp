@@ -17,22 +17,20 @@
 #include <equal/core/scene.hpp>
 #include <equal/core/window.hpp>
 #include <equal/helper/system.hpp>
-#include <equal/system/component_system.hpp>
 #include <equal/system/event_system.hpp>
-#include <equal/system/script_system.hpp>
 
 namespace eq {
 
-const Scope<EventSystem> &GetEventSystem() { return g_app.scene->event_system(); }
+const Scope<EventSystem> &get_event_system() { return g_app.scene->event_system(); }
 
-const Scope<ComponentSystem> &GetComponentSystem() { return g_app.scene->component_system(); }
+const Scope<ComponentSystem> &get_component_system() { return g_app.scene->component_system(); }
 
-const Scope<ScriptSystem> &GetScriptSystem() { return g_app.scene->script_system(); }
+const Scope<ScriptSystem> &get_script_system() { return g_app.scene->script_system(); }
 
-const Scope<Scene> &GetScene() { return g_app.scene; }
+const Scope<Scene> &get_scene() { return g_app.scene; }
 
-const Scope<Window> &GetWindow() { return g_app.window; }
+const Scope<Window> &get_window() { return g_app.window; }
 
-const Scope<Painter> &GetPainter() { return g_app.painter; }
+const Scope<Painter> &get_painter() { return g_app.painter; }
 
 } // namespace eq

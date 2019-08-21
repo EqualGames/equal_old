@@ -32,43 +32,100 @@ private:
   std::unordered_map<std::string, std::unordered_map<std::type_index, Component *>> m_components;
 
 public:
-  bool has(const std::string &id) const;
-  const std::unordered_map<std::type_index, Component *> &get_all(const std::string &id) const;
+  /**
+   * @brief
+   *
+   * @param guid
+   * @return true
+   * @return false
+   */
+  bool has(const std::string &guid) const;
 
+  /**
+   * @brief Get the all object
+   *
+   * @param guid
+   * @return const std::unordered_map<std::type_index, Component *>&
+   */
+  const std::unordered_map<std::type_index, Component *> &get_all(const std::string &guid) const;
+
+  /**
+   * @brief
+   *
+   * @tparam T
+   * @param guid
+   * @return true
+   * @return false
+   */
   template <class T>
-  bool has_type(const std::string &id) const {
-    if (has(id)) {
-      auto list = get_all(id);
+  bool has_type(const std::string &guid) const {
+    if (has(guid)) {
+      auto list = get_all(guid);
       return list.find(std::type_index(typeid(T))) != list.end();
     }
 
     return false;
   }
 
+  /**
+   * @brief
+   *
+   * @tparam T
+   * @param guid
+   * @return T*
+   */
   template <class T>
-  T *get(const std::string &id) const {
-    for (auto &[type, component] : get_all(id)) {
+  T *get(const std::string &guid) const {
+    for (auto &[type, component] : get_all(guid)) {
       if (type == std::type_index(typeid(T))) {
-        return static_cast<T *>(component);
+        return dynamic_cast<T *>(component);
       }
     }
     return nullptr;
   }
 
+  /**
+   * @brief
+   *
+   * @tparam T
+   * @param guid
+   * @param component
+   */
   template <class T>
-  void add(const std::string &id, Component *component) {
-    if (has(id)) {
-      m_components.at(id).try_emplace(std::type_index(typeid(T)), component);
+  void add(const std::string &guid, Component *component) {
+    if (has(guid)) {
+      m_components.at(guid).try_emplace(std::type_index(typeid(T)), component);
     } else {
       std::unordered_map<std::type_index, Component *> list;
       list.try_emplace(std::type_index(typeid(T)), component);
-      m_components.try_emplace(id, list);
+      m_components.try_emplace(guid, list);
     }
   }
 
+  /**
+   * @brief
+   *
+   */
   void start() override;
+
+  /**
+   * @brief
+   *
+   */
   void end() override;
+
+  /**
+   * @brief
+   *
+   * @param timestep
+   */
   void update(const Timestep &timestep) override;
+
+  /**
+   * @brief
+   *
+   * @param timestep
+   */
   void fixed_update(const Timestep &timestep) override;
 };
 

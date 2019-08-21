@@ -52,7 +52,7 @@ std::unordered_map<std::string, Texture *> LoadTextureFromDAT() {
       EQ_THROW("Can't set color key: {}", SDL_GetError());
     }
 
-    SDL_Renderer *sdl_renderer = static_cast<SDL_Renderer *>(GetPainter()->native_painter());
+    SDL_Renderer *sdl_renderer = static_cast<SDL_Renderer *>(get_painter()->native_painter());
     if (!sdl_renderer) {
       SDL_FreeSurface(sdl_surface);
       EQ_THROW("Can't access the renderer");

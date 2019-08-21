@@ -34,7 +34,8 @@ class Script;
  */
 class GameObject {
 protected:
-  std::string m_id{""};
+  std::string m_guid;
+  std::string m_id;
   std::string m_name{"GameObject"};
   bool m_initialized{false};
   bool m_interactive{true};
@@ -69,6 +70,13 @@ public:
    * @brief Destroy the Game Object object
    */
   virtual ~GameObject() = default;
+
+  /**
+   * @brief Get game object guid
+   *
+   * @return const std::string&
+   */
+  const std::string &guid() const;
 
   /**
    * @brief Get game object id
@@ -170,113 +178,74 @@ public:
    * @param args Args
    * @return eq::Ref<eq::GameObject>
    */
-  template <class T, typename... Args>
-  inline Ref<T> CreateObject(Args... args) {
+  template <typename T, typename... Args>
+  inline Ref<T> create_object(Args... args) {
     if (!std::is_base_of_v<GameObject, T>) {
       EQ_THROW("Invalid object type, the type has need be a derived of eq::GameObject");
     }
 
     Ref<T> object = std::make_shared<T>(args...);
     Ref<GameObject> parent(this);
-    GetComponent<TransformComponent>()->add(parent, std::dynamic_pointer_cast<GameObject>(object));
+    get<TransformComponent>()->add(parent, std::dynamic_pointer_cast<GameObject>(object));
     return object;
   }
 
   /**
-   * @brief Add component on game object
+   * @brief Add element on game object
    *
-   * @tparam T eq::Component
+   * @tparam T
    * @tparam Args
    * @param args Args
    */
-  template <class T, typename... Args>
-  inline void AddComponent(Args... args) {
-    if (!std::is_base_of<Component, T>::value) {
-      EQ_THROW("Invalid object type, the type has need be a derived of eq::Component");
+  template <typename T, typename... Args>
+  inline void add(Args... args) {
+    if (!std::is_base_of_v<Component, T> && !std::is_base_of_v<Script, T>) {
+      EQ_THROW("Invalid object type, the type has need be a derived of eq::Component or eq::Script");
     }
 
-    T *component = new T(args...);
+    T *object = new T(args...);
     Ref<GameObject> parent(this);
-    component->target(parent);
-    GetComponentSystem()->add<T>(m_id, component);
+    object->target(parent);
+
+    if (std::is_base_of_v<Component, T>) {
+      register_component<T>(m_guid, dynamic_cast<Component *>(object));
+    } else if (std::is_base_of_v<Script, T>) {
+      register_script<T>(m_guid, dynamic_cast<Script *>(object));
+    }
   }
 
   /**
-   * @brief Check if game object has component
+   * @brief Check if game object has element
    *
-   * @tparam T eq::Component
+   * @tparam T
    * @return bool
    */
-  template <class T>
-  inline bool HasComponent() const {
-    if (!std::is_base_of<Component, T>::value) {
-      EQ_THROW("Invalid object type, the type has need be a derived of eq::Component");
+  template <typename T>
+  inline bool has() const {
+    if (std::is_base_of_v<Component, T>) {
+      return has_component<T>(m_guid);
+    } else if (std::is_base_of_v<Script, T>) {
+      return has_script<T>(m_guid);
+    } else {
+      EQ_THROW("Invalid object type, the type has need be a derived of eq::Component or eq::Script");
     }
-
-    return GetComponentSystem()->has_type<T>(m_id);
   }
 
   /**
-   * @brief Get the component of game object
+   * @brief Get the element of game object
    *
-   * @tparam T eq::Component
-   * @return eq::Component*
+   * @tparam T 
+   * @return T*
    */
-  template <class T>
-  inline T *GetComponent() const {
-    if (!std::is_base_of<Component, T>::value) {
-      EQ_THROW("Invalid object type, the type has need be a derived of eq::Component");
+  template <typename T>
+  inline T *get() const {
+    if (std::is_base_of_v<Component, T>) {
+      return get_component<T>(m_guid);
+    } else if (std::is_base_of_v<Script, T>) {
+      return get_script<T>(m_guid);
+    } else {
+      EQ_THROW("Invalid object type, the type has need be a derived of eq::Component or eq::Script");
     }
-
-    return GetComponentSystem()->get<T>(m_id);
-  }
-
-  /**
-   * @brief Add script on game object
-   *
-   * @tparam T eq::Script
-   * @tparam Args
-   */
-  template <class T, typename... Args>
-  inline void AddScript(Args... args) {
-    if (!std::is_base_of<Script, T>::value) {
-      EQ_THROW("Invalid object type, the type has need be a derived of eq::Script");
-    }
-
-    T *script = new T(args...);
-    Ref<GameObject> parent(this);
-    script->target(parent);
-    GetScriptSystem()->add<T>(m_id, script);
-  }
-
-  /**
-   * @brief Check if game object has script
-   *
-   * @tparam T eq::Script
-   * @return bool
-   */
-  template <class T>
-  inline bool HasScript() const {
-    if (!std::is_base_of<Script, T>::value) {
-      EQ_THROW("Invalid object type, the type has need be a derived of eq::Script");
-    }
-
-    return GetScriptSystem()->has_type<T>(m_id);
-  }
-
-  /**
-   * @brief Get the script of game object
-   *
-   * @tparam T eq::Script
-   * @return eq::Script*
-   */
-  template <class T>
-  inline T *GetScript() const {
-    if (!std::is_base_of<Script, T>::value) {
-      EQ_THROW("Invalid object type, the type has need be a derived of eq::Script");
-    }
-
-    return GetScriptSystem()->get<T>(m_id);
   }
 };
 

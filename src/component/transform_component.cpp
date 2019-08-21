@@ -119,7 +119,7 @@ const Ref<GameObject> TransformComponent::child(int index) const {
 }
 
 void TransformComponent::add(Ref<GameObject> &parent, Ref<GameObject> object) {
-  object->GetComponent<TransformComponent>()->parent(parent);
+  object->get<TransformComponent>()->parent(parent);
   object->order(static_cast<int>(m_children.size()) + 1);
   m_children.push_back(object);
 }
@@ -139,7 +139,7 @@ void TransformComponent::update(const Timestep &timestep) {
     Size area_size{0};
 
     if (m_parent) {
-      TransformComponent *parentTransform = m_parent->GetComponent<TransformComponent>();
+      TransformComponent *parentTransform{m_parent->get<TransformComponent>()};
       area_pos = Position{parentTransform->position() - parentTransform->origin()};
       area_size = parentTransform->size();
     } else if (m_bbox != BoundingBox{0}) {
@@ -147,7 +147,7 @@ void TransformComponent::update(const Timestep &timestep) {
       area_size = Size{m_bbox.z, m_bbox.w};
     } else {
       area_pos = Position{0.0f, 0.0f};
-      area_size = GetWindow()->size();
+      area_size = get_window()->size();
     }
 
     switch (m_anchor) {
@@ -202,10 +202,10 @@ void TransformComponent::update(const Timestep &timestep) {
       break;
     }
 
-    // FIXME: Need review
+    // @FIXME: Need review
     for (auto child : m_children) {
-      child->GetComponent<TransformComponent>()->parentUpdate();
-      child->GetComponent<TransformComponent>()->update(timestep);
+      child->get<TransformComponent>()->parentUpdate();
+      child->get<TransformComponent>()->update(timestep);
     }
   }
 }

@@ -78,8 +78,8 @@ int main(int argc, char *argv[], char *envp[]) {
 
     return EXIT_SUCCESS;
   } catch (const std::exception &ex) {
-    if (eq::GetWindow()) {
-      eq::GetWindow()->shutdown();
+    if (eq::get_window()) {
+      eq::get_window()->shutdown();
     }
     eq::StackTrace(ex);
     return EXIT_FAILURE;

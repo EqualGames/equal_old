@@ -99,6 +99,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a990423caaf168d2da23499e1f1bd2038"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0285418a1196dfcbe39234ab3724b487"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeq_1_1ui_1_1Window.html#a0285418a1196dfcbe39234ab3724b487">title_color</a> (const <a class="el" href="group__types.html#ga486176426a5e043af5762438f8c61ab7">Color</a> &amp;color)</td></tr>
 <tr class="separator:a0285418a1196dfcbe39234ab3724b487"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59fadeca8a02b7154ba2e2d9269811c4"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeq_1_1GameObject.html#a59fadeca8a02b7154ba2e2d9269811c4">guid</a> () const</td></tr>
+<tr class="memdesc:a59fadeca8a02b7154ba2e2d9269811c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get game object guid.  <a href="#a59fadeca8a02b7154ba2e2d9269811c4">More...</a><br /></td></tr>
+<tr class="separator:a59fadeca8a02b7154ba2e2d9269811c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf1253d9ce0822f8b01af2e3273bc14c"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeq_1_1GameObject.html#acf1253d9ce0822f8b01af2e3273bc14c">id</a> () const</td></tr>
 <tr class="memdesc:acf1253d9ce0822f8b01af2e3273bc14c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get game object id.  <a href="#acf1253d9ce0822f8b01af2e3273bc14c">More...</a><br /></td></tr>
 <tr class="separator:acf1253d9ce0822f8b01af2e3273bc14c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -137,38 +140,28 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a13705288b79af1c9cf521bca4ff5d103"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a318db3ff10c533e7d45a03988495d8a9"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="group__types.html#gab82b8382f925f2c4b89e32c126ad1518">Ref</a>&lt; <a class="el" href="classeq_1_1GameObject.html">GameObject</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeq_1_1GameObject.html#a318db3ff10c533e7d45a03988495d8a9">find</a> (const std::string &amp;query)</td></tr>
 <tr class="separator:a318db3ff10c533e7d45a03988495d8a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a294836952890a6a357a9fa77019627"><td class="memTemplParams" colspan="2">template&lt;class T , typename... Args&gt; </td></tr>
-<tr class="memitem:a1a294836952890a6a357a9fa77019627"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gab82b8382f925f2c4b89e32c126ad1518">Ref</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classeq_1_1GameObject.html#a1a294836952890a6a357a9fa77019627">CreateObject</a> (Args... args)</td></tr>
-<tr class="memdesc:a1a294836952890a6a357a9fa77019627"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a game object with a child.  <a href="#a1a294836952890a6a357a9fa77019627">More...</a><br /></td></tr>
-<tr class="separator:a1a294836952890a6a357a9fa77019627"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64f7a6d16995358bb35b188a9316584b"><td class="memTemplParams" colspan="2">template&lt;class T , typename... Args&gt; </td></tr>
-<tr class="memitem:a64f7a6d16995358bb35b188a9316584b"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classeq_1_1GameObject.html#a64f7a6d16995358bb35b188a9316584b">AddComponent</a> (Args... args)</td></tr>
-<tr class="memdesc:a64f7a6d16995358bb35b188a9316584b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add component on game object.  <a href="#a64f7a6d16995358bb35b188a9316584b">More...</a><br /></td></tr>
-<tr class="separator:a64f7a6d16995358bb35b188a9316584b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0487810b91cab9c005cec9e30e70efc2"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
-<tr class="memitem:a0487810b91cab9c005cec9e30e70efc2"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classeq_1_1GameObject.html#a0487810b91cab9c005cec9e30e70efc2">HasComponent</a> () const</td></tr>
-<tr class="memdesc:a0487810b91cab9c005cec9e30e70efc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if game object has component.  <a href="#a0487810b91cab9c005cec9e30e70efc2">More...</a><br /></td></tr>
-<tr class="separator:a0487810b91cab9c005cec9e30e70efc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad544c76aa06cd01c172e08bf2b2debc9"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
-<tr class="memitem:ad544c76aa06cd01c172e08bf2b2debc9"><td class="memTemplItemLeft" align="right" valign="top">T *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classeq_1_1GameObject.html#ad544c76aa06cd01c172e08bf2b2debc9">GetComponent</a> () const</td></tr>
-<tr class="memdesc:ad544c76aa06cd01c172e08bf2b2debc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the component of game object.  <a href="#ad544c76aa06cd01c172e08bf2b2debc9">More...</a><br /></td></tr>
-<tr class="separator:ad544c76aa06cd01c172e08bf2b2debc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa0bc58cfc9beb24df67e68a303de950"><td class="memTemplParams" colspan="2">template&lt;class T , typename... Args&gt; </td></tr>
-<tr class="memitem:aaa0bc58cfc9beb24df67e68a303de950"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classeq_1_1GameObject.html#aaa0bc58cfc9beb24df67e68a303de950">AddScript</a> (Args... args)</td></tr>
-<tr class="memdesc:aaa0bc58cfc9beb24df67e68a303de950"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add script on game object.  <a href="#aaa0bc58cfc9beb24df67e68a303de950">More...</a><br /></td></tr>
-<tr class="separator:aaa0bc58cfc9beb24df67e68a303de950"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a955fe977a3be87336f9ff26d0fb22ec9"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
-<tr class="memitem:a955fe977a3be87336f9ff26d0fb22ec9"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classeq_1_1GameObject.html#a955fe977a3be87336f9ff26d0fb22ec9">HasScript</a> () const</td></tr>
-<tr class="memdesc:a955fe977a3be87336f9ff26d0fb22ec9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if game object has script.  <a href="#a955fe977a3be87336f9ff26d0fb22ec9">More...</a><br /></td></tr>
-<tr class="separator:a955fe977a3be87336f9ff26d0fb22ec9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba4db2b405654b76cba80e2349466f53"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
-<tr class="memitem:aba4db2b405654b76cba80e2349466f53"><td class="memTemplItemLeft" align="right" valign="top">T *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classeq_1_1GameObject.html#aba4db2b405654b76cba80e2349466f53">GetScript</a> () const</td></tr>
-<tr class="memdesc:aba4db2b405654b76cba80e2349466f53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the script of game object.  <a href="#aba4db2b405654b76cba80e2349466f53">More...</a><br /></td></tr>
-<tr class="separator:aba4db2b405654b76cba80e2349466f53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada73edbc7446d52255fd280dc17c4d9c"><td class="memTemplParams" colspan="2">template&lt;typename T , typename... Args&gt; </td></tr>
+<tr class="memitem:ada73edbc7446d52255fd280dc17c4d9c"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gab82b8382f925f2c4b89e32c126ad1518">Ref</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classeq_1_1GameObject.html#ada73edbc7446d52255fd280dc17c4d9c">create_object</a> (Args... args)</td></tr>
+<tr class="memdesc:ada73edbc7446d52255fd280dc17c4d9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a game object with a child.  <a href="#ada73edbc7446d52255fd280dc17c4d9c">More...</a><br /></td></tr>
+<tr class="separator:ada73edbc7446d52255fd280dc17c4d9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c1efe5519cd51fdf8615205a6c917bb"><td class="memTemplParams" colspan="2">template&lt;typename T , typename... Args&gt; </td></tr>
+<tr class="memitem:a2c1efe5519cd51fdf8615205a6c917bb"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classeq_1_1GameObject.html#a2c1efe5519cd51fdf8615205a6c917bb">add</a> (Args... args)</td></tr>
+<tr class="memdesc:a2c1efe5519cd51fdf8615205a6c917bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add element on game object.  <a href="#a2c1efe5519cd51fdf8615205a6c917bb">More...</a><br /></td></tr>
+<tr class="separator:a2c1efe5519cd51fdf8615205a6c917bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04d0fa9eb03e047d2737ac018f110191"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a04d0fa9eb03e047d2737ac018f110191"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classeq_1_1GameObject.html#a04d0fa9eb03e047d2737ac018f110191">has</a> () const</td></tr>
+<tr class="memdesc:a04d0fa9eb03e047d2737ac018f110191"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if game object has element.  <a href="#a04d0fa9eb03e047d2737ac018f110191">More...</a><br /></td></tr>
+<tr class="separator:a04d0fa9eb03e047d2737ac018f110191"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25ac3697accd21c2a12faeb2f2ff8312"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a25ac3697accd21c2a12faeb2f2ff8312"><td class="memTemplItemLeft" align="right" valign="top">T *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classeq_1_1GameObject.html#a25ac3697accd21c2a12faeb2f2ff8312">get</a> () const</td></tr>
+<tr class="memdesc:a25ac3697accd21c2a12faeb2f2ff8312"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the element of game object.  <a href="#a25ac3697accd21c2a12faeb2f2ff8312">More...</a><br /></td></tr>
+<tr class="separator:a25ac3697accd21c2a12faeb2f2ff8312"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:ad8636b46617558dbdc8b517c84a969b0"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeq_1_1GameObject.html#ad8636b46617558dbdc8b517c84a969b0">m_id</a> {&quot;&quot;}</td></tr>
+<tr class="memitem:ab5e8f1f94ec07b624459cd63f3199287"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeq_1_1GameObject.html#ab5e8f1f94ec07b624459cd63f3199287">m_guid</a></td></tr>
+<tr class="separator:ab5e8f1f94ec07b624459cd63f3199287"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8636b46617558dbdc8b517c84a969b0"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeq_1_1GameObject.html#ad8636b46617558dbdc8b517c84a969b0">m_id</a></td></tr>
 <tr class="separator:ad8636b46617558dbdc8b517c84a969b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a46d4cd116f8024d4146b27888994a762"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeq_1_1GameObject.html#a46d4cd116f8024d4146b27888994a762">m_name</a> {&quot;GameObject&quot;}</td></tr>
 <tr class="separator:a46d4cd116f8024d4146b27888994a762"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -276,19 +269,19 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a64f7a6d16995358bb35b188a9316584b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a64f7a6d16995358bb35b188a9316584b">&#9670;&nbsp;</a></span>AddComponent()</h2>
+<a id="a2c1efe5519cd51fdf8615205a6c917bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c1efe5519cd51fdf8615205a6c917bb">&#9670;&nbsp;</a></span>add()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , typename... Args&gt; </div>
+template&lt;typename T , typename... Args&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void eq::GameObject::AddComponent </td>
+          <td class="memname">void eq::GameObject::add </td>
           <td>(</td>
           <td class="paramtype">Args...&#160;</td>
           <td class="paramname"><em>args</em></td><td>)</td>
@@ -303,7 +296,7 @@ template&lt;class T , typename... Args&gt; </div>
 </div><div class="memdoc">
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td><a class="el" href="classeq_1_1Component.html" title="Component Base. ">eq::Component</a> </td></tr>
+    <tr><td class="paramname">T</td><td></td></tr>
     <tr><td class="paramname">Args</td><td></td></tr>
   </table>
   </dd>
@@ -317,54 +310,19 @@ template&lt;class T , typename... Args&gt; </div>
 
 </div>
 </div>
-<a id="aaa0bc58cfc9beb24df67e68a303de950"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaa0bc58cfc9beb24df67e68a303de950">&#9670;&nbsp;</a></span>AddScript()</h2>
+<a id="ada73edbc7446d52255fd280dc17c4d9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada73edbc7446d52255fd280dc17c4d9c">&#9670;&nbsp;</a></span>create_object()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , typename... Args&gt; </div>
+template&lt;typename T , typename... Args&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void eq::GameObject::AddScript </td>
-          <td>(</td>
-          <td class="paramtype">Args...&#160;</td>
-          <td class="paramname"><em>args</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td><a class="el" href="classeq_1_1Script.html" title="Scripts definitions. ">eq::Script</a> </td></tr>
-    <tr><td class="paramname">Args</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a1a294836952890a6a357a9fa77019627"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1a294836952890a6a357a9fa77019627">&#9670;&nbsp;</a></span>CreateObject()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T , typename... Args&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__types.html#gab82b8382f925f2c4b89e32c126ad1518">Ref</a>&lt;T&gt; eq::GameObject::CreateObject </td>
+          <td class="memname"><a class="el" href="group__types.html#gab82b8382f925f2c4b89e32c126ad1518">Ref</a>&lt;T&gt; eq::GameObject::create_object </td>
           <td>(</td>
           <td class="paramtype">Args...&#160;</td>
           <td class="paramname"><em>args</em></td><td>)</td>
@@ -485,19 +443,19 @@ template&lt;class T , typename... Args&gt; </div>
 
 </div>
 </div>
-<a id="ad544c76aa06cd01c172e08bf2b2debc9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad544c76aa06cd01c172e08bf2b2debc9">&#9670;&nbsp;</a></span>GetComponent()</h2>
+<a id="a25ac3697accd21c2a12faeb2f2ff8312"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25ac3697accd21c2a12faeb2f2ff8312">&#9670;&nbsp;</a></span>get()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T &gt; </div>
+template&lt;typename T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">T* eq::GameObject::GetComponent </td>
+          <td class="memname">T* eq::GameObject::get </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -511,27 +469,53 @@ template&lt;class T &gt; </div>
 </div><div class="memdoc">
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td><a class="el" href="classeq_1_1Component.html" title="Component Base. ">eq::Component</a> </td></tr>
+    <tr><td class="paramname">T</td><td></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classeq_1_1Component.html" title="Component Base. ">eq::Component</a>* </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>T* </dd></dl>
 
 </div>
 </div>
-<a id="aba4db2b405654b76cba80e2349466f53"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aba4db2b405654b76cba80e2349466f53">&#9670;&nbsp;</a></span>GetScript()</h2>
+<a id="a59fadeca8a02b7154ba2e2d9269811c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59fadeca8a02b7154ba2e2d9269811c4">&#9670;&nbsp;</a></span>guid()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">T* eq::GameObject::GetScript </td>
+          <td class="memname">const std::string&amp; eq::GameObject::guid </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>const std::string&amp; </dd></dl>
+
+</div>
+</div>
+<a id="a04d0fa9eb03e047d2737ac018f110191"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04d0fa9eb03e047d2737ac018f110191">&#9670;&nbsp;</a></span>has()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool eq::GameObject::has </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -545,75 +529,7 @@ template&lt;class T &gt; </div>
 </div><div class="memdoc">
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td><a class="el" href="classeq_1_1Script.html" title="Scripts definitions. ">eq::Script</a> </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classeq_1_1Script.html" title="Scripts definitions. ">eq::Script</a>* </dd></dl>
-
-</div>
-</div>
-<a id="a0487810b91cab9c005cec9e30e70efc2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0487810b91cab9c005cec9e30e70efc2">&#9670;&nbsp;</a></span>HasComponent()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool eq::GameObject::HasComponent </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td><a class="el" href="classeq_1_1Component.html" title="Component Base. ">eq::Component</a> </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
-
-</div>
-</div>
-<a id="a955fe977a3be87336f9ff26d0fb22ec9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a955fe977a3be87336f9ff26d0fb22ec9">&#9670;&nbsp;</a></span>HasScript()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool eq::GameObject::HasScript </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td><a class="el" href="classeq_1_1Script.html" title="Scripts definitions. ">eq::Script</a> </td></tr>
+    <tr><td class="paramname">T</td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -1030,6 +946,28 @@ template&lt;class T &gt; </div>
 
 </div>
 </div>
+<a id="ab5e8f1f94ec07b624459cd63f3199287"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5e8f1f94ec07b624459cd63f3199287">&#9670;&nbsp;</a></span>m_guid</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string eq::GameObject::m_guid</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ad8636b46617558dbdc8b517c84a969b0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad8636b46617558dbdc8b517c84a969b0">&#9670;&nbsp;</a></span>m_id</h2>
 
@@ -1040,7 +978,7 @@ template&lt;class T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::string eq::GameObject::m_id {&quot;&quot;}</td>
+          <td class="memname">std::string eq::GameObject::m_id</td>
         </tr>
       </table>
   </td>
@@ -1168,7 +1106,7 @@ template&lt;class T &gt; </div>
 </div><!-- contents -->
 <address class="footer">
   <p>
-    Last update on Mon Aug 19 2019 for Equal 1.0.0.0
+    Last update on Wed Aug 21 2019 for Equal 1.0.0.0
   </p>
 </address>
 </body>

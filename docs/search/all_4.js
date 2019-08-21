@@ -25,7 +25,7 @@ var searchData=
   ['eq_5ftrace',['EQ_TRACE',['../group__logger.html#ga8403523d396543ad62a794bfda88dd02',1,'logger.hpp']]],
   ['eq_5fwarn',['EQ_WARN',['../group__logger.html#ga79d651d82f246aa86ed2bce6e2a61402',1,'logger.hpp']]],
   ['equal',['Equal',['../classeq_1_1Keyboard.html#a5d27e13f1857f208de6a2e16c3b322fba23e7a5925b3ebc8c4c1c82142bde3611',1,'eq::Keyboard']]],
-  ['error',['ERROR',['../classeq_1_1Logger.html#af5829d31cca4dd3c9b530885a82171c5a32e985bf39c203c8cab6cbbba8e13e0e',1,'eq::Logger::ERROR()'],['../classeq_1_1Logger.html#acfa111a4674a20f2b250ac95f2133300',1,'eq::Logger::error(Args... args)']]],
+  ['error',['error',['../classeq_1_1Logger.html#acfa111a4674a20f2b250ac95f2133300',1,'eq::Logger::error(Args... args)'],['../classeq_1_1Logger.html#af5829d31cca4dd3c9b530885a82171c5a32e985bf39c203c8cab6cbbba8e13e0e',1,'eq::Logger::ERROR()']]],
   ['error_2ehpp',['error.hpp',['../error_8hpp.html',1,'']]],
   ['escape',['Escape',['../classeq_1_1Keyboard.html#a5d27e13f1857f208de6a2e16c3b322fba3ab1f00a23919846aafba25ef2e1ddcd',1,'eq::Keyboard']]],
   ['event',['Event',['../classeq_1_1Input.html#a0d1b53da4bcd8289b11e4e73d4d4ee59',1,'eq::Input']]],

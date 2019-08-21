@@ -1,5 +1,5 @@
 require "../tools/premake/helpers"
-require "../config"
+require "../tools/premake/config"
 
 workspace "Tests"
   architecture "x64"
@@ -12,9 +12,6 @@ workspace "Tests"
     language "C++"
     cppdialect "gnu++17"
     staticruntime "on"
-    targetdir (TARGET_DIR)
-    debugdir (DEBUG_DIR)
-    objdir (OBJ_DIR)
     flags "NoPCH"
 
     files (GetHeaders("."))

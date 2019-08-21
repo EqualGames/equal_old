@@ -28,32 +28,32 @@ namespace eq::ui {
 Window::Window(const std::string &id) : GameObject(id) {
   name("Window");
 
-  AddComponent<RendererComponent>(g_res.getTexture("container"));
-  GetComponent<RendererComponent>()->type(Render::Type::Sliced);
+  add<RendererComponent>(g_res.getTexture("container"));
+  get<RendererComponent>()->type(Render::Type::Sliced);
 
-  m_title = CreateObject<Text>("", Position{10, 4});
+  m_title = create_object<Text>("", Position{10, 4});
 
-  m_button_close = CreateObject<Button>("", Position{0, 0}, Size{24, 24});
+  m_button_close = create_object<Button>("", Position{0, 0}, Size{24, 24});
   m_button_close->action([&]() { visible(false); });
-  m_button_close->GetComponent<TransformComponent>()->anchor(Transform::Anchor::TR);
-  m_button_close->GetComponent<RendererComponent>()->texture(g_res.getTexture("close_container_button"));
+  m_button_close->get<TransformComponent>()->anchor(Transform::Anchor::TR);
+  m_button_close->get<RendererComponent>()->texture(g_res.getTexture("close_container_button"));
 
-  AddScript<WindowScript>();
+  add<WindowScript>();
 }
 
 Window::Window(const std::string &value, const Position &position, const Size &size) : GameObject(position, size) {
   name("Window");
 
-  AddComponent<RendererComponent>(g_res.getTexture("container"));
-  GetComponent<RendererComponent>()->type(Render::Type::Sliced);
+  add<RendererComponent>(g_res.getTexture("container"));
+  get<RendererComponent>()->type(Render::Type::Sliced);
 
-  m_title = CreateObject<Text>(value, Position{10, 4});
+  m_title = create_object<Text>(value, Position{10, 4});
 
-  m_button_close = CreateObject<Button>("x", Position{0, 0}, Size{24, 24});
+  m_button_close = create_object<Button>("x", Position{0, 0}, Size{24, 24});
   m_button_close->action([&]() { visible(false); });
-  m_button_close->GetComponent<TransformComponent>()->anchor(Transform::Anchor::TR);
+  m_button_close->get<TransformComponent>()->anchor(Transform::Anchor::TR);
 
-  AddScript<WindowScript>();
+  add<WindowScript>();
 }
 
 Window::~Window() {}

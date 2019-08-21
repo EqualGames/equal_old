@@ -90,24 +90,24 @@ void Window_SDL::update() {
     if (m_capture_events) {
       if (event.type == SDL_MOUSEMOTION) {
         SDL_MouseMotionEvent data = event.motion;
-        GetEventSystem()->onMouseMove(Position{data.x, data.y});
+        get_event_system()->onMouseMove(Position{data.x, data.y});
       } else if (event.type == SDL_MOUSEBUTTONDOWN) {
         SDL_MouseButtonEvent data = event.button;
-        GetEventSystem()->onMousePress(eq::Mouse::from(data.button), Position{data.x, data.y});
+        get_event_system()->onMousePress(eq::Mouse::from(data.button), Position{data.x, data.y});
       } else if (event.type == SDL_MOUSEBUTTONUP) {
         SDL_MouseButtonEvent data = event.button;
-        GetEventSystem()->onMouseRelease(eq::Mouse::from(data.button), Position{data.x, data.y});
+        get_event_system()->onMouseRelease(eq::Mouse::from(data.button), Position{data.x, data.y});
       } else if (event.type == SDL_KEYDOWN) {
         SDL_KeyboardEvent data = event.key;
-        GetEventSystem()->onKeyPress(eq::Keyboard::from(data.keysym.sym));
+        get_event_system()->onKeyPress(eq::Keyboard::from(data.keysym.sym));
       } else if (event.type == SDL_KEYUP) {
         SDL_KeyboardEvent data = event.key;
-        GetEventSystem()->onKeyRelease(eq::Keyboard::from(data.keysym.sym));
+        get_event_system()->onKeyRelease(eq::Keyboard::from(data.keysym.sym));
       } else if (event.type == SDL_TEXTINPUT) {
         SDL_TextInputEvent data = event.text;
         // if (data.text >= 32) {
         std::wstring text = str::utf8_to_wchar(data.text);
-        GetEventSystem()->onInsertText(text);
+        get_event_system()->onInsertText(text);
         // }
       }
     }

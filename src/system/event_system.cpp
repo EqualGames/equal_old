@@ -33,7 +33,7 @@ void EventSystem::start() {}
 void EventSystem::end() { m_focused = nullptr; }
 
 void EventSystem::emit(Input::Event event, Ref<GameObject> &object, Input::EventData *data) const {
-  auto list = GetScriptSystem()->get_all(object->id());
+  auto list = get_script_system()->get_all(object->guid());
   for (auto &[type, script] : list) {
     script->dispatch(event, data);
   }
@@ -42,7 +42,7 @@ void EventSystem::emit(Input::Event event, Ref<GameObject> &object, Input::Event
 Ref<GameObject> EventSystem::check_tree(Ref<GameObject> &object, const Position &position) const {
   if (object && object->visible()) {
     Ref<GameObject> target;
-    TransformComponent *transform = object->GetComponent<TransformComponent>();
+    TransformComponent *transform{object->get<TransformComponent>()};
 
     if (transform->contain(position)) {
       for (auto child : transform->children()) {
@@ -77,7 +77,7 @@ void EventSystem::onMouseMove(const Position &position) {
 
   if (!m_dragging && !focus_locked) {
     // Get all game object in scene
-    auto items = GetScene()->canvas()->GetComponent<TransformComponent>()->children();
+    auto items = get_scene()->canvas()->get<TransformComponent>()->children();
 
     std::sort(items.begin(), items.end(),
               [](const Ref<GameObject> l, const Ref<GameObject> r) -> bool { return l->order() > r->order(); });

@@ -19,7 +19,7 @@
 namespace eq {
 
 void ScriptSystem::start() {
-  for (auto &[id, list] : m_scripts) {
+  for (auto &[guid, list] : m_scripts) {
     for (auto &[type, script] : list) {
       script->start();
     }
@@ -27,7 +27,7 @@ void ScriptSystem::start() {
 }
 
 void ScriptSystem::end() {
-  for (auto &[id, list] : m_scripts) {
+  for (auto &[guid, list] : m_scripts) {
     for (auto &[type, script] : list) {
       script->end();
     }
@@ -36,28 +36,36 @@ void ScriptSystem::end() {
   m_scripts.clear();
 }
 
-bool ScriptSystem::has(const std::string &id) const { return m_scripts.find(id) != m_scripts.end(); }
+bool ScriptSystem::has(const std::string &guid) const { return m_scripts.find(guid) != m_scripts.end(); }
 
-const std::unordered_map<std::type_index, Script *> &ScriptSystem::get_all(const std::string &id) const {
-  if (has(id)) {
-    return m_scripts.at(id);
+const std::unordered_map<std::type_index, Script *> &ScriptSystem::get_all(const std::string &guid) const {
+  if (m_scripts.empty()) {
+    EQ_THROW("Can't find scripts, because don't have any component instantiated.");
+  }
+  
+  if (has(guid)) {
+    return m_scripts.at(guid);
   }
 
-  EQ_THROW("Invalid game object id");
+  EQ_THROW("Invalid game object guid({})", guid);
 }
 
 void ScriptSystem::update(const Timestep &timestep) {
-  for (auto &[id, list] : m_scripts) {
+  for (auto &[guid, list] : m_scripts) {
     for (auto &[type, script] : list) {
-      script->update(timestep);
+      if (script->active()) {
+        script->update(timestep);
+      }
     }
   }
 }
 
 void ScriptSystem::fixed_update(const Timestep &timestep) {
-  for (auto &[id, list] : m_scripts) {
+  for (auto &[guid, list] : m_scripts) {
     for (auto &[type, script] : list) {
-      script->fixed_update(timestep);
+      if (script->active()) {
+        script->fixed_update(timestep);
+      }
     }
   }
 }
