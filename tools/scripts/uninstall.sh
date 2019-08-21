@@ -14,10 +14,10 @@ sudo apt remove \
     uuid-dev \
     doxygen
 
-sudo rm -rf /usr/local/lib/libEqual.a
-sudo rm -rf /usr/local/include/equal
-sudo rm -rf /usr/local/include/fmt
-sudo rm -rf /usr/local/include/glm
-sudo rm -rf /usr/local/include/pugixml
-sudo rm -rf /usr/local/include/stb
-sudo rm -rf /usr/local/include/gtest
+sudo rm -rf ~/.local/lib/libEqual.a
+sudo rm -rf ~/.local/include/equal
+sudo rm -rf ~/.local/include/fmt
+sudo rm -rf ~/.local/include/glm
+sudo rm -rf ~/.local/include/pugixml
+sudo rm -rf ~/.local/include/stb
+sudo rm -rf ~/.local/include/gtest

@@ -31,13 +31,13 @@ private:
   std::unordered_map<std::string, std::unordered_map<std::type_index, Script *>> m_scripts;
 
 public:
-  bool has(const std::string &id) const;
-  const std::unordered_map<std::type_index, Script *> &get_all(const std::string &id) const;
+  bool has(const std::string &guid) const;
+  const std::unordered_map<std::type_index, Script *> &get_all(const std::string &guid) const;
 
   template <class T>
-  bool has_type(const std::string &id) const {
-    if (has(id)) {
-      auto list = get_all(id);
+  bool has_type(const std::string &guid) const {
+    if (has(guid)) {
+      auto list = get_all(guid);
       return list.find(std::type_index(typeid(T))) != list.end();
     }
 
@@ -45,23 +45,23 @@ public:
   }
 
   template <class T>
-  T *get(const std::string &id) const {
-    for (auto &[type, script] : get_all(id)) {
+  T *get(const std::string &guid) const {
+    for (auto &[type, script] : get_all(guid)) {
       if (type == std::type_index(typeid(T))) {
-        return static_cast<T *>(script);
+        return dynamic_cast<T *>(script);
       }
     }
     return nullptr;
   }
 
   template <class T>
-  void add(const std::string &id, Script *script) {
-    if (has(id)) {
-      m_scripts.at(id).try_emplace(std::type_index(typeid(T)), script);
+  void add(const std::string &guid, Script *script) {
+    if (has(guid)) {
+      m_scripts.at(guid).try_emplace(std::type_index(typeid(T)), script);
     } else {
       std::unordered_map<std::type_index, Script *> list;
       list.try_emplace(std::type_index(typeid(T)), script);
-      m_scripts.try_emplace(id, list);
+      m_scripts.try_emplace(guid, list);
     }
   }
 

@@ -13,9 +13,9 @@ sudo apt install \
     uuid-dev \
     doxygen
 
-sudo ln -sfr ./include/equal /usr/local/include
-sudo ln -sfr ./external/fmt/include/fmt /usr/local/include
-sudo ln -sfr ./external/glm/glm /usr/local/include
-sudo ln -sfr ./external/pugixml/src /usr/local/include/pugixml
-sudo ln -sfr ./external/stb /usr/local/include
-sudo ln -sfr ./external/googletest/googletest/include/gtest /usr/local/include
+sudo ln -sfr ./include/equal ~/.local/include
+sudo ln -sfr ./external/fmt/include/fmt ~/.local/include
+sudo ln -sfr ./external/glm/glm ~/.local/include
+sudo ln -sfr ./external/pugixml/src ~/.local/include/pugixml
+sudo ln -sfr ./external/stb ~/.local/include
+sudo ln -sfr ./external/googletest/googletest/include/gtest ~/.local/include

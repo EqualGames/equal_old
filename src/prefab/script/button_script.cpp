@@ -37,31 +37,31 @@ void ButtonScript::registerAction(const ActionPerform &fn) { m_action = fn; }
 
 void ButtonScript::onMouseMove(const Position &position) {
   if (m_state != State::Pressed) {
-    if (m_target->GetComponent<TransformComponent>()->contain(position)) {
+    if (m_target->get<TransformComponent>()->contain(position)) {
       m_state = State::Hovered;
-      m_target->GetComponent<RendererComponent>()->color(m_color_hover);
+      m_target->get<RendererComponent>()->color(m_color_hover);
     } else {
       m_state = State::Normal;
-      m_target->GetComponent<RendererComponent>()->color(m_color_normal);
+      m_target->get<RendererComponent>()->color(m_color_normal);
     }
   }
 }
 
 void ButtonScript::onMousePress(Mouse::Button button, const Position &position) {
   m_state = State::Pressed;
-  m_target->GetComponent<RendererComponent>()->color(m_color_pressed);
+  m_target->get<RendererComponent>()->color(m_color_pressed);
 }
 
 void ButtonScript::onMouseRelease(Mouse::Button button, const Position &position) {
   if (m_state == State::Pressed) {
-    if (m_target->GetComponent<TransformComponent>()->contain(position)) {
+    if (m_target->get<TransformComponent>()->contain(position)) {
       m_state = State::Hovered;
-      m_target->GetComponent<RendererComponent>()->color(m_color_hover);
+      m_target->get<RendererComponent>()->color(m_color_hover);
       // Call Button Action
       m_action();
     } else {
       m_state = State::Normal;
-      m_target->GetComponent<RendererComponent>()->color(m_color_normal);
+      m_target->get<RendererComponent>()->color(m_color_normal);
     }
   }
 }

@@ -25,14 +25,14 @@ namespace eq::ui {
 Hotkey::Hotkey(const std::string &value, const Position &position, const Size &size) : GameObject(position, size) {
   name("Hotkey");
 
-  m_image = CreateObject<Image>(Position{5, 5}, size - Size{10, 10});
+  m_image = create_object<Image>(Position{5, 5}, size - Size{10, 10});
 
-  m_button = CreateObject<Button>(value, Position{0, 0}, size);
+  m_button = create_object<Button>(value, Position{0, 0}, size);
   m_button->text_font_size(12);
   m_button->text_anchor(Transform::Anchor::BR);
   m_button->text_position(Position{8, 9});
 
-  RendererComponent *btn_renderer = m_button->GetComponent<RendererComponent>();
+  RendererComponent *btn_renderer = m_button->get<RendererComponent>();
   btn_renderer->type(Render::Type::Simple);
   btn_renderer->texture(g_res.getTexture("hotkey"));
 }

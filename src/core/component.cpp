@@ -21,4 +21,8 @@ Component::~Component() { m_target = nullptr; }
 
 void Component::target(Ref<GameObject> &target) { m_target = target; }
 
+bool Component::active() const { return m_active; }
+
+void Component::active(bool active) { m_active = active; }
+
 } // namespace eq

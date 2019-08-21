@@ -38,8 +38,8 @@ namespace eq {
 template <typename T, typename... Args>
 T *create_canvas(Args... args) {
   T *object = new T(args...);
-  ui::Canvas *canvas = GetScene()->canvas();
-  canvas->GetComponent<eq::TransformComponent>()->add(canvas, object);
+  ui::Canvas *canvas = get_scene()->canvas();
+  canvas->get<TransformComponent>()->add(canvas, object);
   return object;
 }
 

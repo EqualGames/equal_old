@@ -1,8 +1,4 @@
-WKS_DIR = "%{wks.location}"
 VCPKG_ROOT_DIR = "C:/bin/vcpkg"
-TARGET_DIR = "%{wks.location}/build"
-DEBUG_DIR = "%{wks.location}/build"
-OBJ_DIR = "%{wks.location}/build/.obj/%{cfg.buildcfg}-%{cfg.architecture}/%{prj.name}"
 
 EQUAL_PLATFORMS = {
   "sdl"
@@ -19,17 +15,12 @@ newoption {
 }
 
 EQUAL_RUN_PATHS = {
+  "~/.local/lib",
   "/usr/local/lib",
   "."
 }
 
-EQUAL_LINUX_DEFINES = {
-  "__linux__",
-  "EQ_LINUX",
-  "_REENTRANT" -- SDL2 flags
-}
-
-EQUAL_LINUX_BUILD_OPTIONS = {
+EQUAL_LINUX_DEBUG_BUILD_OPTIONS = {
   "-Og",
   "-Wall",
   "-Wextra",
@@ -45,24 +36,33 @@ EQUAL_LINUX_BUILD_OPTIONS = {
   "-Wpointer-arith -Wcast-qual -Wno-missing-braces",
 }
 
-EQUAL_LINUX_BUILD_OPTIONS_OPTIMIZE = {
+
+EQUAL_LINUX_DEBUG_LINK_OPTIONS = {}
+
+EQUAL_LINUX_RELEASE_BUILD_OPTIONS = {
   -- "-O2",
   -- "-ffunction-sections",
   -- "-fdata-sections",
 }
 
-EQUAL_LINUX_LINK_OPTIONS = {}
-
-EQUAL_LINUX_LINK_OPTIONS_OPTIMIZE = {
+EQUAL_LINUX_RELEASE_LINK_OPTIONS = {
   -- "-Wl,-strip-all,--gc-sections"
 }
 
+EQUAL_LINUX_DEFINES = {
+  "__linux__",
+  "EQ_LINUX",
+  "_REENTRANT" -- SDL2 flags
+}
+
 EQUAL_LINUX_INCLUDES = {
+  "$$HOME/.local/include",
   "/usr/include",
   "/usr/local/include"
 }
 
 EQUAL_LINUX_LIBRARIES = {
+  "$$HOME/.local/lib",
   "/usr/lib",
   "/usr/local/lib",
   "/usr/lib/x86_64-linux-gnu",

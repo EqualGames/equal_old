@@ -18,6 +18,10 @@
 
 namespace eq::ui {
 
+Canvas::Canvas(const std::string &id) : GameObject(id) {
+  name("Canvas");
+}
+
 Canvas::Canvas(const Position &position, const Size &size) : GameObject(position, size) {
   name("Canvas");
   interactive(true);

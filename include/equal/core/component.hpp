@@ -26,6 +26,7 @@ class GameObject;
  */
 class Component {
 protected:
+  bool m_active{true};
   Ref<GameObject> m_target;
 
 public:
@@ -33,7 +34,33 @@ public:
 
   void target(Ref<GameObject> &target);
 
+  /**
+   * @brief Return if component has active
+   *
+   * @return bool
+   */
+  bool active() const;
+
+  /**
+   * @brief Set if component has active
+   *
+   * @param active bool
+   */
+  void active(bool active);
+
+
+  /**
+   * @brief
+   *
+   * @param timestep const eq::Timestep&
+   */
   virtual void update(const Timestep &timestep) = 0;
+
+  /**
+   * @brief
+   *
+   * @param timestep const eq::Timestep&
+   */
   virtual void fixed_update(const Timestep &timestep) = 0;
 };
 

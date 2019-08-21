@@ -141,7 +141,7 @@ void RendererComponent::update(const Timestep &timestep) {
 
     if (m_type != Render::Type::Manual) {
       m_vao.clear();
-      const fSize size{m_target->GetComponent<TransformComponent>()->size()};
+      const fSize size{m_target->get<TransformComponent>()->size()};
       const fSize texture_size{m_texture->size};
 
       if (m_type == Render::Type::Simple) {
@@ -152,7 +152,7 @@ void RendererComponent::update(const Timestep &timestep) {
         const fSize sliced_edge{Render::sliced_edge};
         const fSize sliced_border_TB{Render::sliced_border_TB};
         const fSize sliced_border_LR{Render::sliced_border_LR};
-        const float sliced_shadow = static_cast<float>(Render::sliced_shadow);
+        const float sliced_shadow{static_cast<float>(Render::sliced_shadow)};
 
         // Top Left
         m_vao.emplace_back(
@@ -240,7 +240,7 @@ void RendererComponent::update(const Timestep &timestep) {
                        VertexPoint{progress / ratio, 0, texture_size.x - progress / ratio, texture_size.y}});
           }
         } else if (m_fill_method == Render::Method::Radial) {
-          // TODO: Make a radial render with clockwise option
+          // @TODO: Make a radial render with clockwise option
         }
       }
     }

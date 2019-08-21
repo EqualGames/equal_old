@@ -21,24 +21,23 @@
 namespace eq {
 
 GameObject::GameObject(const std::string &id) {
-  if (!id.empty()) {
-    m_id = id;
-  } else {
-    m_id = GenerateUUID();
-  }
+  m_guid = GenerateUUID();
+  m_id = id;
 
-  AddComponent<TransformComponent>();
+  add<TransformComponent>();
 }
 
 GameObject::GameObject(const Position &position) {
-  m_id = GenerateUUID();
-  AddComponent<TransformComponent>(position);
+  m_guid = GenerateUUID();
+  add<TransformComponent>(position);
 }
 
 GameObject::GameObject(const Position &position, const Size &size) {
-  m_id = GenerateUUID();
-  AddComponent<TransformComponent>(position, size);
+  m_guid = GenerateUUID();
+  add<TransformComponent>(position, size);
 }
+
+const std::string &GameObject::guid() const { return m_guid; }
 
 void GameObject::id(const std::string &id) { m_id = id; }
 
@@ -65,13 +64,11 @@ int GameObject::order() const { return m_order; }
 void GameObject::order(int order) { m_order = order; }
 
 const Ref<GameObject> GameObject::find(const std::string &query) {
-  auto children = GetComponent<TransformComponent>()->children();
+  auto children = get<TransformComponent>()->children();
   std::pair<std::string, std::string> p = str::split_pair(query, '#');
-  std::string name = p.first;
-  std::string id = p.second;
 
-  auto result = std::find_if(children.begin(), children.end(), [name, id](const Ref<GameObject> &child) {
-    return child->name() == name && child->id() == id;
+  auto result = std::find_if(children.begin(), children.end(), [&p](const Ref<GameObject> &child) {
+    return child->name() == p.first && child->id() == p.second;
   });
 
   if (result != children.end()) {

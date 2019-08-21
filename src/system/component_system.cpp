@@ -22,28 +22,36 @@ void ComponentSystem::start() {}
 
 void ComponentSystem::end() { m_components.clear(); }
 
-bool ComponentSystem::has(const std::string &id) const { return m_components.find(id) != m_components.end(); }
+bool ComponentSystem::has(const std::string &guid) const { return m_components.find(guid) != m_components.end(); }
 
-const std::unordered_map<std::type_index, Component *> &ComponentSystem::get_all(const std::string &id) const {
-  if (has(id)) {
-    return m_components.at(id);
+const std::unordered_map<std::type_index, Component *> &ComponentSystem::get_all(const std::string &guid) const {
+  if (m_components.empty()) {
+    EQ_THROW("Can't find components, because no have any component instantiated.");
   }
 
-  EQ_THROW("Invalid game object id");
+  if (has(guid)) {
+    return m_components.at(guid);
+  }
+
+  EQ_THROW("Invalid game object guid({})", guid);
 }
 
 void ComponentSystem::update(const Timestep &timestep) {
-  for (auto &[id, list] : m_components) {
+  for (auto &[guid, list] : m_components) {
     for (auto &[type, component] : list) {
-      component->update(timestep);
+      if (component->active()) {
+        component->update(timestep);
+      }
     }
   }
 }
 
 void ComponentSystem::fixed_update(const Timestep &timestep) {
-  for (auto &[id, list] : m_components) {
+  for (auto &[guid, list] : m_components) {
     for (auto &[type, component] : list) {
-      component->fixed_update(timestep);
+      if (component->active()) {
+        component->fixed_update(timestep);
+      }
     }
   }
 }

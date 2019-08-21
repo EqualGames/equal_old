@@ -33,6 +33,7 @@ class GameObject;
  */
 class Script {
 protected:
+  bool m_active{true};
   Ref<GameObject> m_target;
   Input::OnMouseMove SignalOnMouseMove;
   Input::OnMousePress SignalOnMousePress;
@@ -53,6 +54,20 @@ public:
    * @brief Destroy the Script object
    */
   virtual ~Script();
+
+  /**
+   * @brief Return if script has active
+   *
+   * @return bool
+   */
+  bool active() const;
+
+  /**
+   * @brief Set if script has active
+   *
+   * @param active bool
+   */
+  void active(bool active);
 
   /**
    * @brief

@@ -100,6 +100,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae6f39ad37fa7dabcaa904549b3cf6f43"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeq_1_1WindowScript.html#ae6f39ad37fa7dabcaa904549b3cf6f43">onMouseRelease</a> (<a class="el" href="classeq_1_1Mouse.html#a131fb34bf5dfc6f593c0e8844125f300">Mouse::Button</a> button, const <a class="el" href="group__types.html#ga51bf710cf599ec90ff40cf61050135dd">Position</a> &amp;position) override</td></tr>
 <tr class="memdesc:ae6f39ad37fa7dabcaa904549b3cf6f43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method called on mouse release.  <a href="#ae6f39ad37fa7dabcaa904549b3cf6f43">More...</a><br /></td></tr>
 <tr class="separator:ae6f39ad37fa7dabcaa904549b3cf6f43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fbb1dea4951f92f85acff83533e66f8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeq_1_1Script.html#a2fbb1dea4951f92f85acff83533e66f8">active</a> () const</td></tr>
+<tr class="memdesc:a2fbb1dea4951f92f85acff83533e66f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return if script has active.  <a href="#a2fbb1dea4951f92f85acff83533e66f8">More...</a><br /></td></tr>
+<tr class="separator:a2fbb1dea4951f92f85acff83533e66f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79302235cef65f195b7a2aac69cc5595"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeq_1_1Script.html#a79302235cef65f195b7a2aac69cc5595">active</a> (bool active)</td></tr>
+<tr class="memdesc:a79302235cef65f195b7a2aac69cc5595"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set if script has active.  <a href="#a79302235cef65f195b7a2aac69cc5595">More...</a><br /></td></tr>
+<tr class="separator:a79302235cef65f195b7a2aac69cc5595"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeee4fdf3493662377955c60a5f023286"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeq_1_1Script.html#aeee4fdf3493662377955c60a5f023286">target</a> (<a class="el" href="group__types.html#gab82b8382f925f2c4b89e32c126ad1518">Ref</a>&lt; <a class="el" href="classeq_1_1GameObject.html">GameObject</a> &gt; &amp;object)</td></tr>
 <tr class="separator:aeee4fdf3493662377955c60a5f023286"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff9f0bba692e6fe76241c32ea4b62896"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeq_1_1Script.html#aff9f0bba692e6fe76241c32ea4b62896">dispatch</a> (<a class="el" href="classeq_1_1Input.html#a0d1b53da4bcd8289b11e4e73d4d4ee59">Input::Event</a> event, <a class="el" href="structeq_1_1Input_1_1EventData.html">Input::EventData</a> *data)</td></tr>
@@ -112,6 +118,8 @@ Protected Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
+<tr class="memitem:af69d76fad794e1dd301941777d161076"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeq_1_1Script.html#af69d76fad794e1dd301941777d161076">m_active</a> {true}</td></tr>
+<tr class="separator:af69d76fad794e1dd301941777d161076"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a605eaa8ebe60342f3b466293c14267b4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gab82b8382f925f2c4b89e32c126ad1518">Ref</a>&lt; <a class="el" href="classeq_1_1GameObject.html">GameObject</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeq_1_1Script.html#a605eaa8ebe60342f3b466293c14267b4">m_target</a></td></tr>
 <tr class="separator:a605eaa8ebe60342f3b466293c14267b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f045ef67fdb64abf3784902800e0cd2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classeq_1_1Input.html#a1587cca10687805b17fd753bbec6fd97">Input::OnMouseMove</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeq_1_1Script.html#a6f045ef67fdb64abf3784902800e0cd2">SignalOnMouseMove</a></td></tr>
@@ -128,6 +136,64 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a5f6cb10baa0d90c4cd9a254f7916cd98"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a2fbb1dea4951f92f85acff83533e66f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fbb1dea4951f92f85acff83533e66f8">&#9670;&nbsp;</a></span>active() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool eq::Script::active </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
+
+</div>
+</div>
+<a id="a79302235cef65f195b7a2aac69cc5595"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79302235cef65f195b7a2aac69cc5595">&#9670;&nbsp;</a></span>active() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void eq::Script::active </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>active</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">active</td><td>bool </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="aff9f0bba692e6fe76241c32ea4b62896"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aff9f0bba692e6fe76241c32ea4b62896">&#9670;&nbsp;</a></span>dispatch()</h2>
 
@@ -486,6 +552,28 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="af69d76fad794e1dd301941777d161076"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af69d76fad794e1dd301941777d161076">&#9670;&nbsp;</a></span>m_active</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool eq::Script::m_active {true}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a605eaa8ebe60342f3b466293c14267b4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a605eaa8ebe60342f3b466293c14267b4">&#9670;&nbsp;</a></span>m_target</h2>
 
@@ -646,7 +734,7 @@ Protected Attributes</h2></td></tr>
 </div><!-- contents -->
 <address class="footer">
   <p>
-    Last update on Mon Aug 19 2019 for Equal 1.0.0.0
+    Last update on Wed Aug 21 2019 for Equal 1.0.0.0
   </p>
 </address>
 </body>

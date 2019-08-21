@@ -5,7 +5,7 @@ var searchData=
   ['id',['id',['../structeq_1_1Thing.html#af13e7885ad756fd1470ed56d1efa5850',1,'eq::Thing::id()'],['../classeq_1_1GameObject.html#acf1253d9ce0822f8b01af2e3273bc14c',1,'eq::GameObject::id() const'],['../classeq_1_1GameObject.html#a147c0f2759aa897af531c660dff5d5bd',1,'eq::GameObject::id(const std::string &amp;id)']]],
   ['image',['Image',['../classeq_1_1ui_1_1Image.html',1,'eq::ui::Image'],['../classeq_1_1ui_1_1Image.html#a81a245a0050ac64a3104a404ca4b9e15',1,'eq::ui::Image::Image(const std::string &amp;id=&quot;&quot;)'],['../classeq_1_1ui_1_1Image.html#ae597de51a12e820f2fff20f6c30db64d',1,'eq::ui::Image::Image(const Position &amp;position, const Size &amp;size)']]],
   ['image_2ehpp',['image.hpp',['../image_8hpp.html',1,'']]],
-  ['info',['info',['../classeq_1_1Logger.html#a1c0c3f2d41fedd7c978f0b78fe8e0bb7',1,'eq::Logger::info(Args... args)'],['../classeq_1_1Logger.html#af5829d31cca4dd3c9b530885a82171c5a9091388f6f6af9cfba2b1b8cd8e14cc8',1,'eq::Logger::INFO()']]],
+  ['info',['INFO',['../classeq_1_1Logger.html#af5829d31cca4dd3c9b530885a82171c5a9091388f6f6af9cfba2b1b8cd8e14cc8',1,'eq::Logger::INFO()'],['../classeq_1_1Logger.html#a1c0c3f2d41fedd7c978f0b78fe8e0bb7',1,'eq::Logger::info(Args... args)']]],
   ['init',['Init',['../group__core.html#ga0f7b9d7935315270c1bee3b1120d7a46',1,'eq']]],
   ['input',['Input',['../classeq_1_1Input.html',1,'eq']]],
   ['insert',['Insert',['../classeq_1_1Keyboard.html#a5d27e13f1857f208de6a2e16c3b322fba012cc40f6cb046199e54d615cfa8894f',1,'eq::Keyboard']]],

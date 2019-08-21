@@ -33,8 +33,8 @@ void Timestep::fix(const std::function<void(const Timestep &timestep)> &fn) {
 }
 
 void Timestep::reset() {
-  if (eq::GetWindow()) {
-    const float now = eq::GetWindow()->time();
+  if (eq::get_window()) {
+    const float now = eq::get_window()->time();
     time = now - last_time;
     fps = static_cast<int>(1.0f / time);
     last_fixed_time = last_fixed_time + time;

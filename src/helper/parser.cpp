@@ -33,7 +33,7 @@ namespace eq {
 Ref<ui::Canvas> ParserUI(const std::string &filename, const Parser::Actions &actions) {
   try {
     eq::Timer timer("Parsing UI");
-    Ref<ui::Canvas> canvas = std::make_shared<ui::Canvas>(Position{0, 0}, GetWindow()->size());
+    Ref<ui::Canvas> canvas = std::make_shared<ui::Canvas>(Position{0, 0}, get_window()->size());
 
     std::ifstream ui_file(filename);
     std::string line;
@@ -78,26 +78,26 @@ Ref<ui::Canvas> ParserUI(const std::string &filename, const Parser::Actions &act
         if (level_child == 0) {
           parent = canvas;
         } else {
-          parent = canvas->GetComponent<TransformComponent>()->children().back();
+          parent = canvas->get<TransformComponent>()->children().back();
           for (int level = 1; level < level_child; ++level) {
-            parent = parent->GetComponent<TransformComponent>()->children().back();
+            parent = parent->get<TransformComponent>()->children().back();
           }
         }
 
         if (type == "Image") {
-          object = parent->CreateObject<ui::Image>(id);
+          object = parent->create_object<ui::Image>(id);
         } else if (type == "Container") {
-          object = parent->CreateObject<ui::Container>(id);
+          object = parent->create_object<ui::Container>(id);
         } else if (type == "Text") {
-          object = parent->CreateObject<ui::Text>(id);
+          object = parent->create_object<ui::Text>(id);
         } else if (type == "Button") {
-          object = parent->CreateObject<ui::Button>(id);
+          object = parent->create_object<ui::Button>(id);
         } else if (type == "Window") {
-          object = parent->CreateObject<ui::Window>(id);
+          object = parent->create_object<ui::Window>(id);
         } else if (type == "TextInput") {
-          object = parent->CreateObject<ui::TextInput>(id);
+          object = parent->create_object<ui::TextInput>(id);
         } else if (type == "ProgressBar") {
-          object = parent->CreateObject<ui::ProgressBar>(id);
+          object = parent->create_object<ui::ProgressBar>(id);
         }
 
       } else if (std::find(line.begin(), line.end(), ':') != line.end()) { // Is Property
@@ -109,14 +109,14 @@ Ref<ui::Canvas> ParserUI(const std::string &filename, const Parser::Actions &act
           std::pair<std::string, std::string> p = str::split_pair(value, ' ');
           int x = std::atoi(p.first.c_str());
           int y = std::atoi(p.second.c_str());
-          object->GetComponent<TransformComponent>()->position(Position{x, y});
+          object->get<TransformComponent>()->position(Position{x, y});
         } else if (attr == "size") {
           std::pair<std::string, std::string> p = str::split_pair(value, ' ');
           int x = std::atoi(p.first.c_str());
           int y = std::atoi(p.second.c_str());
-          object->GetComponent<TransformComponent>()->size(Size{x, y});
+          object->get<TransformComponent>()->size(Size{x, y});
         } else if (attr == "anchor") {
-          object->GetComponent<TransformComponent>()->anchor(Transform::AnchorFromString(value));
+          object->get<TransformComponent>()->anchor(Transform::AnchorFromString(value));
         } else if (attr == "visible") {
           object->visible(value == "true" ? true : false);
         } else if (object->name() == "Image") {

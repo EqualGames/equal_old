@@ -26,25 +26,25 @@ namespace eq::ui {
 Button::Button(const std::string &id) : GameObject(id) {
   name("Button");
 
-  AddComponent<RendererComponent>(g_res.getTexture("container"));
-  GetComponent<RendererComponent>()->type(Render::Type::Sliced);
+  add<RendererComponent>(g_res.getTexture("container"));
+  get<RendererComponent>()->type(Render::Type::Sliced);
 
-  m_label = CreateObject<Text>();
-  m_label->GetComponent<TransformComponent>()->anchor(Transform::Anchor::CC);
+  m_label = create_object<Text>();
+  m_label->get<TransformComponent>()->anchor(Transform::Anchor::CC);
 
-  AddScript<ButtonScript>();
+  add<ButtonScript>();
 }
 
 Button::Button(const std::string &value, const Position &position, const Size &size) : GameObject(position, size) {
   name("Button");
 
-  AddComponent<RendererComponent>(g_res.getTexture("container"));
-  GetComponent<RendererComponent>()->type(Render::Type::Sliced);
+  add<RendererComponent>(g_res.getTexture("container"));
+  get<RendererComponent>()->type(Render::Type::Sliced);
 
-  m_label = CreateObject<Text>(value, Position{0, 0});
-  m_label->GetComponent<TransformComponent>()->anchor(Transform::Anchor::CC);
+  m_label = create_object<Text>(value, Position{0, 0});
+  m_label->get<TransformComponent>()->anchor(Transform::Anchor::CC);
 
-  AddScript<ButtonScript>();
+  add<ButtonScript>();
 }
 
 Button::~Button() {}
@@ -59,12 +59,10 @@ void Button::text_font_size(uint32_t font_size) { m_label->font_size(font_size);
 
 void Button::text_color(const Color &color) { m_label->color(color); }
 
-void Button::text_position(const Position &position) {
-  m_label->GetComponent<TransformComponent>()->position(position);
-}
+void Button::text_position(const Position &position) { m_label->get<TransformComponent>()->position(position); }
 
-void Button::text_anchor(Transform::Anchor anchor) { m_label->GetComponent<TransformComponent>()->anchor(anchor); }
+void Button::text_anchor(Transform::Anchor anchor) { m_label->get<TransformComponent>()->anchor(anchor); }
 
-void Button::action(const ActionPerform &fn) { GetScript<ButtonScript>()->registerAction(fn); }
+void Button::action(const ActionPerform &fn) { get<ButtonScript>()->registerAction(fn); }
 
 } // namespace eq::ui

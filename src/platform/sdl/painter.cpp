@@ -29,7 +29,7 @@ Scope<Painter> Painter::create(const WindowOptions &options) { return std::make_
 Painter_SDL::Painter_SDL(const WindowOptions &options) : Painter() {
   m_scale = options.scale;
 
-  m_window = static_cast<SDL_Window *>(GetWindow()->native_window());
+  m_window = static_cast<SDL_Window *>(get_window()->native_window());
   if (!m_window) {
     SDL_DestroyWindow(m_window);
     EQ_THROW("Can't access the window");

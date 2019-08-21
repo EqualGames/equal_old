@@ -137,9 +137,17 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:abee9b86fe8ae017cb4d43e6049829f7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef7ac76e320d09cbfbef1929784676f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeq_1_1Component.html#aef7ac76e320d09cbfbef1929784676f1">target</a> (<a class="el" href="group__types.html#gab82b8382f925f2c4b89e32c126ad1518">Ref</a>&lt; <a class="el" href="classeq_1_1GameObject.html">GameObject</a> &gt; &amp;target)</td></tr>
 <tr class="separator:aef7ac76e320d09cbfbef1929784676f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33de66d64be4edf9a961ffbfff5fc554"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeq_1_1Component.html#a33de66d64be4edf9a961ffbfff5fc554">active</a> () const</td></tr>
+<tr class="memdesc:a33de66d64be4edf9a961ffbfff5fc554"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return if component has active.  <a href="#a33de66d64be4edf9a961ffbfff5fc554">More...</a><br /></td></tr>
+<tr class="separator:a33de66d64be4edf9a961ffbfff5fc554"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad18b5f391da800c142ed0c6c8a65823f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeq_1_1Component.html#ad18b5f391da800c142ed0c6c8a65823f">active</a> (bool active)</td></tr>
+<tr class="memdesc:ad18b5f391da800c142ed0c6c8a65823f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set if component has active.  <a href="#ad18b5f391da800c142ed0c6c8a65823f">More...</a><br /></td></tr>
+<tr class="separator:ad18b5f391da800c142ed0c6c8a65823f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
+<tr class="memitem:a52fd7770995c70b898d5a3ca2a0d2f55"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeq_1_1Component.html#a52fd7770995c70b898d5a3ca2a0d2f55">m_active</a> {true}</td></tr>
+<tr class="separator:a52fd7770995c70b898d5a3ca2a0d2f55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac47478e96de67ba1fe0d30357eaafb1e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gab82b8382f925f2c4b89e32c126ad1518">Ref</a>&lt; <a class="el" href="classeq_1_1GameObject.html">GameObject</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeq_1_1Component.html#ac47478e96de67ba1fe0d30357eaafb1e">m_target</a></td></tr>
 <tr class="separator:ac47478e96de67ba1fe0d30357eaafb1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -213,6 +221,64 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a33de66d64be4edf9a961ffbfff5fc554"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33de66d64be4edf9a961ffbfff5fc554">&#9670;&nbsp;</a></span>active() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool eq::Component::active </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
+
+</div>
+</div>
+<a id="ad18b5f391da800c142ed0c6c8a65823f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad18b5f391da800c142ed0c6c8a65823f">&#9670;&nbsp;</a></span>active() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void eq::Component::active </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>active</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">active</td><td>bool </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a15c7bdbc3265b52d6f94045e4a2196ba"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a15c7bdbc3265b52d6f94045e4a2196ba">&#9670;&nbsp;</a></span>clockwise() <span class="overload">[1/2]</span></h2>
 
@@ -411,6 +477,12 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">timestep</td><td>const <a class="el" href="classeq_1_1Timestep.html" title="Class to measure and generate informations. ">eq::Timestep</a>&amp; </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Implements <a class="el" href="classeq_1_1Component.html#a7234c8e41bd0dd0b72ada369d2936d41">eq::Component</a>.</p>
 
@@ -675,6 +747,12 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">timestep</td><td>const <a class="el" href="classeq_1_1Timestep.html" title="Class to measure and generate informations. ">eq::Timestep</a>&amp; </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Implements <a class="el" href="classeq_1_1Component.html#a31f75187ad76a9a999cd91c38afd181a">eq::Component</a>.</p>
 
@@ -698,6 +776,28 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a52fd7770995c70b898d5a3ca2a0d2f55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52fd7770995c70b898d5a3ca2a0d2f55">&#9670;&nbsp;</a></span>m_active</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool eq::Component::m_active {true}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ac47478e96de67ba1fe0d30357eaafb1e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac47478e96de67ba1fe0d30357eaafb1e">&#9670;&nbsp;</a></span>m_target</h2>
 
@@ -726,7 +826,7 @@ Protected Attributes</h2></td></tr>
 </div><!-- contents -->
 <address class="footer">
   <p>
-    Last update on Mon Aug 19 2019 for Equal 1.0.0.0
+    Last update on Wed Aug 21 2019 for Equal 1.0.0.0
   </p>
 </address>
 </body>

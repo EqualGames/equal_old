@@ -14,13 +14,15 @@
  */
 #pragma once
 
+#include <equal/core/component.hpp>
+#include <equal/core/script.hpp>
 #include <equal/core/types.hpp>
+#include <equal/system/component_system.hpp>
+#include <equal/system/script_system.hpp>
 
 namespace eq {
 
 class EventSystem;
-class ComponentSystem;
-class ScriptSystem;
 class Window;
 class Scene;
 class Painter;
@@ -31,7 +33,7 @@ class Painter;
  *
  * @return const eq::Scope<eq::EventSystem>&
  */
-const Scope<EventSystem> &GetEventSystem();
+const Scope<EventSystem> &get_event_system();
 
 /**
  * @ingroup helpers
@@ -39,7 +41,7 @@ const Scope<EventSystem> &GetEventSystem();
  *
  * @return const eq::Scope<eq::ComponentSystem>&
  */
-const Scope<ComponentSystem> &GetComponentSystem();
+const Scope<ComponentSystem> &get_component_system();
 
 /**
  * @ingroup helpers
@@ -47,7 +49,7 @@ const Scope<ComponentSystem> &GetComponentSystem();
  *
  * @return const eq::Scope<eq::ScriptSystem>&
  */
-const Scope<ScriptSystem> &GetScriptSystem();
+const Scope<ScriptSystem> &get_script_system();
 
 /**
  * @ingroup helpers
@@ -55,7 +57,7 @@ const Scope<ScriptSystem> &GetScriptSystem();
  *
  * @return const eq::Scope<eq::Scene>&
  */
-const Scope<Scene> &GetScene();
+const Scope<Scene> &get_scene();
 
 /**
  * @ingroup helpers
@@ -63,7 +65,7 @@ const Scope<Scene> &GetScene();
  *
  * @return const eq::Scope<eq::Window>&
  */
-const Scope<Window> &GetWindow();
+const Scope<Window> &get_window();
 
 /**
  * @ingroup helpers
@@ -71,6 +73,84 @@ const Scope<Window> &GetWindow();
  *
  * @return const eq::Scope<eq::Painter>&
  */
-const Scope<Painter> &GetPainter();
+const Scope<Painter> &get_painter();
+
+/**
+ * @ingroup helpers
+ * @brief
+ *
+ * @tparam T eq::Component
+ * @param guid const std::string&
+ * @param component eq::Component*
+ */
+template <typename T>
+inline void register_component(const std::string &guid, Component *component) {
+  get_component_system()->add<T>(guid, component);
+}
+
+/**
+ * @ingroup helpers
+ * @brief Get the component object
+ *
+ * @tparam T eq::Component
+ * @param guid const std::string&
+ * @return T*
+ */
+template <typename T>
+inline T *get_component(const std::string &guid) {
+  return get_component_system()->get<T>(guid);
+}
+
+/**
+ * @ingroup helpers
+ * @brief Check if component exists
+ *
+ * @tparam T
+ * @param guid const std::string&
+ * @return bool
+ */
+template <typename T>
+inline bool has_component(const std::string &guid) {
+  return get_component_system()->has_type<T>(guid);
+}
+
+/**
+ * @ingroup helpers
+ * @brief
+ *
+ * @tparam T eq::Script
+ * @param guid const std::string&
+ * @param script eq::Script*
+ */
+template <typename T>
+inline void register_script(const std::string &guid, Script *script) {
+  get_script_system()->add<T>(guid, script);
+}
+
+/**
+ * @ingroup helpers
+ * @brief Get the script object
+ *
+ * @tparam T eq::Script
+ * @param guid const std::string&
+ * @return T*
+ */
+template <typename T>
+inline T *get_script(const std::string &guid) {
+  return get_script_system()->get<T>(guid);
+}
+
+/**
+ * @ingroup helpers
+ * @brief Check if script exists
+ *
+ * @tparam T eq::Script
+ * @param guid const std::string&
+ * @return bool
+ */
+template <typename T>
+inline bool has_script(const std::string &guid) {
+  return get_script_system()->has_type<T>(guid);
+}
 
 } // namespace eq

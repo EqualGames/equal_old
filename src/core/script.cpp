@@ -26,6 +26,10 @@ Script::~Script() {
   m_target = nullptr;
 }
 
+bool Script::active() const { return m_active; }
+
+void Script::active(bool active) { m_active = active; }
+
 void Script::target(Ref<GameObject> &target) { m_target = target; }
 
 void Script::register_event(Input::Event event, const Input::EventHandler &fn) {

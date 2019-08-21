@@ -1,10 +1,12 @@
 var searchData=
 [
+  ['m_5factive',['m_active',['../classeq_1_1Component.html#a52fd7770995c70b898d5a3ca2a0d2f55',1,'eq::Component::m_active()'],['../classeq_1_1Script.html#af69d76fad794e1dd301941777d161076',1,'eq::Script::m_active()']]],
   ['m_5fcanvas',['m_canvas',['../classeq_1_1Scene.html#a10fd662f14f999ec89a54ffa8b4116c9',1,'eq::Scene']]],
   ['m_5fcapture_5fevents',['m_capture_events',['../classeq_1_1Window.html#acecd7f97bbcf642ad66359ba2eb5de61',1,'eq::Window']]],
   ['m_5fcomponent',['m_component',['../classeq_1_1Scene.html#a7dd0789a988bbe59d965616a448e4f26',1,'eq::Scene']]],
   ['m_5fevent',['m_event',['../classeq_1_1Scene.html#a4a518843cb28c97d042c28ef161b0cd3',1,'eq::Scene']]],
   ['m_5ffocused',['m_focused',['../classeq_1_1GameObject.html#a12e551e617b3d5fc49448232586bcb5f',1,'eq::GameObject']]],
+  ['m_5fguid',['m_guid',['../classeq_1_1GameObject.html#ab5e8f1f94ec07b624459cd63f3199287',1,'eq::GameObject']]],
   ['m_5fid',['m_id',['../classeq_1_1GameObject.html#ad8636b46617558dbdc8b517c84a969b0',1,'eq::GameObject']]],
   ['m_5finitialized',['m_initialized',['../classeq_1_1GameObject.html#a45dd3b6dbb821f5f108a10be1986683a',1,'eq::GameObject::m_initialized()'],['../classeq_1_1Scene.html#a3dbee6ccaec225c65d78e71286737509',1,'eq::Scene::m_initialized()']]],
   ['m_5finteractive',['m_interactive',['../classeq_1_1GameObject.html#a2123829886a7851c52303a69c827aa94',1,'eq::GameObject']]],

@@ -29,11 +29,11 @@ ProgressBar::ProgressBar(const std::string &id) : GameObject(id) {
   float max_value{100.0f};
   Size size{300, 64};
 
-  m_background = CreateObject<Image>(Position{0, 0}, size);
+  m_background = create_object<Image>(Position{0, 0}, size);
   m_background->texture(g_res.getTexture("progress_bar_background"));
 
   {
-    RendererComponent *bg_render = m_background->GetComponent<RendererComponent>();
+    RendererComponent *bg_render{m_background->get<RendererComponent>()};
     bg_render->type(Render::Type::Manual);
     fSize tex_size{bg_render->texture()->size.x, bg_render->texture()->size.y};
     float ratio = tex_size.y / tex_size.x;
@@ -49,9 +49,9 @@ ProgressBar::ProgressBar(const std::string &id) : GameObject(id) {
   }
 
   {
-    m_foreground = CreateObject<Image>(Position{0, 0}, size);
+    m_foreground = create_object<Image>(Position{0, 0}, size);
     m_foreground->texture(g_res.getTexture("progress_bar_foreground"));
-    m_foreground->GetComponent<RendererComponent>()->type(Render::Type::Manual);
+    m_foreground->get<RendererComponent>()->type(Render::Type::Manual);
   }
 
   m_max_value = max_value;
@@ -63,11 +63,11 @@ ProgressBar::ProgressBar(float value, float max_value, const Position &position,
   name("ProgressBar");
   interactive(false);
 
-  m_background = CreateObject<Image>(Position{0, 0}, size);
+  m_background = create_object<Image>(Position{0, 0}, size);
   m_background->texture(g_res.getTexture("progress_bar_background"));
 
   {
-    RendererComponent *bg_render = m_background->GetComponent<RendererComponent>();
+    RendererComponent *bg_render{m_background->get<RendererComponent>()};
     bg_render->type(Render::Type::Manual);
     fSize tex_size{bg_render->texture()->size.x, bg_render->texture()->size.y};
     float ratio = tex_size.y / tex_size.x;
@@ -83,9 +83,9 @@ ProgressBar::ProgressBar(float value, float max_value, const Position &position,
   }
 
   {
-    m_foreground = CreateObject<Image>(Position{0, 0}, size);
+    m_foreground = create_object<Image>(Position{0, 0}, size);
     m_foreground->texture(g_res.getTexture("progress_bar_foreground"));
-    m_foreground->GetComponent<RendererComponent>()->type(Render::Type::Manual);
+    m_foreground->get<RendererComponent>()->type(Render::Type::Manual);
   }
 
   m_max_value = max_value;
@@ -100,8 +100,8 @@ void ProgressBar::value(float value) {
   m_value = value;
 
   {
-    auto fg_render = m_foreground->GetComponent<RendererComponent>();
-    fSize size{m_foreground->GetComponent<TransformComponent>()->size()};
+    RendererComponent *fg_render{m_foreground->get<RendererComponent>()};
+    fSize size{m_foreground->get<TransformComponent>()->size()};
 
     fSize tex_size{fg_render->texture()->size.x, fg_render->texture()->size.y};
     float ratio = tex_size.y / tex_size.x;

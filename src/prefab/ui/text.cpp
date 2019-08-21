@@ -24,32 +24,32 @@ Text::Text(const std::string &id) : GameObject(id) {
   name("Text");
   interactive(false);
 
-  AddComponent<TextComponent>(g_res.getFont("consola_16"));
+  add<TextComponent>(g_res.getFont("consola_16"));
 }
 
 Text::Text(const std::string &value, const Position &position) : GameObject(position) {
   name("Text");
   interactive(false);
 
-  AddComponent<TextComponent>(value, g_res.getFont("consola_16"));
+  add<TextComponent>(value, g_res.getFont("consola_16"));
 }
 
 Text::~Text() {}
 
-std::wstring Text::text() { return GetComponent<TextComponent>()->text(); }
+std::wstring Text::text() { return get<TextComponent>()->text(); }
 
-void Text::text(const std::wstring &text) { GetComponent<TextComponent>()->text(text); }
+void Text::text(const std::wstring &text) { get<TextComponent>()->text(text); }
 
-void Text::text(const std::string &text) { GetComponent<TextComponent>()->text(text); }
+void Text::text(const std::string &text) { get<TextComponent>()->text(text); }
 
-void Text::font(Font *font) { GetComponent<TextComponent>()->font(font); }
+void Text::font(Font *font) { get<TextComponent>()->font(font); }
 
-void Text::font_size(uint32_t font_size) { GetComponent<TextComponent>()->font_size(font_size); }
+void Text::font_size(uint32_t font_size) { get<TextComponent>()->font_size(font_size); }
 
-void Text::color(const Color &color) { GetComponent<TextComponent>()->color(color); }
+void Text::color(const Color &color) { get<TextComponent>()->color(color); }
 
-void Text::alignment(const eq::Text::Alignment &align) { GetComponent<TextComponent>()->alignment(align); }
+void Text::alignment(const eq::Text::Alignment &align) { get<TextComponent>()->alignment(align); }
 
-void Text::style(const eq::Text::Style &style) { GetComponent<TextComponent>()->style(style); }
+void Text::style(const eq::Text::Style &style) { get<TextComponent>()->style(style); }
 
 } // namespace eq::ui

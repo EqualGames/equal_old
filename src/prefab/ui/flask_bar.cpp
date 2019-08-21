@@ -27,13 +27,13 @@ FlaskBar::FlaskBar(float value, float max_value, const Position &position, const
   interactive(false);
   m_max_value = max_value;
 
-  m_background = CreateObject<Image>(Position{0, 0}, size);
+  m_background = create_object<Image>(Position{0, 0}, size);
   m_background->texture(g_res.getTexture("container_bar_background"));
 
-  m_foreground = CreateObject<Image>(Position{0, 0}, size);
+  m_foreground = create_object<Image>(Position{0, 0}, size);
   m_foreground->texture(g_res.getTexture("container_bar_background"));
 
-  RendererComponent *f_renderer = m_foreground->GetComponent<RendererComponent>();
+  RendererComponent *f_renderer = m_foreground->get<RendererComponent>();
   f_renderer->type(Render::Type::Filled);
   f_renderer->fill_method(Render::Method::Progress);
   f_renderer->fill_origin(Render::Origin::Bottom);
@@ -42,12 +42,10 @@ FlaskBar::FlaskBar(float value, float max_value, const Position &position, const
 
 FlaskBar::~FlaskBar() {}
 
-void FlaskBar::value(float value) {
-  m_foreground->GetComponent<RendererComponent>()->fill_ammount(value / m_max_value);
-}
+void FlaskBar::value(float value) { m_foreground->get<RendererComponent>()->fill_ammount(value / m_max_value); }
 
 void FlaskBar::max_value(float value) { m_max_value = value; }
 
-void FlaskBar::color(const Color &color) { m_foreground->GetComponent<RendererComponent>()->color(color); }
+void FlaskBar::color(const Color &color) { m_foreground->get<RendererComponent>()->color(color); }
 
 } // namespace eq::ui

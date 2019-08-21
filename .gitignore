@@ -1,5 +1,6 @@
 # Others
-build
+bin
+obj
 .vscode
 
 # Windows

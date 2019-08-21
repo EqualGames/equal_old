@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Equal Games
+if (m_canvas) {qual Games
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -27,7 +27,7 @@ Scene::Scene() {
 }
 
 Scene::~Scene() {
-  GetWindow()->capture_events(false);
+  get_window()->capture_events(false);
   end();
   m_event = nullptr;
   m_script = nullptr;
@@ -48,9 +48,7 @@ const Scope<ScriptSystem> &Scene::script_system() const { return m_script; }
 
 void Scene::canvas(Ref<ui::Canvas> &canvas) {
   if (canvas) {
-    if (m_canvas) {
-      m_canvas = nullptr;
-    }
+     m_canvas = nullptr;
     m_canvas = canvas;
   } else {
     EQ_THROW("Can't define a invalid canvas");
@@ -72,13 +70,13 @@ void Scene::add(Ref<GameObject> &object) {
 void Scene::update(const Timestep &timestep) {
   // Start scene
   if (!m_initialized) {
-    m_canvas = std::make_shared<ui::Canvas>(Position{0, 0}, GetWindow()->size());
+    m_canvas = std::make_shared<ui::Canvas>(Position{0, 0}, get_window()->size());
     start();
     m_component->start();
     m_script->start();
     m_event->start();
     m_initialized = true;
-    GetWindow()->capture_events(true);
+    get_window()->capture_events(true);
   }
 
   m_component->update(timestep);

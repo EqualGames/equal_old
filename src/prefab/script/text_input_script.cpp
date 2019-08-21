@@ -42,7 +42,7 @@ void TextInputScript::fixed_update(const Timestep &timestep) {}
 
 void TextInputScript::onMouseMove(const Position &position) {
   if (m_state != State::Focused) {
-    if (m_target->GetComponent<TransformComponent>()->contain(position)) {
+    if (m_target->get<TransformComponent>()->contain(position)) {
       m_state = State::Hovered;
       // Change cursor to text caret
     } else if (!m_target->focused()) {
@@ -61,7 +61,7 @@ void TextInputScript::onMousePress(Mouse::Button button, const Position &positio
     Ref<ui::TextInput> input = std::dynamic_pointer_cast<ui::TextInput>(m_target);
     m_caret_visible = false;
     input->caret(false);
-  } else if (m_target->GetComponent<TransformComponent>()->contain(position)) {
+  } else if (m_target->get<TransformComponent>()->contain(position)) {
     m_state = State::Focused;
     m_target->focused(true);
     Ref<ui::TextInput> input = std::dynamic_pointer_cast<ui::TextInput>(m_target);

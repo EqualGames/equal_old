@@ -20,7 +20,7 @@ void Painter::recursive(const Ref<GameObject> &object) {
   if (object->visible()) {
     draw(object);
 
-    for (const Ref<GameObject> &child : object->GetComponent<TransformComponent>()->children()) {
+    for (auto child : object->get<TransformComponent>()->children()) {
       recursive(child);
     }
   }
@@ -35,10 +35,10 @@ void Painter::draw(const Scope<Scene> &scene) {
 }
 
 void Painter::draw(const Ref<GameObject> &object) {
-  if (object->HasComponent<RendererComponent>()) {
-    draw(*object->GetComponent<RendererComponent>(), *object->GetComponent<TransformComponent>());
-  } else if (object->HasComponent<TextComponent>()) {
-    draw(*object->GetComponent<TextComponent>(), *object->GetComponent<TransformComponent>());
+  if (object->has<RendererComponent>()) {
+    draw(*object->get<RendererComponent>(), *object->get<TransformComponent>());
+  } else if (object->has<TextComponent>()) {
+    draw(*object->get<TextComponent>(), *object->get<TransformComponent>());
   }
 }
 

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['canvas',['canvas',['../classeq_1_1Scene.html#a8a3ed905a07d93817ba778a13a47e19b',1,'eq::Scene::canvas(Ref&lt; ui::Canvas &gt; &amp;canvas)'],['../classeq_1_1Scene.html#a417609981871aa2e4cd7ea061bd05420',1,'eq::Scene::canvas() const'],['../classeq_1_1ui_1_1Canvas.html#ae7592839d5a7ca41f5368c67ece5fc7d',1,'eq::ui::Canvas::Canvas()']]],
+  ['canvas',['canvas',['../classeq_1_1Scene.html#a8a3ed905a07d93817ba778a13a47e19b',1,'eq::Scene::canvas(Ref&lt; ui::Canvas &gt; &amp;canvas)'],['../classeq_1_1Scene.html#a417609981871aa2e4cd7ea061bd05420',1,'eq::Scene::canvas() const'],['../classeq_1_1ui_1_1Canvas.html#a8575d6c43def547a07b607e241ff0ffc',1,'eq::ui::Canvas::Canvas(const std::string &amp;id)'],['../classeq_1_1ui_1_1Canvas.html#ae7592839d5a7ca41f5368c67ece5fc7d',1,'eq::ui::Canvas::Canvas(const Position &amp;position, const Size &amp;size)']]],
   ['capture_5fevents',['capture_events',['../classeq_1_1Window.html#a483f6a331612bb448cada6bc23b1246b',1,'eq::Window::capture_events(bool capture)'],['../classeq_1_1Window.html#a156ac478fcce82443efd41f04e3d95b9',1,'eq::Window::capture_events() const']]],
   ['caret',['caret',['../classeq_1_1ui_1_1TextInput.html#a04285040c2abe3423095c0399432adcf',1,'eq::ui::TextInput::caret() const'],['../classeq_1_1ui_1_1TextInput.html#a8a575cb8163b506fb76d669b4f9d660c',1,'eq::ui::TextInput::caret(bool visible)']]],
   ['child',['child',['../classeq_1_1TransformComponent.html#a6e76b5f8ed319b86c4129a023b2e280c',1,'eq::TransformComponent']]],
@@ -15,13 +15,13 @@ var searchData=
   ['create_5fapplication',['create_application',['../group__factories.html#ga13a86b10de36b81bc997fb0c56d4b672',1,'eq']]],
   ['create_5fcanvas',['create_canvas',['../group__factories.html#ga039a00f36b12a3b110e3fa41a3843bd0',1,'eq']]],
   ['create_5fgame',['create_game',['../group__factories.html#ga6266f585368dfb2b4e3e5873c6a4e064',1,'eq']]],
+  ['create_5fobject',['create_object',['../classeq_1_1GameObject.html#ada73edbc7446d52255fd280dc17c4d9c',1,'eq::GameObject']]],
   ['create_5fworld',['create_world',['../namespaceeq.html#ada57b1d0bbbec460d2397558fc35e10f',1,'eq']]],
   ['create_5fworld_5fchunk',['create_world_chunk',['../namespaceeq.html#a7543d669147e76fadf7d63383209c1a7',1,'eq']]],
   ['create_5fworld_5ffloor',['create_world_floor',['../namespaceeq.html#a0eb3817ffcc25f4ffac1a69af433fccc',1,'eq']]],
   ['create_5fworld_5fthing',['create_world_thing',['../namespaceeq.html#a4bfb5fbde117e70b127af64b081ac40d',1,'eq']]],
   ['create_5fworld_5ftile',['create_world_tile',['../namespaceeq.html#ad961e90d23fc1a17d6bea310d35caf3b',1,'eq']]],
   ['create_5fworld_5ftileset',['create_world_tileset',['../namespaceeq.html#aac8c9921d4302d7bc7ba36c4fdbc7fcc',1,'eq']]],
-  ['createobject',['CreateObject',['../classeq_1_1GameObject.html#a1a294836952890a6a357a9fa77019627',1,'eq::GameObject']]],
   ['critical',['critical',['../classeq_1_1Logger.html#a64b4ad56b2d5a9817be87b1956551803',1,'eq::Logger']]],
   ['crop',['crop',['../classeq_1_1TextComponent.html#a257836ec45c5e4b18122320de4d770f2',1,'eq::TextComponent::crop() const'],['../classeq_1_1TextComponent.html#adf178c7df2cfcd0db8d32f2038a33763',1,'eq::TextComponent::crop(const BoundingBox &amp;crop)']]],
   ['cyan',['CYAN',['../namespaceeq_1_1out.html#a0aedb5fc65b686fb67b40294abcf9daf',1,'eq::out']]]
